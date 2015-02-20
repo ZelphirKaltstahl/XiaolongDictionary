@@ -1,4 +1,4 @@
-#Fri Feb 20 18:09:34 CET 2015
+#Fri Feb 20 18:14:40 CET 2015
 application_name=Xiaolong Dictionary
 application_version=3.0
 big_character_box_font_name=Dialog
@@ -32,7 +32,7 @@ vocable_training_predefined_new_learn_levels=LVL5,LVL4,LVL3,LVL2,LVL1
 vocable_training_predefined_new_relevance_level_selected=true
 vocable_training_predefined_new_relevance_levels=LVL5,LVL4,LVL3,LVL2,LVL1
 vocable_training_show_description=false
-vocable_training_show_first_language=false
+vocable_training_show_first_language=true
 vocable_training_show_first_language_phonetic_script=true
 vocable_training_show_second_language=false
 vocable_training_show_second_language_phonetic_script=false
