@@ -595,8 +595,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		});
 		
 		stopVocableTrainingButton.setOnAction((actionEvent) -> {
-			//hide();
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, "BUG");
+			hide();
+			//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
 		});
 		
 		restartVocableTrainingButton.setOnAction((actionEvent) -> {
@@ -743,7 +743,13 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 
 	private void registerAsListener() {
-		/* Don't subscribe to these settings, they are only changed in this dialog but not reacted to - this means any changes will only be visible when the training dialog is started the next time
+		/*
+		Don't subscribe to these settings, they are only changed in this dialog but not reacted
+		to - this means any changes will only be visible when the training dialog is started the 
+		next time - is this what I want?
+		*/
+		
+		/*
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, this);
@@ -768,21 +774,47 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 	
 	private void setActionsForNotifications() {
-		actionsForObservedSettingsChanges.put(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, (Action<String>) (String value) -> {
-			updateFirstLanguageName(value);
-		});
+		// actions for language an phonetic script name changes
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> updateFirstLanguageName(value)
+		);
 		
-		actionsForObservedSettingsChanges.put(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, (Action<String>) (String value) -> {
-			updateFirstLanguagePhoneticScriptName(value);
-		});
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> updateFirstLanguagePhoneticScriptName(value)
+		);
 		
-		actionsForObservedSettingsChanges.put(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, (Action<String>) (String value) -> {
-			updateSecondLanguageName(value);
-		});
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> updateSecondLanguageName(value)
+		);
 		
-		actionsForObservedSettingsChanges.put(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, (Action<String>) (String value) -> {
-			updateSecondLanguagePhoneticScriptName(value);
-		});
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> updateSecondLanguagePhoneticScriptName(value)
+		);
+		
+		// actions for level settings changes
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME,
+			(Action<String>) (String value) -> customNewLearnLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME,
+			(Action<String>) (String value) -> predefinedNewLearnLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
+			(Action<String>) (String value) -> customNewRelevanceLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
+			(Action<String>) (String value) -> predefinedNewRelevanceLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
 	}
 	
 	@Override

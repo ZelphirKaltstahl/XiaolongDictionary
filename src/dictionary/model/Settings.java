@@ -23,10 +23,13 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -227,7 +230,12 @@ public class Settings {
 	
 	public void readSettings() {
 		final String DEFAULT_SETTINGS_FILE_NAME = "xld.settings";
-		Properties properties = new Properties();
+		Properties properties = new Properties() {
+			@Override
+			public synchronized Enumeration<Object> keys() {
+				return Collections.enumeration(new TreeSet<Object>(super.keySet()));
+			}
+		};
 		InputStream input = null;
 
 		try {
@@ -266,7 +274,12 @@ public class Settings {
 	
 	public void writeSettings() {
 		final String DEFAULT_SETTINGS_FILE_NAME = "xld.settings";
-		Properties properties = new Properties();
+		Properties properties = new Properties() {
+			@Override
+			public synchronized Enumeration<Object> keys() {
+				return Collections.enumeration(new TreeSet<Object>(super.keySet()));
+			}
+		};
 		OutputStream settingsOutputStream = null;
 		Writer settingsWriter;
 		
