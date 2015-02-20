@@ -1,0 +1,7 @@
+build/*
+Train vocables dialog mockup.png
+dist/*
+encodingTestFile.xml
+hs_err_pid*.log
+oldvocabulary
+xld_settings.xml
