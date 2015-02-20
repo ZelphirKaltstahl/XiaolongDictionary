@@ -9,6 +9,7 @@ import dictionary.customcontrols.XLDBigCharacterBox;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.CustomControlsInstanceManager;
+import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Action;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -128,6 +130,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private final HashMap<Vocable, Boolean> learnedVocablesHashMap = new HashMap<>(); // which vocables are already learned?
 	
+	//private final SimpleBooleanProperty firstLanguageTranslationDisableProperty = new SimpleBooleanProperty(true);
 	private boolean firstLanguageTranslationShown;
 	private boolean firstLanguagePhoneticScriptShown;
 	private boolean secondLanguageTranslationShown;
@@ -200,33 +203,24 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		if(newLearnLevelComboBox.getItems().contains(vocable.getLearnLevel())) {
 			predefinedNewLearnLevelRadioButton.setSelected(true);
 			customNewLearnLevelRadioButton.setSelected(false);
-			newLearnLevelTextField.setEditable(false);
-			newLearnLevelComboBox.setEditable(true);
+			newLearnLevelComboBox.getSelectionModel().select(vocable.getLearnLevel());
 		} else {
 			predefinedNewLearnLevelRadioButton.setSelected(false);
 			customNewLearnLevelRadioButton.setSelected(true);
+			newLearnLevelComboBox.getSelectionModel().clearSelection();
 			newLearnLevelTextField.setText(vocable.getLearnLevel());
-			newLearnLevelTextField.setEditable(true);
-			newLearnLevelComboBox.setEditable(false);
 		}
 		
 		if(newRelevanceLevelComboBox.getItems().contains(vocable.getRelevanceLevel())) {
 			predefinedNewRelevanceLevelRadioButton.setSelected(true);
 			customNewRelevanceLevelRadioButton.setSelected(false);
-			newRelevanceLevelTextField.setEditable(false);
-			newRelevanceLevelComboBox.setEditable(true);
+			newRelevanceLevelComboBox.getSelectionModel().select(vocable.getRelevanceLevel());
 		} else {
 			predefinedNewRelevanceLevelRadioButton.setSelected(false);
 			customNewRelevanceLevelRadioButton.setSelected(true);
+			newRelevanceLevelComboBox.getSelectionModel().clearSelection();
 			newRelevanceLevelTextField.setText(vocable.getRelevanceLevel());
-			newRelevanceLevelTextField.setEditable(true);
-			newRelevanceLevelComboBox.setEditable(false);
 		}
-		
-		
-		//input fields falls nicht hidden
-		//werte aus der vokabel fuer die verschiedenen Level
-		//System.out.println("Settings Vocable Number ");
 	}
 	
 	private void setVocable(int vocableNumber) {
@@ -235,11 +229,41 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 	
 	private void nextVocable() {
+		if(customNewLearnLevelRadioButton.isSelected()) {
+			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelTextField.getText());
+		} else {
+			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelComboBox.getSelectionModel().getSelectedItem());
+		}
 		
+		if(customNewRelevanceLevelRadioButton.isSelected()) {
+			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelTextField.getText());
+		} else {
+			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
+		}
+		
+		currentVocableNumber.set((currentVocableNumber.getValue() + 1) % trainingVocables.size());
+		setVocable(currentVocableNumber.get());
 	}
 	
 	private void previousVocable() {
+		if(customNewLearnLevelRadioButton.isSelected()) {
+			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelTextField.getText());
+		} else {
+			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelComboBox.getSelectionModel().getSelectedItem());
+		}
 		
+		if(customNewRelevanceLevelRadioButton.isSelected()) {
+			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelTextField.getText());
+		} else {
+			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
+		}
+		
+		if(currentVocableNumber.get() > 0) {
+			currentVocableNumber.set(currentVocableNumber.get() - 1);
+		} else {
+			currentVocableNumber.set(trainingVocables.size()-1);
+		}
+		setVocable(currentVocableNumber.get());
 	}
 	
 	private void restartTraining() {
@@ -256,25 +280,25 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private void loadSettings() {
 		try {
-			firstLanguageTranslationShown = Settings.getInstance().getSettingsProperty(
-				Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME
-			).equals(Boolean.TRUE.toString());
+			firstLanguageTranslationShown =	Settings.getInstance().getSettingsProperty(
+				Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME).equals(Boolean.TRUE.toString()
+			);
 			
 			firstLanguagePhoneticScriptShown = Settings.getInstance().getSettingsProperty(
-				Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME
-			).equals(Boolean.TRUE.toString());
+				Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME).equals(Boolean.TRUE.toString()
+			);
 			
 			secondLanguageTranslationShown = Settings.getInstance().getSettingsProperty(
-				Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME
-			).equals(Boolean.TRUE.toString());
+				Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME).equals(Boolean.TRUE.toString()
+			);
 			
 			secondLanguagePhoneticScriptShown = Settings.getInstance().getSettingsProperty(
-				Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME
-			).equals(Boolean.TRUE.toString());
+				Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME).equals(Boolean.TRUE.toString()
+			);
 			
 			descriptionShown = Settings.getInstance().getSettingsProperty(
-				Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME
-			).equals(Boolean.TRUE.toString());
+				Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME).equals(Boolean.TRUE.toString()
+			);
 			
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(TrainVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
@@ -314,11 +338,13 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private void addCSSClasses() {
 		//scene.getStylesheets().add("../../resources/css/style.css");
+		/*
 		firstLanguageTranslationTextField.getStyleClass().add("disablable_text_field");
 		firstLanguagePhoneticScriptTextField.getStyleClass().add("disablable_text_field");
 		secondLanguageTranslationTextField.getStyleClass().add("disablable_text_field");
 		secondLanguagePhoneticScriptTextField.getStyleClass().add("disablable_text_field");
 		descriptionTextArea.getStyleClass().add("disablable_text_field");
+		*/
 	}
 	
 	public void initialize(List<Vocable> listOfVocables) {
@@ -388,18 +414,22 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			firstLanguageTranslationTextField = new TextField();
 			firstLanguageTranslationTextField.setMinWidth(200);
 			firstLanguageTranslationTextField.setPrefWidth(200);
+			firstLanguageTranslationTextField.setEditable(false);
 			showHideFirstLanguageButton = new Button("Show");
 			
 			secondLanguageTranslationLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME) + ":");
 			secondLanguageTranslationTextField = new TextField();
+			secondLanguageTranslationTextField.setEditable(false);
 			showHideSecondLanguageButton = new Button("Show");
 			
 			firstLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
 			firstLanguagePhoneticScriptTextField = new TextField();
+			firstLanguagePhoneticScriptTextField.setEditable(false);
 			showHideFirstLanguagePhoneticScriptButton = new Button("Show");
 			
 			secondLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
 			secondLanguagePhoneticScriptTextField = new TextField();
+			secondLanguagePhoneticScriptTextField.setEditable(false);
 			showHideSecondLanguagePhoneticScriptButton = new Button("Show");
 			
 			xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(trainingVocables.get(0).getSecondLanguageTranslationsAsString(), "Characters");
@@ -408,6 +438,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			descriptionLabel = new Label("Description" + ":");
 			descriptionTextArea = new TextArea();
 			descriptionTextArea.setWrapText(true);
+			descriptionTextArea.setEditable(false);
 			showHideDescriptionButton = new Button("Show");
 			
 			newLearnLevelLabel = new Label("New Learn Level" + ":");
@@ -417,10 +448,12 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			newLearnLevelRadioButtonsToggleGroup.getToggles().add(customNewLearnLevelRadioButton);
 			newLearnLevelRadioButtonsToggleGroup.getToggles().add(predefinedNewLearnLevelRadioButton);
 			newLearnLevelTextField = new TextField();
+			newLearnLevelTextField.disableProperty().bindBidirectional(predefinedNewLearnLevelRadioButton.selectedProperty());
 			
 			String[] predefinedNewLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME).split(",", -1);
 			ObservableList newLearnLevelChoices = FXCollections.observableArrayList(predefinedNewLearnLevelChoices);
 			newLearnLevelComboBox = new ComboBox<>(newLearnLevelChoices);
+			newLearnLevelComboBox.disableProperty().bindBidirectional(customNewLearnLevelRadioButton.selectedProperty());
 			
 			newRelevanceLevelLabel = new Label("New Relevance Level" + ":");
 			newRelevanceLevelRadioButtonsToggleGroup = new ToggleGroup();
@@ -429,10 +462,12 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			newRelevanceLevelRadioButtonsToggleGroup.getToggles().add(customNewRelevanceLevelRadioButton);
 			newRelevanceLevelRadioButtonsToggleGroup.getToggles().add(predefinedNewRelevanceLevelRadioButton);
 			newRelevanceLevelTextField = new TextField();
+			newRelevanceLevelTextField.disableProperty().bindBidirectional(predefinedNewRelevanceLevelRadioButton.selectedProperty());
 			
 			String[] predefinedNewRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME).split(",", -1);
 			ObservableList newRelevanceLevelChoices = FXCollections.observableArrayList(predefinedNewRelevanceLevelChoices);
 			newRelevanceLevelComboBox = new ComboBox<>(newRelevanceLevelChoices);
+			newRelevanceLevelComboBox.disableProperty().bindBidirectional(customNewRelevanceLevelRadioButton.selectedProperty());
 			
 			vocableNumberLabel = new Label("Vocable Number" + ":");
 			
@@ -448,7 +483,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			vocableNumberSlider.setOrientation(Orientation.HORIZONTAL);
 			
 			vocableNumberSlider.setBlockIncrement(1);
-			vocableNumberSlider.setMajorTickUnit(trainingVocables.size()/10);
+			vocableNumberSlider.setMajorTickUnit(Math.floor(Math.max(((double) trainingVocables.size())/10 , 1)));
 			vocableNumberSlider.setMinorTickCount(5);
 			vocableNumberSlider.setShowTickLabels(true);
 			vocableNumberSlider.setShowTickMarks(true);
@@ -558,45 +593,34 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		
 		showHideFirstLanguageButton.setOnAction((actionEvent) -> {
 			toggleFirstLanguageVisibility();
-			firstLanguageTranslationShown = !firstLanguageTranslationShown;
 		});
 		
 		showHideFirstLanguagePhoneticScriptButton.setOnAction((actionEvent) -> {
 			toggleFirstLanguagePhoneticScriptVisibility();
-			firstLanguagePhoneticScriptShown = !firstLanguagePhoneticScriptShown;
 		});
 		
 		showHideSecondLanguageButton.setOnAction((actionEvent) -> {
 			toggleSecondLanguageVisibility();
-			toggleXLDBigCharacterBoxVisibility();
-			secondLanguageTranslationShown = !secondLanguageTranslationShown;
 		});
 		
 		showHideSecondLanguagePhoneticScriptButton.setOnAction((actionEvent) -> {
 			toggleSecondLanguagePhoneticScriptVisibility();
-			secondLanguagePhoneticScriptShown = !secondLanguagePhoneticScriptShown;
 		});
 		
 		showHideDescriptionButton.setOnAction((actionEvent) -> {
 			toggleDescriptionVisibility();
-			descriptionShown = !descriptionShown;
 		});
 		
 		previousVocableButton.setOnAction((actionEvent) -> {
-			if(currentVocableNumber.get() > 0) {
-				currentVocableNumber.set(currentVocableNumber.get() - 1);
-			} else {
-				currentVocableNumber.set(trainingVocables.size()-1);
-			}
+			previousVocable();
 		});
 		
 		nextVocableButton.setOnAction((actionEvent) -> {
-			currentVocableNumber.set((currentVocableNumber.getValue() + 1) % trainingVocables.size());
+			nextVocable();
 		});
 		
 		stopVocableTrainingButton.setOnAction((actionEvent) -> {
-			hide();
-			//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
+			stopTraining();
 		});
 		
 		restartVocableTrainingButton.setOnAction((actionEvent) -> {
@@ -646,14 +670,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		}
 	}
 	
-	private void toggleXLDBigCharacterBoxVisibility() {
-		if(secondLanguageTranslationShown) {
-			xldBigCharacterBox.hideCharacters();
-		} else {
-			xldBigCharacterBox.showCharacters();
-		}
-	}
-	
 	private void toggleSecondLanguagePhoneticScriptVisibility() {
 		if(secondLanguagePhoneticScriptShown) {
 			hideSecondLanguagePhoneticScript();
@@ -670,75 +686,107 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		}
 	}
 	
+	private void setFirstLanguageVisibility(boolean value) {
+		if(value) {
+			showFirstLanguage();
+		} else {
+			hideFirstLanguage();
+		}
+	}
+	
+	private void setFirstLanguagePhoneticScriptVisibility(boolean value) {
+		if(value) {
+			showFirstLanguagePhoneticScript();
+		} else {
+			hideFirstLanguagePhoneticScript();
+		}
+	}
+	
+	private void setSecondLanguageVisibility(boolean value) {
+		if(value) {
+			showSecondLanguage();
+		} else {
+			hideSecondLanguage();
+		}
+	}
+	
+	private void setSecondLanguagePhoneticScriptVisibility(boolean value) {
+		if(value) {
+			showSecondLanguagePhoneticScript();
+		} else {
+			hideSecondLanguagePhoneticScript();
+		}
+	}
+	
+	private void setDescriptionVisibility(boolean value) {
+		if(value) {
+			showDescription();
+		} else {
+			hideDescription();
+		}
+	}
+	
 	private void hideFirstLanguage() {
 		firstLanguageTranslationTextField.setText("Hidden ...");
-		firstLanguageTranslationTextField.setEditable(false);
 		showHideFirstLanguageButton.setText("Show");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, Boolean.toString(false));
+		firstLanguageTranslationShown = false;
 	}
 	
 	private void showFirstLanguage() {
 		firstLanguageTranslationTextField.setText(trainingVocables.get(currentVocableNumber.intValue()).getFirstLanguageTranslationsAsString());
-		firstLanguageTranslationTextField.setEditable(true);
 		showHideFirstLanguageButton.setText("Hide");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, Boolean.toString(true));
+		firstLanguageTranslationShown = true;
 	}
 	
 	private void hideFirstLanguagePhoneticScript() {
 		firstLanguagePhoneticScriptTextField.setText("Hidden ...");
-		firstLanguagePhoneticScriptTextField.setEditable(false);
 		showHideFirstLanguagePhoneticScriptButton.setText("Show");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, Boolean.toString(false));
+		firstLanguagePhoneticScriptShown = false;
 	}
 	
 	private void showFirstLanguagePhoneticScript() {
 		firstLanguagePhoneticScriptTextField.setText(trainingVocables.get(currentVocableNumber.intValue()).getFirstLanguagePhoneticScriptsAsString());
-		firstLanguagePhoneticScriptTextField.setEditable(true);
 		showHideFirstLanguagePhoneticScriptButton.setText("Hide");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, Boolean.toString(true));
+		firstLanguagePhoneticScriptShown = true;
 	}
 	
 	private void hideSecondLanguage() {
 		secondLanguageTranslationTextField.setText("Hidden ...");
-		secondLanguageTranslationTextField.setEditable(false);
 		xldBigCharacterBox.hideCharacters();
 		showHideSecondLanguageButton.setText("Show");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, Boolean.toString(false));
+		secondLanguageTranslationShown = false;
 	}
 	
 	private void showSecondLanguage() {
 		secondLanguageTranslationTextField.setText(trainingVocables.get(currentVocableNumber.intValue()).getSecondLanguageTranslationsAsString());
-		secondLanguageTranslationTextField.setEditable(true); //TODO: Hintergrundfarbe fuer Textfelder die nicht editierbar sind im css festlegen
 		xldBigCharacterBox.showCharacters();
 		showHideSecondLanguageButton.setText("Hide");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, Boolean.toString(true));
+		secondLanguageTranslationShown = true;
 	}
 	
 	private void hideSecondLanguagePhoneticScript() {
 		secondLanguagePhoneticScriptTextField.setText("Hidden ...");
-		secondLanguagePhoneticScriptTextField.setEditable(false);
 		showHideSecondLanguagePhoneticScriptButton.setText("Show");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, Boolean.toString(false));
+		secondLanguagePhoneticScriptShown = false;
 	}
 	
 	private void showSecondLanguagePhoneticScript() {
 		secondLanguagePhoneticScriptTextField.setText(trainingVocables.get(currentVocableNumber.intValue()).getSecondLanguagePhoneticScriptsAsString());
-		secondLanguagePhoneticScriptTextField.setEditable(true);
 		showHideSecondLanguagePhoneticScriptButton.setText("Hide");
-		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, Boolean.toString(true));
+		secondLanguagePhoneticScriptShown = true;
 	}
 	
 	private void hideDescription() {
 		descriptionTextArea.setText("Hidden ...");
-		descriptionTextArea.setEditable(false);
 		showHideDescriptionButton.setText("Show");
+		descriptionShown = false;
 		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, Boolean.toString(false));
 	}
 	
 	private void showDescription() {
 		descriptionTextArea.setText(trainingVocables.get(currentVocableNumber.intValue()).getDescription());
-		descriptionTextArea.setEditable(true);
 		showHideDescriptionButton.setText("Hide");
+		descriptionShown = true;
 		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, Boolean.toString(true));
 	}
 
@@ -749,13 +797,11 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		next time - is this what I want?
 		*/
 		
-		/*
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, this);
-		*/
 		
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
@@ -774,7 +820,9 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 	
 	private void setActionsForNotifications() {
+		// ====================================================
 		// actions for language an phonetic script name changes
+		// ====================================================
 		actionsForObservedSettingsChanges.put(
 			Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME,
 			(Action<String>) (String value) -> updateFirstLanguageName(value)
@@ -795,7 +843,37 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			(Action<String>) (String value) -> updateSecondLanguagePhoneticScriptName(value)
 		);
 		
+		// ================================================
+		// actions for showing or hiding vocable attributes
+		// ================================================
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> setFirstLanguageVisibility(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> setFirstLanguagePhoneticScriptVisibility(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> setSecondLanguageVisibility(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> setSecondLanguagePhoneticScriptVisibility(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME,
+			(Action<String>) (String value) -> setDescriptionVisibility(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		// ==================================
 		// actions for level settings changes
+		// ==================================
 		actionsForObservedSettingsChanges.put(
 			Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME,
 			(Action<String>) (String value) -> customNewLearnLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)

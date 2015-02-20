@@ -57,7 +57,7 @@ public class Vocable {
 		return result;
 	}
 	
-	public void setFirstLanugageTranslations(ArrayList<String> firstLanguageTranslations) {
+	public void setFirstLanugageTranslations(List<String> firstLanguageTranslations) {
 		this.firstLanguageTranslations = firstLanguageTranslations;
 	}
 
@@ -73,7 +73,7 @@ public class Vocable {
 		return result;
 	}
 
-	public void setFirstLanguagePhoneticScripts(ArrayList<String> firstLanguagePhoneticScripts) {
+	public void setFirstLanguagePhoneticScripts(List<String> firstLanguagePhoneticScripts) {
 		this.firstLanguagePhoneticScripts = firstLanguagePhoneticScripts;
 	}
 	
