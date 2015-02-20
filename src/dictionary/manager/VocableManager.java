@@ -108,7 +108,7 @@ public class VocableManager implements VocableListLoadedListener {
 				
 			} else if (vocableSearchData.isORSearch()) {
 				((ObservableList<Vocable>) vocableSearchTask.getValue())
-					.parallelStream()
+					.stream() //TODO: does this have to be single core?!
 					.filter(((vocable) -> !searchResultVocableList.contains(vocable)))
 					.forEach((vocable) -> searchResultVocableList.add(vocable));
 				
