@@ -1,4 +1,4 @@
-#Fri Feb 20 13:44:37 CET 2015
+#Fri Feb 20 14:29:49 CET 2015
 application_name=Xiaolong Dictionary
 settings_filename=xld.settings
 separator_character=/
@@ -32,7 +32,7 @@ preserve_first_language_phonetic_script_selected=false
 vocable_training_predefined_new_relevance_levels=LVL5,LVL4,LVL3,LVL2,LVL1
 vocable_training_show_second_language_phonetic_script=false
 separator_regular_expression=\\s*/\\s*
-first_language_name=German
+first_language_name=BUG
 vocables_filename=vocables.xml
 vocable_training_show_first_language_phonetic_script=true
 vocable_training_custom_new_learn_level_selected=false

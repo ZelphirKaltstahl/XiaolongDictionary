@@ -9,6 +9,7 @@ import dictionary.customcontrols.XLDBigCharacterBox;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.CustomControlsInstanceManager;
+import dictionary.model.Action;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.util.HashMap;
@@ -46,7 +47,7 @@ import javafx.stage.Modality;
  * TODO: Complete IF statements reacting on settings changes
  * TODO: Add a Label, TextField and Button for going to a specific vocable, or only a button that opens a dialog where the user can enter a number
  * TODO: Should the settings be SimpleStringProperty? That would save a lot of trouble in other classes.
- * TODO: define Stops for clicks on the slider, doesn't work so far, only works with keyboard, it should be the other way around, so that one can go one vocable further by using the keyboard and many by using mouse
+ * 
  * @author xiaolong
  */
 public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyChangeListener {
@@ -133,6 +134,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	private boolean secondLanguagePhoneticScriptShown;
 	private boolean descriptionShown;
 	
+	private final HashMap<String, Action<String>> actionsForObservedSettingsChanges = new HashMap<>();
 	
 	public TrainVocablesDialog(Modality modality) {
 		super(modality);
@@ -337,6 +339,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		addPropertyChangeListeners();
 		
 		registerAsListener();
+		setActionsForNotifications();
 		
 		startVocableTraining();
 	}
@@ -592,7 +595,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		});
 		
 		stopVocableTrainingButton.setOnAction((actionEvent) -> {
-			hide();
+			//hide();
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, "BUG");
 		});
 		
 		restartVocableTrainingButton.setOnAction((actionEvent) -> {
@@ -611,31 +615,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 				}
 			}
 		);
-	}
-	
-	private void registerAsListener() {
-		/* Don't subscribe to these settings, they are only changed in this dialog but not reacted to
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, this);
-		*/
-		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
-		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME, this);
-		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_DIRECTION_SETTING_NAME, this);
-		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 	}
 	
 	@Override
@@ -763,23 +742,52 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		//Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, Boolean.toString(true));
 	}
 
+	private void registerAsListener() {
+		/* Don't subscribe to these settings, they are only changed in this dialog but not reacted to - this means any changes will only be visible when the training dialog is started the next time
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_DESCRIPTION_SETTING_NAME, this);
+		*/
+		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
+		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME, this);
+		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_DIRECTION_SETTING_NAME, this);
+		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+	}
+	
+	private void setActionsForNotifications() {
+		actionsForObservedSettingsChanges.put(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, (Action<String>) (String value) -> {
+			updateFirstLanguageName(value);
+		});
+		
+		actionsForObservedSettingsChanges.put(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, (Action<String>) (String value) -> {
+			updateFirstLanguagePhoneticScriptName(value);
+		});
+		
+		actionsForObservedSettingsChanges.put(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, (Action<String>) (String value) -> {
+			updateSecondLanguageName(value);
+		});
+		
+		actionsForObservedSettingsChanges.put(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, (Action<String>) (String value) -> {
+			updateSecondLanguagePhoneticScriptName(value);
+		});
+	}
+	
 	@Override
 	public void update(String settingName, String settingValue) {
-		
-		if(settingName.equals(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME)) {
-			updateFirstLanguageName(settingValue);
-			
-		} else if (settingName.equals(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME)) {
-			updateFirstLanguagePhoneticScriptName(settingValue);
-			
-		} else if (settingName.equals(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME)) {
-			updateSecondLanguageName(settingValue);
-			
-		} else if (settingName.equals(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME)) {
-			updateSecondLanguagePhoneticScriptName(settingValue);
-			
-		}
-		//TODO: complete these if clauses for all subscribed settings values
+		actionsForObservedSettingsChanges.get(settingName).execute(settingValue);
 	}
 	
 	private void updateFirstLanguageName(String firstLanguageName) {
