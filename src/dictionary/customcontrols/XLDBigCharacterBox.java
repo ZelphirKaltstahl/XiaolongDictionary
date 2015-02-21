@@ -42,6 +42,8 @@ public class XLDBigCharacterBox extends VBox {
 	private HBox buttonHBox;
 	private Button nextButton;
 	private Button previousButton;
+	
+	private String ignoredCharacters;
 
 	/**
 	 * This constructor creates a {@link XLDCharacterBox} with a label containing the String, which
@@ -148,7 +150,9 @@ public class XLDBigCharacterBox extends VBox {
 	public void setCharacters(String newCharacters) {
 		List<Character> listOfCharacters = new ArrayList<>();
 		for (Character character : newCharacters.toCharArray()) {
-			listOfCharacters.add(character);
+			if(!ignoredCharacters.contains(character.toString())) {
+				listOfCharacters.add(character);
+			}
 		}
 		characters.setValues(listOfCharacters);
 		showCharacter(characters.getCurrentValue());
@@ -190,5 +194,9 @@ public class XLDBigCharacterBox extends VBox {
 	public void hideCharacters() {
 		charactersText.setVisible(false);
 		//showCharacter(' ');
+	}
+	
+	public void setIgnoredCharacters(String ignoredCharacters) {
+		this.ignoredCharacters = ignoredCharacters;
 	}
 }

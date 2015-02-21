@@ -431,6 +431,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			showHideSecondLanguagePhoneticScriptButton = new Button("Show");
 			
 			xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(trainingVocables.get(0).getSecondLanguageTranslationsAsString(), "Characters");
+			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME));
 			xldBigCharacterBox.setAlignment(Pos.TOP_RIGHT);
 			
 			descriptionLabel = new Label("Description" + ":");

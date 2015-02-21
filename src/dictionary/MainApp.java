@@ -60,7 +60,6 @@ public class MainApp extends Application {
 
 	//BigCharacterBox
 	private VBox xldBigCharacterBoxHBox;
-	private Label xldBigCharacterBoxLabel;
 	private XLDBigCharacterBox xldBigCharacterBox;
 
 	//Status Label
@@ -140,6 +139,11 @@ public class MainApp extends Application {
 		xldBigCharacterBoxLabel.setAlignment(Pos.CENTER);
 		xldBigCharacterBoxLabel.setTextAlignment(TextAlignment.CENTER);*/
 		xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(MainApp.INITIAL_BIG_CHARACTER_BOX_STRING, "Characters");
+		try {
+			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME));
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+		}
 		xldVocableTable.bindXLDBigCharacterBox(xldBigCharacterBox);
 
 		// Status Labels

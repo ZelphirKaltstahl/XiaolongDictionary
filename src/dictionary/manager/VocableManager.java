@@ -29,6 +29,7 @@ public class VocableManager implements VocableListLoadedListener {
 
 	private final ArrayList<VocableListChangeListener> vocableListChangeListeners;
 	private final ArrayList<VocableSearchPerformedListener> vocableSearchPerformedListeners;
+	private String ignoredCharacters;
 	
 	//private boolean vocableIsInVocableList = false;
 
@@ -180,5 +181,9 @@ public class VocableManager implements VocableListLoadedListener {
 		System.out.println("Notified of: Vocable List Loaded");
 		vocableList = FXCollections.observableArrayList(ManagerInstanceManager.getVocableFileManagerInstance().getVocableListFromFile());
 		notifyVocableListChangeListeners();
+	}
+	
+	public void setIgnoredCharacters(String ignoredCharacters) {
+		this.ignoredCharacters = ignoredCharacters;
 	}
 }
