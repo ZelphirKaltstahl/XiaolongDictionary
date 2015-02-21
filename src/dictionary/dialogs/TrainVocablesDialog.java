@@ -790,12 +790,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 
 	private void registerAsListener() {
-		/*
-		Don't subscribe to these settings, they are only changed in this dialog but not reacted
-		to - this means any changes will only be visible when the training dialog is started the 
-		next time - is this what I want?
-		*/
-		
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_SHOW_SECOND_LANGUAGE_SETTING_NAME, this);
@@ -816,6 +810,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME, this);
 	}
 	
 	private void setActionsForNotifications() {
@@ -891,6 +887,12 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		actionsForObservedSettingsChanges.put(
 			Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
 			(Action<String>) (String value) -> predefinedNewRelevanceLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
+		);
+		
+		// OTHER
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME,
+			(Action<String>) (String value) -> xldBigCharacterBox.setIgnoredCharacters(value)
 		);
 	}
 	
