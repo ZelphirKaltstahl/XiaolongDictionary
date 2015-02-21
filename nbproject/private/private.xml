@@ -4,11 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/model/Settings.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/model/Vocable.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/DialogInstanceManager.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/MainApp.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/TrainVocablesDialog.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/listeners/SettingsPropertyChangeListener.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/customcontrols/XLDBigCharacterBox.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/VocableManager.java</file>
         </group>
     </open-files>
 </project-private>
