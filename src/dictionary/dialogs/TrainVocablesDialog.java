@@ -115,7 +115,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	private Slider vocableNumberSlider;
 	private Label learnedVocablesLabel;
 	private ProgressBar learnedVocablesProgressBar;
-		
+	
+	private Button changeVocableButton;
 	private Button previousVocableButton;
 	private Button nextVocableButton;
 	private Button restartVocableTrainingButton;
@@ -496,6 +497,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			learnedVocablesProgressBar.setMaxHeight(14);
 			learnedVocablesProgressBar.progressProperty().bind(learnedVocablesProgress); // bind progress property of the progressbar to the counter of learned vocables
 			
+			changeVocableButton = new Button("Change");
 			previousVocableButton = new Button("<--");
 			previousVocableButton.setMaxWidth(Double.MAX_VALUE);
 			nextVocableButton = new Button("-->");
@@ -566,10 +568,11 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		// third row
 		statisticsVBox.getChildren().addAll(vocableNumberLabel, vocableNumberSlider, learnedVocablesLabel, learnedVocablesProgressBar);
 		
-		actionButtonGridPane.add(previousVocableButton, 0, 0);
-		actionButtonGridPane.add(nextVocableButton, 1, 0);
-		actionButtonGridPane.add(restartVocableTrainingButton, 0, 1);
-		actionButtonGridPane.add(stopVocableTrainingButton, 1, 1);
+		actionButtonGridPane.add(changeVocableButton, 1, 0);
+		actionButtonGridPane.add(previousVocableButton, 0, 1);
+		actionButtonGridPane.add(nextVocableButton, 1, 1);
+		actionButtonGridPane.add(restartVocableTrainingButton, 0, 2);
+		actionButtonGridPane.add(stopVocableTrainingButton, 1, 2);
 		actionButtonGridPane.setAlignment(Pos.BOTTOM_RIGHT);
 		
 		setScene(scene);
