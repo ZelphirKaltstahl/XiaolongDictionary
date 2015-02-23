@@ -244,10 +244,13 @@ public class MainApp extends Application {
 	private void addActionListeners() {
 
 		addVocableButton.setOnAction((ActionEvent event) -> {
-			DialogInstanceManager.getAddVocablesDialogInstance().show();
-			DialogInstanceManager.getAddVocablesDialogInstance().requestFocus();
+			addVocableButtonActionPerformed();
 		});
-
+		
+		changeVocablesButton.setOnAction((ActionEvent event) -> {
+			changeVocableButtonActionPerformed();
+		});
+		
 		deleteVocablesButton.setOnAction((ActionEvent event) -> {
 			deleteVocablesButtonActionPerformed();
 		});
@@ -275,7 +278,12 @@ public class MainApp extends Application {
 			}
 		});
 	}
-
+	
+	private void addVocableButtonActionPerformed() {
+		DialogInstanceManager.getAddVocablesDialogInstance().show();
+		DialogInstanceManager.getAddVocablesDialogInstance().requestFocus();
+	}
+	
 	private void deleteVocablesButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
 			Action response = ControlFXDialogDisplayer.showDeleteVocablesConfirmationDialog(primaryStage);
@@ -288,6 +296,16 @@ public class MainApp extends Application {
 			}
 		} else {
 			ControlFXDialogDisplayer.showNoVocablesSelectedForDeletionDialog(primaryStage);
+		}
+	}
+	
+	private void changeVocableButtonActionPerformed() {
+		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
+			Vocable changingVocable = (Vocable) xldVocableTable.getSelectionModel().getSelectedItem();
+			DialogInstanceManager.getChangeVocableDialogInstanceForVocable(changingVocable).show();
+			DialogInstanceManager.getChangeVocableDialogInstanceForVocable(changingVocable).requestFocus();
+		} else {
+			ControlFXDialogDisplayer.showNoVocableSelectedForChangeVocableDialog(primaryStage);
 		}
 	}
 	

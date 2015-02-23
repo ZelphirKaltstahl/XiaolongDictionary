@@ -78,16 +78,14 @@ public class VocableManager implements VocableListLoadedListener {
 
 	public void deleteVocables(ObservableList<Vocable> listOfVocables) {
 		vocableList.removeAll(listOfVocables);
-		//searchResultVocableList.removeAll(listOfVocables); //not needed because searchResult contains references to vocablelist, so the vocable are also deleted from the search result
 	}
 
 	public void deleteVocable(Vocable vocable) {
 		vocableList.remove(vocable);
-		//searchResultVocableList.remove(vocable); //not needed because searchResult contains references to vocablelist, so the vocable are also deleted from the search result
 	}
 
 	public void changeVocable(Vocable oldVocable, Vocable changedVocable) {
-		System.out.println("Change Vocable");
+		System.out.println("DO NOT USE THIS METHOD");
 	}
 
 	public void searchVocables(VocableSearchData vocableSearchData) {

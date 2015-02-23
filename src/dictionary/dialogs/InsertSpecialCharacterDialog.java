@@ -49,7 +49,7 @@ public class InsertSpecialCharacterDialog extends Stage {
 		initModality(modality);
 	}
 
-	public void init() {
+	public void initialize() {
 		initializeControls();
 		addControls();
 		addActionListeners();

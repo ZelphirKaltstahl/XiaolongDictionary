@@ -42,12 +42,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 
 /**
- * TODO: change disabled textfield background color
- * TODO: Find a better way to react on Settings, maybe using a HashMap<String, Action>, with Action having a method taking a String, the new settingsValue.
- * TODO: Complete IF statements reacting on settings changes
- * TODO: Add a Label, TextField and Button for going to a specific vocable, or only a button that opens a dialog where the user can enter a number
- * TODO: Should the settings be SimpleStringProperty? That would save a lot of trouble in other classes.
- * 
+ * TODO: Count learned vocables somehow - maybe only if the highest predefined learn level is selected, or maybe a user can specify in the settings which learn levels are "learned"
  * @author xiaolong
  */
 public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyChangeListener {

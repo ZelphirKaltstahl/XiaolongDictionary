@@ -287,120 +287,93 @@ public class AddVocablesDialog extends XLDDialog {
 
 	@Override
 	protected void addFocusChangeListeners() {
-		firstLanguageTranslationsTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = firstLanguageTranslationsTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		firstLanguageTranslationsTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = firstLanguageTranslationsTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		firstLanguagePhoneticScriptTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = firstLanguagePhoneticScriptTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		firstLanguagePhoneticScriptTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = firstLanguagePhoneticScriptTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		secondLanguageTranslationsTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = secondLanguageTranslationsTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		secondLanguageTranslationsTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = secondLanguageTranslationsTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		secondLanguagePhoneticScriptTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = secondLanguagePhoneticScriptTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		secondLanguagePhoneticScriptTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = secondLanguagePhoneticScriptTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		topicTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = topicTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		topicTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = topicTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		chapterTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = chapterTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		chapterTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = chapterTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		learnLevelTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = learnLevelTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		learnLevelTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = learnLevelTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		relevanceLevelTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = relevanceLevelTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		relevanceLevelTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = relevanceLevelTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 
-		descriptionTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = descriptionTextArea;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getAddVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		descriptionTextArea.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = descriptionTextArea;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(this);
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 	}
