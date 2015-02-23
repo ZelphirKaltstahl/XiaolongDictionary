@@ -60,6 +60,15 @@ public class ControlFXDialogDisplayer {
 			.showInformation();
 	}
 	
+	public static void showNoVocableSelectedForChangeVocableDialog(Object dialogOwner) {
+		Dialogs.create()
+			.owner(dialogOwner)
+			.title("Change of Vocable")
+			.masthead("No vocables selected")
+			.message("Please select the vocable you want to change from the vocable table first.")
+			.showInformation();
+	}
+	
 	public static void showNoVocablesSelectedForTrainingDialog(Object dialogOwner) {
 		Dialogs.create()
 			.owner(dialogOwner)

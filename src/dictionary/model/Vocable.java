@@ -1,7 +1,10 @@
 package dictionary.model;
 
+import dictionary.exceptions.SettingNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author XiaoLong
@@ -50,14 +53,21 @@ public class Vocable {
 	}
 	
 	public String getFirstLanguageTranslationsAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
 		String result = firstLanguageTranslations.get(0);
 		for(int i = 1; i < firstLanguageTranslations.size(); i++) {
-			result += ", " + firstLanguageTranslations.get(i);
+			result += " " + separatorCharacter + " " + firstLanguageTranslations.get(i);
 		}
 		return result;
 	}
 	
-	public void setFirstLanugageTranslations(ArrayList<String> firstLanguageTranslations) {
+	public void setFirstLanugageTranslations(List<String> firstLanguageTranslations) {
 		this.firstLanguageTranslations = firstLanguageTranslations;
 	}
 
@@ -66,14 +76,21 @@ public class Vocable {
 	}
 	
 	public String getFirstLanguagePhoneticScriptsAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
 		String result = firstLanguagePhoneticScripts.get(0);
 		for(int i = 1; i < firstLanguagePhoneticScripts.size(); i++) {
-			result += ", " + firstLanguagePhoneticScripts.get(i);
+			result += " " + separatorCharacter + " " + firstLanguagePhoneticScripts.get(i);
 		}
 		return result;
 	}
 
-	public void setFirstLanguagePhoneticScripts(ArrayList<String> firstLanguagePhoneticScripts) {
+	public void setFirstLanguagePhoneticScripts(List<String> firstLanguagePhoneticScripts) {
 		this.firstLanguagePhoneticScripts = firstLanguagePhoneticScripts;
 	}
 	
@@ -82,14 +99,21 @@ public class Vocable {
 	}
 	
 	public String getSecondLanguageTranslationsAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
 		String result = secondLanguageTranslations.get(0);
 		for(int i = 1; i < secondLanguageTranslations.size(); i++) {
-			result += ", " + secondLanguageTranslations.get(i);
+			result += " " + separatorCharacter + " " + secondLanguageTranslations.get(i);
 		}
 		return result;
 	}
 
-	public void setSecondLanguageTranslations(ArrayList<String> secondLanguageTranslations) {
+	public void setSecondLanguageTranslations(List<String> secondLanguageTranslations) {
 		this.secondLanguageTranslations = secondLanguageTranslations;
 	}
 
@@ -98,14 +122,21 @@ public class Vocable {
 	}
 	
 	public String getSecondLanguagePhoneticScriptsAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
 		String result = secondLanguagePhoneticScripts.get(0);
 		for(int i = 1; i < secondLanguagePhoneticScripts.size(); i++) {
-			result += ", " + secondLanguagePhoneticScripts.get(i);
+			result += " " + separatorCharacter + " " + secondLanguagePhoneticScripts.get(i);
 		}
 		return result;
 	}
 
-	public void setSecondLanguagePhoneticScripts(ArrayList<String> secondLanguagePhoneticScripts) {
+	public void setSecondLanguagePhoneticScripts(List<String> secondLanguagePhoneticScripts) {
 		this.secondLanguagePhoneticScripts = secondLanguagePhoneticScripts;
 	}
 	
@@ -113,15 +144,45 @@ public class Vocable {
 		return topics;
 	}
 
-	public void setTopic(ArrayList<String> topics) {
+	public String getTopicsAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
+		String result = topics.get(0);
+		for(int i = 1; i < topics.size(); i++) {
+			result += " " + separatorCharacter + " " + topics.get(i);
+		}
+		return result;
+	}
+	
+	public void setTopic(List<String> topics) {
 		this.topics = topics;
 	}
 	
 	public List<String> getChapters() {
 		return chapters;
 	}
+	
+	public String getChaptersAsString() {
+		String separatorCharacter = "/";
+		try {
+			separatorCharacter = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(Vocable.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
+		String result = chapters.get(0);
+		for(int i = 1; i < chapters.size(); i++) {
+			result += " " + separatorCharacter + " " + chapters.get(i);
+		}
+		return result;
+	}
 
-	public void setChapters(ArrayList<String> chapters) {
+	public void setChapters(List<String> chapters) {
 		this.chapters = chapters;
 	}
 

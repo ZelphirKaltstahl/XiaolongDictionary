@@ -23,10 +23,13 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -96,8 +99,8 @@ public class Settings {
 	public final String VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME = "vocable_training_custom_new_relevance_level_selected";
 	public final String VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME = "vocable_training_predefined_new_relevance_level_selected";
 	
-	public final String VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME = "vocable_training_predefined_new_learn_levels";
-	public final String VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME = "vocable_training_predefined_new_relevance_levels";
+	public final String VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME = "vocable_training_predefined_new_learn_levels";
+	public final String VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME = "vocable_training_predefined_new_relevance_levels";
 	
 	
 	// other values
@@ -156,8 +159,8 @@ public class Settings {
 		VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME,
 		VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
 		VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
-		VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME,
-		VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME
+		VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME,
+		VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME
 	};
 	
 	private final HashMap<String, String> settings = new HashMap<>();
@@ -216,8 +219,8 @@ public class Settings {
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(true));
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(true));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
 			
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
@@ -227,7 +230,12 @@ public class Settings {
 	
 	public void readSettings() {
 		final String DEFAULT_SETTINGS_FILE_NAME = "xld.settings";
-		Properties properties = new Properties();
+		Properties properties = new Properties() {
+			@Override
+			public synchronized Enumeration<Object> keys() {
+				return Collections.enumeration(new TreeSet<Object>(super.keySet()));
+			}
+		};
 		InputStream input = null;
 
 		try {
@@ -266,7 +274,12 @@ public class Settings {
 	
 	public void writeSettings() {
 		final String DEFAULT_SETTINGS_FILE_NAME = "xld.settings";
-		Properties properties = new Properties();
+		Properties properties = new Properties() {
+			@Override
+			public synchronized Enumeration<Object> keys() {
+				return Collections.enumeration(new TreeSet<Object>(super.keySet()));
+			}
+		};
 		OutputStream settingsOutputStream = null;
 		Writer settingsWriter;
 		

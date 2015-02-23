@@ -7,6 +7,7 @@
 package dictionary.manager;
 
 import dictionary.dialogs.AddVocablesDialog;
+import dictionary.dialogs.ChangeVocableDialog;
 import dictionary.dialogs.InsertSpecialCharacterDialog;
 import dictionary.dialogs.SearchVocablesDialog;
 import dictionary.dialogs.TrainVocablesDialog;
@@ -20,6 +21,7 @@ import javafx.stage.Modality;
  */
 public class DialogInstanceManager {
 	private static AddVocablesDialog addVocablesDialogInstance;
+	private static ChangeVocableDialog changeVocableDialogInstance;
 	private static TrainVocablesDialog trainVocablesDialogInstance;
 	private static SearchVocablesDialog searchVocablesDialogInstance;
 	private static InsertSpecialCharacterDialog insertSpecialCharacterDialogInstance;
@@ -27,15 +29,26 @@ public class DialogInstanceManager {
 	public static AddVocablesDialog getAddVocablesDialogInstance() {
 		if(addVocablesDialogInstance == null) {
 			addVocablesDialogInstance = new AddVocablesDialog(Modality.NONE);
-			addVocablesDialogInstance.init();
+			addVocablesDialogInstance.initialize();
 		}
 		return addVocablesDialogInstance;
+	}
+	
+	public static ChangeVocableDialog getChangeVocableDialogInstanceForVocable(Vocable vocable) {
+		if(changeVocableDialogInstance == null) {
+			changeVocableDialogInstance = new ChangeVocableDialog(Modality.NONE);
+			changeVocableDialogInstance.initialize(vocable);
+			return changeVocableDialogInstance;
+		} else {
+			changeVocableDialogInstance.setVocable(vocable);
+			return changeVocableDialogInstance;
+		}
 	}
 	
 	public static SearchVocablesDialog getSearchVocablesDialogInstance() {
 		if(searchVocablesDialogInstance == null) {
 			searchVocablesDialogInstance = new SearchVocablesDialog(Modality.NONE);
-			searchVocablesDialogInstance.init();
+			searchVocablesDialogInstance.initialize();
 		}
 		return searchVocablesDialogInstance;
 	}
@@ -43,7 +56,7 @@ public class DialogInstanceManager {
 	public static InsertSpecialCharacterDialog getInsertSpecialCharacterDialogInstance() {
 		if(insertSpecialCharacterDialogInstance == null) {
 			insertSpecialCharacterDialogInstance = new InsertSpecialCharacterDialog(Modality.NONE);
-			insertSpecialCharacterDialogInstance.init();
+			insertSpecialCharacterDialogInstance.initialize();
 		}
 		return insertSpecialCharacterDialogInstance;
 	}
@@ -59,5 +72,6 @@ public class DialogInstanceManager {
 		if (searchVocablesDialogInstance != null) searchVocablesDialogInstance.close();
 		if (insertSpecialCharacterDialogInstance != null) insertSpecialCharacterDialogInstance.close();
 		if (trainVocablesDialogInstance != null) trainVocablesDialogInstance.close();
+		if (changeVocableDialogInstance != null) changeVocableDialogInstance.close();
 	}
 }
