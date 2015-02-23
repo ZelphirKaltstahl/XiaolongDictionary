@@ -36,20 +36,12 @@ public class DialogInstanceManager {
 	
 	public static ChangeVocableDialog getChangeVocableDialogInstanceForVocable(Vocable vocable) {
 		if(changeVocableDialogInstance == null) {
-			//System.out.println("Creating new instance ChangeVocableDialog.");
 			changeVocableDialogInstance = new ChangeVocableDialog(Modality.NONE);
 			changeVocableDialogInstance.initialize(vocable);
 			return changeVocableDialogInstance;
 		} else {
-			//System.out.println("Not creating new instance ChangeVocableDialog.");
-			if(changeVocableDialogInstance.getChangingVocable() == vocable) {
-				//System.out.println("Not re-initializing.");
-				return changeVocableDialogInstance;
-			} else {
-				//System.out.println("Re-initializing.");
-				changeVocableDialogInstance.initialize(vocable);
-				return changeVocableDialogInstance;
-			}
+			changeVocableDialogInstance.setVocable(vocable);
+			return changeVocableDialogInstance;
 		}
 	}
 	

@@ -445,7 +445,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			newLearnLevelTextField = new TextField();
 			newLearnLevelTextField.disableProperty().bindBidirectional(predefinedNewLearnLevelRadioButton.selectedProperty());
 			
-			String[] predefinedNewLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+			String[] predefinedNewLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
 			ObservableList newLearnLevelChoices = FXCollections.observableArrayList(predefinedNewLearnLevelChoices);
 			newLearnLevelComboBox = new ComboBox<>(newLearnLevelChoices);
 			newLearnLevelComboBox.disableProperty().bindBidirectional(customNewLearnLevelRadioButton.selectedProperty());
@@ -459,7 +459,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			newRelevanceLevelTextField = new TextField();
 			newRelevanceLevelTextField.disableProperty().bindBidirectional(predefinedNewRelevanceLevelRadioButton.selectedProperty());
 			
-			String[] predefinedNewRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME).split(",", -1);
+			String[] predefinedNewRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME).split(",", -1);
 			ObservableList newRelevanceLevelChoices = FXCollections.observableArrayList(predefinedNewRelevanceLevelChoices);
 			newRelevanceLevelComboBox = new ComboBox<>(newRelevanceLevelChoices);
 			newRelevanceLevelComboBox.disableProperty().bindBidirectional(customNewRelevanceLevelRadioButton.selectedProperty());
@@ -799,8 +799,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, this);
 		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_LEARN_LEVELS_SETTING_NAME, this);
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVELS_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME, this);
 		
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().VOCABLE_TRAINING_DIRECTION_SETTING_NAME, this);
 		

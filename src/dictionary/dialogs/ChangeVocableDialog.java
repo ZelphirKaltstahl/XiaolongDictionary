@@ -16,19 +16,23 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
@@ -47,6 +51,7 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private GridPane root;
 	private GridPane actionButtonGridPane;
+	private HBox actionButtonGridPaneHBox;
 	
 	// CONTROLS
 	
@@ -102,8 +107,26 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 	private TextField changedChapterTextField;
 	private TextField changedTopicTextField;
 	private TextArea changedDescriptionTextArea;
+	
+	private GridPane changedLearnLevelGridPane;
+	private ToggleGroup changedLearnLevelRadioButtonsToggleGroup;
+	private RadioButton changedCustomLearnLevelRadioButton;
+	private RadioButton changedPredefinedLearnLevelRadioButton;
+	private ComboBox<String> changedLearnLevelComboBox;
 	private TextField changedLearnLevelTextField;
+	
+	private GridPane changedRelevanceLevelGridPane;
+	private ToggleGroup changedRelevanceLevelRadioButtonsToggleGroup;
+	private RadioButton changedCustomRelevanceLevelRadioButton;
+	private RadioButton changedPredefinedRelevanceLevelRadioButton;
+	private ComboBox<String> changedRelevanceLevelComboBox;
 	private TextField changedRelevanceLevelTextField;
+	
+	
+	
+	
+	
+	
 	
 	private Button clearChangedValuesButton;
 	
@@ -144,18 +167,43 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 			
 			root = new GridPane();
 			root.setPadding(new Insets(10));
-			root.setHgap(20);
+			root.setHgap(10);
 			root.setVgap(10);
 			root.setAlignment(Pos.CENTER);
+			
+			changedLearnLevelGridPane = new GridPane();
+			changedLearnLevelGridPane.setHgap(2);
+			changedLearnLevelGridPane.setVgap(2);
+			changedLearnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+			changedLearnLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+			changedLearnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+			changedLearnLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
+			
+			changedRelevanceLevelGridPane = new GridPane();
+			changedRelevanceLevelGridPane.setHgap(2);
+			changedRelevanceLevelGridPane.setVgap(2);
+			changedRelevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+			changedRelevanceLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+			changedRelevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+			changedRelevanceLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
 			
 			actionButtonGridPane = new GridPane();
 			actionButtonGridPane.setHgap(2);
 			actionButtonGridPane.setVgap(2);
 			actionButtonGridPane.setMaxWidth(200);
+			actionButtonGridPane.setMinWidth(200);
+			actionButtonGridPane.setAlignment(Pos.BOTTOM_RIGHT);
 			actionButtonGridPane.getColumnConstraints().add(new ColumnConstraints());
 			actionButtonGridPane.getColumnConstraints().get(0).setPercentWidth(50);
 			actionButtonGridPane.getColumnConstraints().add(new ColumnConstraints());
 			actionButtonGridPane.getColumnConstraints().get(1).setPercentWidth(50);
+			actionButtonGridPane.setPadding(new Insets(10));
+			
+			
+			actionButtonGridPaneHBox = new HBox();
+			actionButtonGridPaneHBox.setMaxWidth(Double.MAX_VALUE);
+			actionButtonGridPaneHBox.setAlignment(Pos.TOP_RIGHT);
+			
 			
 			// CONTROLS
 			currentValuesHeadingLabel = new Label("Current Values");
@@ -233,7 +281,7 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 			currentLearnLevelTextField.setEditable(false);
 			currentRelevanceLevelTextField.setEditable(false);
 			
-			currentDescriptionTextArea.setMaxWidth(200);
+			currentDescriptionTextArea.setMaxWidth(250);
 			currentDescriptionTextArea.setWrapText(true);
 			
 			takeCurrentFirstLanguageButton = new Button("-->");
@@ -252,7 +300,7 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 			changedValuesHeadingLabel.setMaxHeight(Double.MAX_VALUE);
 			changedValuesHeadingLabel.setAlignment(Pos.CENTER);
 			changedValuesHeadingLabel.setTextAlignment(TextAlignment.CENTER);
-			changedValuesHeadingLabel.setFont(new Font("System Regular",20));
+			changedValuesHeadingLabel.setFont(new Font("System Regular", 20));
 
 			changedFirstLanguageLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME) + ":");
 			changedFirstLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
@@ -271,8 +319,64 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 			changedChapterTextField = new TextField(changingVocable.getChaptersAsString());
 			changedTopicTextField = new TextField(changingVocable.getTopicsAsString());
 			changedDescriptionTextArea = new TextArea(changingVocable.getDescription());
-			changedLearnLevelTextField = new TextField(changingVocable.getLearnLevel());
-			changedRelevanceLevelTextField = new TextField(changingVocable.getRelevanceLevel());
+			
+			changedDescriptionTextArea.setMaxWidth(250);
+			changedDescriptionTextArea.setWrapText(true);
+			
+			// learn level
+			changedLearnLevelRadioButtonsToggleGroup = new ToggleGroup();
+			changedCustomLearnLevelRadioButton = new RadioButton("Custom");
+			changedPredefinedLearnLevelRadioButton = new RadioButton("Predefined");			
+			changedLearnLevelRadioButtonsToggleGroup.getToggles().add(changedCustomLearnLevelRadioButton);
+			changedLearnLevelRadioButtonsToggleGroup.getToggles().add(changedPredefinedLearnLevelRadioButton);
+			
+			changedLearnLevelTextField = new TextField();
+			changedLearnLevelTextField.disableProperty().bindBidirectional(changedPredefinedLearnLevelRadioButton.selectedProperty());
+			
+			String[] changedPredefinedLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+			ObservableList changedLearnLevelChoices = FXCollections.observableArrayList(changedPredefinedLearnLevelChoices);
+			changedLearnLevelComboBox = new ComboBox<>(changedLearnLevelChoices);
+			changedLearnLevelComboBox.disableProperty().bindBidirectional(changedCustomLearnLevelRadioButton.selectedProperty());
+			
+			if(changedLearnLevelComboBox.getItems().contains(changingVocable.getLearnLevel())) {
+				changedPredefinedLearnLevelRadioButton.setSelected(true);
+				changedCustomLearnLevelRadioButton.setSelected(false);
+				changedLearnLevelComboBox.getSelectionModel().select(changingVocable.getLearnLevel());
+			} else {
+				changedPredefinedLearnLevelRadioButton.setSelected(false);
+				changedCustomLearnLevelRadioButton.setSelected(true);
+				changedLearnLevelComboBox.getSelectionModel().clearSelection();
+				changedLearnLevelTextField.setText(changingVocable.getLearnLevel());
+			}
+			
+			
+			// relevance level
+			changedRelevanceLevelRadioButtonsToggleGroup = new ToggleGroup();
+			changedCustomRelevanceLevelRadioButton = new RadioButton("Custom");
+			changedPredefinedRelevanceLevelRadioButton = new RadioButton("Predefined");
+			changedRelevanceLevelRadioButtonsToggleGroup.getToggles().add(changedCustomRelevanceLevelRadioButton);
+			changedRelevanceLevelRadioButtonsToggleGroup.getToggles().add(changedPredefinedRelevanceLevelRadioButton);
+			
+			changedRelevanceLevelTextField = new TextField();
+			changedRelevanceLevelTextField.disableProperty().bindBidirectional(changedPredefinedRelevanceLevelRadioButton.selectedProperty());
+			
+			String[] changedPredefinedRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME).split(",", -1);
+			ObservableList changedRelevanceLevelChoices = FXCollections.observableArrayList(changedPredefinedRelevanceLevelChoices);
+			changedRelevanceLevelComboBox = new ComboBox<>(changedRelevanceLevelChoices);
+			changedRelevanceLevelComboBox.disableProperty().bindBidirectional(changedCustomRelevanceLevelRadioButton.selectedProperty());
+			
+			
+			if(changedRelevanceLevelComboBox.getItems().contains(changingVocable.getRelevanceLevel())) {
+				changedPredefinedRelevanceLevelRadioButton.setSelected(true);
+				changedCustomRelevanceLevelRadioButton.setSelected(false);
+				changedRelevanceLevelComboBox.getSelectionModel().select(changingVocable.getRelevanceLevel());
+			} else {
+				changedPredefinedRelevanceLevelRadioButton.setSelected(false);
+				changedCustomRelevanceLevelRadioButton.setSelected(true);
+				changedRelevanceLevelComboBox.getSelectionModel().clearSelection();
+				changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+			}
+			
 			
 			// ALIGNMENT
 			changedFirstLanguageLabel.setMaxWidth(Double.MAX_VALUE);
@@ -310,9 +414,6 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 			changedRelevanceLabel.setMaxWidth(Double.MAX_VALUE);
 			changedRelevanceLabel.setAlignment(Pos.TOP_RIGHT);
 			changedRelevanceLabel.setTextAlignment(TextAlignment.RIGHT);
-			
-			changedDescriptionTextArea.setMaxWidth(200);
-			changedDescriptionTextArea.setWrapText(true);
 
 			clearChangedValuesButton = new Button("Clear");
 			clearChangedValuesButton.setMaxWidth(Double.MAX_VALUE);
@@ -391,23 +492,37 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 		root.add(currentLearnLevelTextField, 1, 8);
 		root.add(takeCurrentLearnLevelButton, 2, 8);
 		root.add(changedLearnLevelLabel, 3, 8);
-		root.add(changedLearnLevelTextField, 4, 8);
+		//root.add(changedLearnLevelTextField, 4, 8);
 		
-		root.add(currentRelevanceLabel, 0, 9);
-		root.add(currentRelevanceLevelTextField, 1, 9);
-		root.add(takeCurrentRelevanceButton, 2, 9);
-		root.add(changedRelevanceLabel, 3, 9);
-		root.add(changedRelevanceLevelTextField, 4, 9);
+		changedLearnLevelGridPane.add(changedCustomLearnLevelRadioButton, 0, 0);
+		changedLearnLevelGridPane.add(changedLearnLevelTextField, 1, 0);
+		changedLearnLevelGridPane.add(changedPredefinedLearnLevelRadioButton, 0, 1);
+		changedLearnLevelGridPane.add(changedLearnLevelComboBox, 1, 1);
+		root.add(changedLearnLevelGridPane, 4, 8);
 		
-		root.add(takeCurrentAllButton, 2, 10);
+		root.add(currentRelevanceLabel, 0, 10);
+		root.add(currentRelevanceLevelTextField, 1, 10);
+		root.add(takeCurrentRelevanceButton, 2, 10);
+		root.add(changedRelevanceLabel, 3, 10);
+		//root.add(changedRelevanceLevelTextField, 4, 10);
+		
+		changedRelevanceLevelGridPane.add(changedCustomRelevanceLevelRadioButton, 0, 0);
+		changedRelevanceLevelGridPane.add(changedRelevanceLevelTextField, 1, 0);
+		changedRelevanceLevelGridPane.add(changedPredefinedRelevanceLevelRadioButton, 0, 1);
+		changedRelevanceLevelGridPane.add(changedRelevanceLevelComboBox, 1, 1);
+		root.add(changedRelevanceLevelGridPane, 4, 10);
+		
+		root.add(takeCurrentAllButton, 2, 11);
 		insertSpecialCharacterButtonHBox.getChildren().add(insertSpecialCharacterButton);
-		root.add(insertSpecialCharacterButtonHBox, 4, 10);
+		root.add(insertSpecialCharacterButtonHBox, 4, 11);
+		
+		actionButtonGridPaneHBox.getChildren().add(actionButtonGridPane);
 		
 		actionButtonGridPane.add(clearChangedValuesButton, 1, 0);
 		actionButtonGridPane.add(changeButton, 0, 1);
 		actionButtonGridPane.add(cancelButton, 1, 1);
 		
-		root.add(actionButtonGridPane, 4, 11, 1, 2);
+		root.add(actionButtonGridPaneHBox, 4, 12, 2, 2);
 		
 		setScene(scene);
 	}
@@ -455,11 +570,33 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 		);
 		
 		takeCurrentLearnLevelButton.setOnAction(
-			(ActionEvent event) -> changedLearnLevelTextField.setText(changingVocable.getLearnLevel())
+			(ActionEvent event) -> {
+				if(changedLearnLevelComboBox.getItems().contains(changingVocable.getLearnLevel())) {
+					changedPredefinedLearnLevelRadioButton.setSelected(true);
+					changedCustomLearnLevelRadioButton.setSelected(false);
+					changedLearnLevelComboBox.getSelectionModel().select(changingVocable.getLearnLevel());
+				} else {
+					changedPredefinedLearnLevelRadioButton.setSelected(false);
+					changedCustomLearnLevelRadioButton.setSelected(true);
+					changedLearnLevelComboBox.getSelectionModel().clearSelection();
+					changedLearnLevelTextField.setText(changingVocable.getLearnLevel());
+				}
+			}
 		);
 		
 		takeCurrentRelevanceButton.setOnAction(
-			(ActionEvent event) -> changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel())
+			(ActionEvent event) -> {
+				if(changedRelevanceLevelComboBox.getItems().contains(changingVocable.getRelevanceLevel())) {
+					changedPredefinedRelevanceLevelRadioButton.setSelected(true);
+					changedCustomRelevanceLevelRadioButton.setSelected(false);
+					changedRelevanceLevelComboBox.getSelectionModel().select(changingVocable.getRelevanceLevel());
+				} else {
+					changedPredefinedRelevanceLevelRadioButton.setSelected(false);
+					changedCustomRelevanceLevelRadioButton.setSelected(true);
+					changedRelevanceLevelComboBox.getSelectionModel().clearSelection();
+					changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+				}
+			}
 		);
 		
 		takeCurrentAllButton.setOnAction(
@@ -471,8 +608,28 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 				changedTopicTextField.setText(changingVocable.getTopicsAsString());
 				changedChapterTextField.setText(changingVocable.getChaptersAsString());
 				changedDescriptionTextArea.setText(changingVocable.getDescription());
-				changedLearnLevelTextField.setText(changingVocable.getLearnLevel());
-				changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+				
+				if(changedLearnLevelComboBox.getItems().contains(changingVocable.getLearnLevel())) {
+					changedPredefinedLearnLevelRadioButton.setSelected(true);
+					changedCustomLearnLevelRadioButton.setSelected(false);
+					changedLearnLevelComboBox.getSelectionModel().select(changingVocable.getLearnLevel());
+				} else {
+					changedPredefinedLearnLevelRadioButton.setSelected(false);
+					changedCustomLearnLevelRadioButton.setSelected(true);
+					changedLearnLevelComboBox.getSelectionModel().clearSelection();
+					changedLearnLevelTextField.setText(changingVocable.getLearnLevel());
+				}
+				
+				if(changedRelevanceLevelComboBox.getItems().contains(changingVocable.getRelevanceLevel())) {
+					changedPredefinedRelevanceLevelRadioButton.setSelected(true);
+					changedCustomRelevanceLevelRadioButton.setSelected(false);
+					changedRelevanceLevelComboBox.getSelectionModel().select(changingVocable.getRelevanceLevel());
+				} else {
+					changedPredefinedRelevanceLevelRadioButton.setSelected(false);
+					changedCustomRelevanceLevelRadioButton.setSelected(true);
+					changedRelevanceLevelComboBox.getSelectionModel().clearSelection();
+					changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+				}
 			}
 		);
 		
@@ -571,8 +728,19 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 		changingVocable.setTopic(changedTopics);
 		
 		changingVocable.setDescription(changedDescriptionTextArea.getText());
-		changingVocable.setLearnLevel(changedLearnLevelTextField.getText());
-		changingVocable.setRelevanceLevel(changedRelevanceLevelTextField.getText());
+		
+		if(changedPredefinedLearnLevelRadioButton.isSelected()) {
+			changingVocable.setLearnLevel(changedLearnLevelComboBox.getSelectionModel().getSelectedItem());
+		} else {
+			changingVocable.setLearnLevel(changedLearnLevelTextField.getText());
+		}
+		
+		if(changedPredefinedRelevanceLevelRadioButton.isSelected()) {
+			changingVocable.setRelevanceLevel(changedRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
+		} else {
+			changingVocable.setRelevanceLevel(changedRelevanceLevelTextField.getText());
+		}
+		
 		
 		hide();
 	}
@@ -595,6 +763,53 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 	
 	public Vocable getChangingVocable() {
 		return this.changingVocable;
+	}
+	
+	public void setVocable(Vocable vocable) {
+		this.changingVocable = vocable;
+		fillInVocableAttributeValues();
+	}
+
+	private void fillInVocableAttributeValues() {
+		currentFirstLanguageTextField.setText(changingVocable.getFirstLanguageTranslationsAsString());
+		currentFirstLanguagePhoneticScriptTextField.setText(changingVocable.getFirstLanguagePhoneticScriptsAsString());
+		currentSecondLanguageTextField.setText(changingVocable.getSecondLanguageTranslationsAsString());
+		currentSecondLanguagePhoneticScriptTextField.setText(changingVocable.getSecondLanguagePhoneticScriptsAsString());
+		currentChapterTextField.setText(changingVocable.getChaptersAsString());
+		currentTopicTextField.setText(changingVocable.getTopicsAsString());
+		currentDescriptionTextArea.setText(changingVocable.getDescription());
+		currentLearnLevelTextField.setText(changingVocable.getLearnLevel());
+		currentRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+		
+		changedFirstLanguageTranslationTextField.setText(changingVocable.getFirstLanguageTranslationsAsString());
+		changedFirstLanguagePhoneticScriptTextField.setText(changingVocable.getFirstLanguagePhoneticScriptsAsString());
+		changedSecondLanguageTranslationTextField.setText(changingVocable.getSecondLanguageTranslationsAsString());
+		changedSecondLanguagePhoneticScriptTextField.setText(changingVocable.getSecondLanguagePhoneticScriptsAsString());
+		changedChapterTextField.setText(changingVocable.getChaptersAsString());
+		changedTopicTextField.setText(changingVocable.getTopicsAsString());
+		changedDescriptionTextArea.setText(changingVocable.getDescription());
+		
+		if(changedLearnLevelComboBox.getItems().contains(changingVocable.getLearnLevel())) {
+			changedPredefinedLearnLevelRadioButton.setSelected(true);
+			changedCustomLearnLevelRadioButton.setSelected(false);
+			changedLearnLevelComboBox.getSelectionModel().select(changingVocable.getLearnLevel());
+		} else {
+			changedPredefinedLearnLevelRadioButton.setSelected(false);
+			changedCustomLearnLevelRadioButton.setSelected(true);
+			changedLearnLevelComboBox.getSelectionModel().clearSelection();
+			changedLearnLevelTextField.setText(changingVocable.getLearnLevel());
+		}
+
+		if(changedRelevanceLevelComboBox.getItems().contains(changingVocable.getRelevanceLevel())) {
+			changedPredefinedRelevanceLevelRadioButton.setSelected(true);
+			changedCustomRelevanceLevelRadioButton.setSelected(false);
+			changedRelevanceLevelComboBox.getSelectionModel().select(changingVocable.getRelevanceLevel());
+		} else {
+			changedPredefinedRelevanceLevelRadioButton.setSelected(false);
+			changedCustomRelevanceLevelRadioButton.setSelected(true);
+			changedRelevanceLevelComboBox.getSelectionModel().clearSelection();
+			changedRelevanceLevelTextField.setText(changingVocable.getRelevanceLevel());
+		}
 	}
 	
 }
