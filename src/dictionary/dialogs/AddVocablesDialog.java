@@ -10,23 +10,32 @@ import dictionary.buttons.InsertSpecialCharacterButton;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.exceptions.VocableAlreadyExistsException;
 import dictionary.helpers.ControlFXDialogDisplayer;
+import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.ManagerInstanceManager;
+import dictionary.model.Action;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -37,7 +46,7 @@ import javafx.stage.Modality;
  *
  * @author XiaoLong
  */
-public class AddVocablesDialog extends XLDDialog {
+public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChangeListener {
 
 	private Scene scene;
 
@@ -64,9 +73,21 @@ public class AddVocablesDialog extends XLDDialog {
 	private TextField secondLanguagePhoneticScriptTextField;
 	private TextField topicTextField;
 	private TextField chapterTextField;
-	private TextField learnLevelTextField;
-	private TextField relevanceLevelTextField;
 	private TextArea descriptionTextArea;
+	
+	private GridPane learnLevelGridPane;
+	private ToggleGroup learnLevelRadioButtonsToggleGroup;
+	private RadioButton customLearnLevelRadioButton;
+	private RadioButton predefinedLearnLevelRadioButton;
+	private ComboBox<String> learnLevelComboBox;
+	private TextField learnLevelTextField;
+	
+	private GridPane relevanceLevelGridPane;
+	private ToggleGroup relevanceLevelRadioButtonsToggleGroup;
+	private RadioButton customRelevanceLevelRadioButton;
+	private RadioButton predefinedRelevanceLevelRadioButton;
+	private ComboBox<String> relevanceLevelComboBox;
+	private TextField relevanceLevelTextField;
 
 	private CheckBox preserveFirstLanguageCheckBox;
 	private CheckBox preserveFirstLanguagePhoneticScriptCheckBox;
@@ -84,6 +105,8 @@ public class AddVocablesDialog extends XLDDialog {
 	private InsertSpecialCharacterButton insertSpecialCharacterButton;
 
 	private int numberOfAddedVocables = 0;
+	
+	private final HashMap<String, Action<String>> actionsForObservedSettingsChanges = new HashMap<>();
 
 	public AddVocablesDialog(Modality modality) {
 		super(modality);
@@ -115,19 +138,19 @@ public class AddVocablesDialog extends XLDDialog {
 		buttonHBox.setSpacing(5);
 		
 		try {
-			firstLanguageLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME));
-			firstLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME));
-			secondLanguageLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME));
-			secondLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME));
+			firstLanguageLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME) + ":");
+			firstLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
+			secondLanguageLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME) + ":");
+			secondLanguagePhoneticScriptLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		
-		topicLabel = new Label("Topic");
-		chapterLabel = new Label("Chapter");
-		learnLevelLabel = new Label("Learn level");
-		relevanceLevelLabel = new Label("Relevance level");
-		descriptionLabel = new Label("Description");
+		topicLabel = new Label("Topic" + ":");
+		chapterLabel = new Label("Chapter" + ":");
+		learnLevelLabel = new Label("Learn level" + ":");
+		relevanceLevelLabel = new Label("Relevance level" + ":");
+		descriptionLabel = new Label("Description" + ":");
 
 		addedVocablesCounterLabel = new Label("Vocables added: " + numberOfAddedVocables);
 		addedVocablesCounterLabel.setAlignment(Pos.BOTTOM_LEFT);
@@ -146,10 +169,80 @@ public class AddVocablesDialog extends XLDDialog {
 		topicTextField.setPrefColumnCount(20);
 		chapterTextField = new TextField();
 		chapterTextField.setPrefColumnCount(20);
+		
+		// ===========
+		// learn level
+		// ===========
+		learnLevelGridPane = new GridPane();
+		learnLevelGridPane.setHgap(2);
+		learnLevelGridPane.setVgap(2);
+		learnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		learnLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+		learnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		learnLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
+		learnLevelGridPane.setMaxWidth(300);
+		
+		learnLevelRadioButtonsToggleGroup = new ToggleGroup();
+		customLearnLevelRadioButton = new RadioButton("Custom");
+		predefinedLearnLevelRadioButton = new RadioButton("Predefined");			
+		learnLevelRadioButtonsToggleGroup.getToggles().add(customLearnLevelRadioButton);
+		learnLevelRadioButtonsToggleGroup.getToggles().add(predefinedLearnLevelRadioButton);
+
 		learnLevelTextField = new TextField();
 		learnLevelTextField.setPrefColumnCount(20);
+		learnLevelTextField.disableProperty().bindBidirectional(predefinedLearnLevelRadioButton.selectedProperty());
+
+		String[] changedPredefinedLearnLevelChoices = null;
+		try {
+			changedPredefinedLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		ObservableList changedLearnLevelChoices = FXCollections.observableArrayList(changedPredefinedLearnLevelChoices);
+		learnLevelComboBox = new ComboBox<>(changedLearnLevelChoices);
+		learnLevelComboBox.disableProperty().bindBidirectional(customLearnLevelRadioButton.selectedProperty());
+
+		predefinedLearnLevelRadioButton.setSelected(false);
+		customLearnLevelRadioButton.setSelected(true);
+		learnLevelComboBox.getSelectionModel().select(0);
+		
+		// =========
+		// RELEVANCE
+		// =========
+		relevanceLevelGridPane = new GridPane();
+		relevanceLevelGridPane.setHgap(2);
+		relevanceLevelGridPane.setVgap(2);
+		relevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		relevanceLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+		relevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		relevanceLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
+		relevanceLevelGridPane.setMaxWidth(300);
+		
+		relevanceLevelRadioButtonsToggleGroup = new ToggleGroup();
+		customRelevanceLevelRadioButton = new RadioButton("Custom");
+		predefinedRelevanceLevelRadioButton = new RadioButton("Predefined");			
+		relevanceLevelRadioButtonsToggleGroup.getToggles().add(customRelevanceLevelRadioButton);
+		relevanceLevelRadioButtonsToggleGroup.getToggles().add(predefinedRelevanceLevelRadioButton);
+
 		relevanceLevelTextField = new TextField();
 		relevanceLevelTextField.setPrefColumnCount(20);
+		relevanceLevelTextField.disableProperty().bindBidirectional(predefinedRelevanceLevelRadioButton.selectedProperty());
+
+		String[] changedPredefinedRelevanceLevelChoices = null;
+		try {
+			changedPredefinedRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		ObservableList changedRelevanceLevelChoices = FXCollections.observableArrayList(changedPredefinedRelevanceLevelChoices);
+		relevanceLevelComboBox = new ComboBox<>(changedRelevanceLevelChoices);
+		relevanceLevelComboBox.disableProperty().bindBidirectional(customRelevanceLevelRadioButton.selectedProperty());
+
+		predefinedRelevanceLevelRadioButton.setSelected(false);
+		customRelevanceLevelRadioButton.setSelected(true);
+		relevanceLevelComboBox.getSelectionModel().select(0);
+		
+		
 
 		descriptionTextArea = new TextArea();
 		descriptionTextArea.setPrefColumnCount(20);
@@ -237,11 +330,23 @@ public class AddVocablesDialog extends XLDDialog {
 
 		inputGridPane.add(preserveLearnLevelCheckBox, 0, 6);
 		inputGridPane.add(learnLevelLabel, 1, 6);
-		inputGridPane.add(learnLevelTextField, 2, 6);
+		
+		learnLevelGridPane.add(customLearnLevelRadioButton, 0, 0);
+		learnLevelGridPane.add(learnLevelTextField, 1, 0);
+		learnLevelGridPane.add(predefinedLearnLevelRadioButton, 0, 1);
+		learnLevelGridPane.add(learnLevelComboBox, 1, 1);
+		
+		inputGridPane.add(learnLevelGridPane, 2, 6);
 
 		inputGridPane.add(preserveRelevanceCheckBox, 0, 7);
 		inputGridPane.add(relevanceLevelLabel, 1, 7);
-		inputGridPane.add(relevanceLevelTextField, 2, 7);
+		
+		relevanceLevelGridPane.add(customRelevanceLevelRadioButton, 0, 0);
+		relevanceLevelGridPane.add(relevanceLevelTextField, 1, 0);
+		relevanceLevelGridPane.add(predefinedRelevanceLevelRadioButton, 0, 1);
+		relevanceLevelGridPane.add(relevanceLevelComboBox, 1, 1);
+		
+		inputGridPane.add(relevanceLevelGridPane, 2, 7);
 
 		inputGridPane.add(preserveDescriptionCheckBox, 0, 8);
 		inputGridPane.add(descriptionLabel, 1, 8);
@@ -383,6 +488,22 @@ public class AddVocablesDialog extends XLDDialog {
 			
 			Vocable additionalVocable = null;
 			
+			
+			String learnLevel = null;
+			String relevanceLevel = null;
+			
+			if(customLearnLevelRadioButton.isSelected()) {
+				learnLevel = learnLevelTextField.getText();
+			} else if(predefinedLearnLevelRadioButton.isSelected()) {
+				learnLevel = learnLevelComboBox.getSelectionModel().getSelectedItem();
+			}
+			
+			if(customRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevel = relevanceLevelTextField.getText();
+			} else if(predefinedRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevel = relevanceLevelComboBox.getSelectionModel().getSelectedItem();
+			}
+			
 			try {
 				additionalVocable = new Vocable(
 					Arrays.asList(firstLanguageTranslationsTextField.getText().split(Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME), -1)),
@@ -391,8 +512,8 @@ public class AddVocablesDialog extends XLDDialog {
 					Arrays.asList(secondLanguagePhoneticScriptTextField.getText().split(Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME), -1)),
 					Arrays.asList(topicTextField.getText().split(Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME), -1)),
 					Arrays.asList(chapterTextField.getText().split(Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME), -1)),
-					learnLevelTextField.getText(),
-					relevanceLevelTextField.getText(),
+					learnLevel,
+					relevanceLevel,
 					descriptionTextArea.getText()
 				);
 			} catch (SettingNotFoundException ex) {
@@ -423,10 +544,6 @@ public class AddVocablesDialog extends XLDDialog {
 	}
 
 	private void clearButtonActionPerformed() {
-		clearAllTexts();
-	}
-
-	private void clearAllTexts() {
 		firstLanguageTranslationsTextField.clear();
 		firstLanguagePhoneticScriptTextField.clear();
 		secondLanguageTranslationsTextField.clear();
@@ -434,7 +551,9 @@ public class AddVocablesDialog extends XLDDialog {
 		topicTextField.clear();
 		chapterTextField.clear();
 		learnLevelTextField.clear();
+		learnLevelComboBox.getSelectionModel().clearSelection();
 		relevanceLevelTextField.clear();
+		relevanceLevelComboBox.getSelectionModel().clearSelection();
 		descriptionTextArea.clear();
 		
 		lastActiveTextInputControl = firstLanguageTranslationsTextField;
@@ -467,10 +586,32 @@ public class AddVocablesDialog extends XLDDialog {
 
 		if (!preserveLearnLevelCheckBox.isSelected()) {
 			learnLevelTextField.clear();
+			learnLevelComboBox.getSelectionModel().clearSelection();
+			predefinedLearnLevelRadioButton.setSelected(true);
+			customLearnLevelRadioButton.setSelected(false);
+		} else {
+			if(predefinedLearnLevelRadioButton.isSelected()) {
+				learnLevelTextField.clear();
+			} else if (customLearnLevelRadioButton.isSelected()) {
+				learnLevelComboBox.getSelectionModel().clearSelection();
+				predefinedLearnLevelRadioButton.setSelected(false);
+				customLearnLevelRadioButton.setSelected(true);
+			}
 		}
 
 		if (!preserveRelevanceCheckBox.isSelected()) {
 			relevanceLevelTextField.clear();
+			relevanceLevelComboBox.getSelectionModel().clearSelection();
+			predefinedRelevanceLevelRadioButton.setSelected(true);
+			customRelevanceLevelRadioButton.setSelected(false);
+		} else {
+			if(predefinedRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevelTextField.clear();
+			} else if(customRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevelComboBox.getSelectionModel().clearSelection();
+				predefinedRelevanceLevelRadioButton.setSelected(false);
+				customRelevanceLevelRadioButton.setSelected(true);
+			}
 		}
 
 		if (!preserveDescriptionCheckBox.isSelected()) {
@@ -479,15 +620,19 @@ public class AddVocablesDialog extends XLDDialog {
 	}
 
 	private boolean isInputValid() {
-		return !(firstLanguageTranslationsTextField.getText().isEmpty()
-				|| firstLanguagePhoneticScriptTextField.getText().isEmpty()
-				|| secondLanguageTranslationsTextField.getText().isEmpty()
-				|| secondLanguagePhoneticScriptTextField.getText().isEmpty()
-				|| topicTextField.getText().isEmpty()
-				|| chapterTextField.getText().isEmpty()
-				|| learnLevelTextField.getText().isEmpty()
-				|| relevanceLevelTextField.getText().isEmpty()
-				|| descriptionTextArea.getText().isEmpty());
+		return (
+			!firstLanguageTranslationsTextField.getText().isEmpty() &&
+			!firstLanguagePhoneticScriptTextField.getText().isEmpty() &&
+			!secondLanguageTranslationsTextField.getText().isEmpty() &&
+			!secondLanguagePhoneticScriptTextField.getText().isEmpty() &&
+			!topicTextField.getText().isEmpty() &&
+			!chapterTextField.getText().isEmpty() &&
+			!(learnLevelTextField.getText().isEmpty() && customLearnLevelRadioButton.isSelected()) &&
+			!(learnLevelComboBox.getSelectionModel().isEmpty() && predefinedLearnLevelRadioButton.isSelected()) &&
+			!(relevanceLevelTextField.getText().isEmpty() && customRelevanceLevelRadioButton.isSelected()) &&
+			!(relevanceLevelComboBox.getSelectionModel().isEmpty() && predefinedRelevanceLevelRadioButton.isSelected()) &&
+			!descriptionTextArea.getText().isEmpty()
+		);
 	}
 
 	private void cancelButtonActionPerformed() {
@@ -502,5 +647,14 @@ public class AddVocablesDialog extends XLDDialog {
 	
 	private void updateAddedVocablesCounterLabel() {
 		addedVocablesCounterLabel.setText("Vocables added: " + numberOfAddedVocables);
+	}
+	
+	private void registerAsListener() {
+		
+	}
+	
+	@Override
+	public void update(String settingName, String settingValue) {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 }

@@ -154,8 +154,10 @@ public class XLDBigCharacterBox extends VBox {
 				listOfCharacters.add(character);
 			}
 		}
-		characters.setValues(listOfCharacters);
-		showCharacter(characters.getCurrentValue());
+		if(!listOfCharacters.isEmpty()) {
+			characters.setValues(listOfCharacters);
+			showCharacter(characters.getCurrentValue());
+		}
 	}
 
 	/**
