@@ -17,6 +17,7 @@ import dictionary.model.VocableSearchData;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 
 /**
  *
@@ -101,7 +102,7 @@ public class VocableManager implements VocableListLoadedListener {
 		vocableSearchTask = new VocableSearchTask(vocableSearchData, listOfVocables);
 		
 		
-		vocableSearchTask.setOnSucceeded((workerStateEvent) -> {
+		vocableSearchTask.setOnSucceeded((Event workerStateEvent) -> {
 			if (vocableSearchData.isANDSearch()) {
 				searchResultVocableList = (ObservableList<Vocable>) vocableSearchTask.getValue();
 				

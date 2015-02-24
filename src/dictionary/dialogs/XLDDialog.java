@@ -23,13 +23,6 @@ public abstract class XLDDialog extends Stage {
 	public XLDDialog(Modality modality) {
 		initModality(modality);
 	}
-	
-	public void initialize() {
-		initializeControls();
-		addControls();
-		addActionListeners();
-		addFocusChangeListeners();
-	}
 
 	protected abstract void initializeControls();
 

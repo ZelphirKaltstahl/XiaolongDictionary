@@ -19,7 +19,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -111,7 +110,21 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 	public AddVocablesDialog(Modality modality) {
 		super(modality);
 	}
-
+	
+	
+	public void initialize() {
+		loadSettings();
+		initializeControls();
+		addCSSClasses();
+		addControls();
+		addActionListeners();
+		addFocusChangeListeners();
+		applySettings();
+		registerAsListener();
+		addPropertyChangeListeners();
+		setActionsForNotifications();
+	}
+	
 	@Override
 	protected void initializeControls() {
 		this.setTitle("Add Vocables");
@@ -198,7 +211,7 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		ObservableList changedLearnLevelChoices = FXCollections.observableArrayList(changedPredefinedLearnLevelChoices);
+		ObservableList<String> changedLearnLevelChoices = FXCollections.observableArrayList(changedPredefinedLearnLevelChoices);
 		learnLevelComboBox = new ComboBox<>(changedLearnLevelChoices);
 		learnLevelComboBox.disableProperty().bindBidirectional(customLearnLevelRadioButton.selectedProperty());
 
@@ -234,7 +247,7 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		ObservableList changedRelevanceLevelChoices = FXCollections.observableArrayList(changedPredefinedRelevanceLevelChoices);
+		ObservableList<String> changedRelevanceLevelChoices = FXCollections.observableArrayList(changedPredefinedRelevanceLevelChoices);
 		relevanceLevelComboBox = new ComboBox<>(changedRelevanceLevelChoices);
 		relevanceLevelComboBox.disableProperty().bindBidirectional(customRelevanceLevelRadioButton.selectedProperty());
 
@@ -247,6 +260,7 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 		descriptionTextArea = new TextArea();
 		descriptionTextArea.setPrefColumnCount(20);
 		descriptionTextArea.setPrefRowCount(4);
+		descriptionTextArea.setWrapText(true);
 
 		preserveFirstLanguageCheckBox = new CheckBox("preserve");
 		preserveFirstLanguagePhoneticScriptCheckBox = new CheckBox("preserve");
@@ -260,31 +274,31 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 		
 		try {
 			preserveFirstLanguageCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME))
 			);
 			preserveFirstLanguagePhoneticScriptCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME))
 			);
 			preserveSecondLanguageCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_SELECTED_SETTING_NAME))
 			);
 			preserveSecondLanguagePhoneticScriptCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME))
 			);
 			preserveTopicCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_TOPIC_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_TOPIC_SELECTED_SETTING_NAME))
 			);
 			preserveChapterCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_CHAPTER_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_CHAPTER_SELECTED_SETTING_NAME))
 			);
 			preserveLearnLevelCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_LEARN_LEVEL_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_LEARN_LEVEL_SELECTED_SETTING_NAME))
 			);
 			preserveRelevanceCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_RELEVANCE_LEVEL_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_RELEVANCE_LEVEL_SELECTED_SETTING_NAME))
 			);
 			preserveDescriptionCheckBox.setSelected(
-				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_DESCRIPTION_SELECTED_SETTING_NAME))
+				Boolean.getBoolean(Settings.getInstance().getSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_DESCRIPTION_SELECTED_SETTING_NAME))
 			);
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
@@ -389,7 +403,11 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 			insertSpecialCharacterButtonActionPerformed();
 		});
 	}
-
+	
+	private void applySettings() {
+		
+	}
+	
 	@Override
 	protected void addFocusChangeListeners() {
 		firstLanguageTranslationsTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
@@ -650,11 +668,30 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 	}
 	
 	private void registerAsListener() {
-		
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 	}
 	
 	@Override
 	public void update(String settingName, String settingValue) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	private void loadSettings() {
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	private void addCSSClasses() {
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	private void addPropertyChangeListeners() {
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+
+	private void setActionsForNotifications() {
+		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 }

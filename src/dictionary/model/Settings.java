@@ -74,15 +74,15 @@ public class Settings {
 	
 	// dialogs
 	// add vocable dialog
-	public final String ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_SELECTED_SETTING_NAME = "preserve_first_language_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME = "preserve_first_language_phonetic_script_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_SELECTED_SETTING_NAME = "preserve_second_language_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME = "preserve_second_language_phonetic_script_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_TOPIC_SELECTED_SETTING_NAME = "preserve_topic_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_CHAPTER_SELECTED_SETTING_NAME = "preserve_chapter_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_LEARN_LEVEL_SELECTED_SETTING_NAME = "preserve_learn_level_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_RELEVANCE_LEVEL_SELECTED_SETTING_NAME = "preserve_relevance_selected";
-	public final String ADD_VOCABLE_DIALOG_KEEP_DESCRIPTION_SELECTED_SETTING_NAME = "preserve_description_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME = "preserve_first_language_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME = "preserve_first_language_phonetic_script_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_SELECTED_SETTING_NAME = "preserve_second_language_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME = "preserve_second_language_phonetic_script_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_TOPIC_SELECTED_SETTING_NAME = "preserve_topic_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_CHAPTER_SELECTED_SETTING_NAME = "preserve_chapter_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_LEARN_LEVEL_SELECTED_SETTING_NAME = "preserve_learn_level_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_RELEVANCE_LEVEL_SELECTED_SETTING_NAME = "preserve_relevance_selected";
+	public final String ADD_VOCABLE_DIALOG_PRESERVE_DESCRIPTION_SELECTED_SETTING_NAME = "preserve_description_selected";
 	
 	// vocable training settings
 	public final String VOCABLE_TRAINING_DIRECTION_SETTING_NAME = "vocable_training_direction";
@@ -139,15 +139,15 @@ public class Settings {
 		BIG_CHARACTER_BOX_LOOP_SETTING_NAME,
 		SPECIAL_CHARACTERS_SETTING_NAME,
 		
-		ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_TOPIC_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_CHAPTER_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_LEARN_LEVEL_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
-		ADD_VOCABLE_DIALOG_KEEP_DESCRIPTION_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_TOPIC_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_CHAPTER_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_LEARN_LEVEL_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
+		ADD_VOCABLE_DIALOG_PRESERVE_DESCRIPTION_SELECTED_SETTING_NAME,
 		
 		VOCABLE_TRAINING_DIRECTION_SETTING_NAME,
 		VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME,
@@ -199,15 +199,15 @@ public class Settings {
 			
 			// dialogs settings
 			// add vocable dialog settings
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_TOPIC_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_CHAPTER_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_LEARN_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_KEEP_DESCRIPTION_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_SECOND_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_TOPIC_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_CHAPTER_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_LEARN_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(false));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().ADD_VOCABLE_DIALOG_PRESERVE_DESCRIPTION_SELECTED_SETTING_NAME, Boolean.toString(false));
 			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_DIRECTION_SETTING_NAME, Settings.getInstance().FIRST_LANGUAGE_TO_SECOND_LANGUAGE_TRAINING_DIRECTION); // first to second language
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_SHOW_FIRST_LANGUAGE_SETTING_NAME, Boolean.toString(true));

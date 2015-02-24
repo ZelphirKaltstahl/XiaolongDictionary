@@ -101,7 +101,14 @@ public class SearchVocablesDialog extends XLDDialog {
 	public SearchVocablesDialog(Modality modality) {
 		super(modality);
 	}
-
+	
+	public void initialize() {
+		initializeControls();
+		addControls();
+		addActionListeners();
+		addFocusChangeListeners();
+	}
+	
 	@Override
 	protected void initializeControls() {
 		this.setTitle("Search vocables");
