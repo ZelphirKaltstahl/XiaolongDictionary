@@ -42,6 +42,7 @@ public class Settings {
 	private static Settings instance;
 	
 	// general application settings or properties
+	public final String APPLICATION_PATH_SETTING_NAME = "application_path";
 	public final String APPLICATION_NAME_SETTING_NAME = "application_name";
 	public final String APPLICATION_VERSION_PROPERTY_NAME = "application_version";
 	
@@ -121,23 +122,31 @@ public class Settings {
 	
 	// array for iteration and saving all settings to the hash map
 	private final String[] ALL_SETTINGS_NAMES = {
+		APPLICATION_PATH_SETTING_NAME,
 		APPLICATION_NAME_SETTING_NAME,
 		APPLICATION_VERSION_PROPERTY_NAME,
+		
 		XLD_SETTING_FILENAME_SETTING_NAME,
 		XLD_VOCABLE_FILENAME_SETTING_NAME,
+		
 		SCENE_WIDTH_SETTING_NAME,
 		SCENE_HEIGHT_SETTING_NAME,
+		
 		FIRST_LANGUAGE_SETTING_NAME,
 		FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
 		SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
 		SECOND_LANGUAGE_SETTING_NAME,
+		
 		SEPARATOR_CHARACTER_SETTING_NAME,
 		SEPARATOR_REGEX_SETTING_NAME,
+		
 		IGNORED_CHARACTERS_SETTING_NAME,
+		
+		SPECIAL_CHARACTERS_SETTING_NAME,
+		
 		BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME,
 		BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME,
 		BIG_CHARACTER_BOX_LOOP_SETTING_NAME,
-		SPECIAL_CHARACTERS_SETTING_NAME,
 		
 		ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME,
 		ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_PHONETIC_SCRIPT_SELECTED_SETTING_NAME,
@@ -169,7 +178,8 @@ public class Settings {
 	
 	public static void setDefaultValues() {
 		try {
-			// version settings
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().APPLICATION_NAME_SETTING_NAME, "Xiaolong Dictionary");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().APPLICATION_PATH_SETTING_NAME, System.getProperty("user.dir"));
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().APPLICATION_VERSION_PROPERTY_NAME, "2.0");
 			
 			// file settings
@@ -190,12 +200,18 @@ public class Settings {
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME, "/");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME, "\\s*"+Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME)+"\\s*");
 			
-			// big character box settings
+			
+			
+			// special characters
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SPECIAL_CHARACTERS_SETTING_NAME, "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ");
 			
+			
+			
+			// big character box settings
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME, "Dialog");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME, "50");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_LOOP_SETTING_NAME, "false");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME, "abcdefghijklmnopqrstuvwxyzäöüß ,/ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ");
 			
 			// dialogs settings
 			// add vocable dialog settings
@@ -288,7 +304,10 @@ public class Settings {
 			settingsWriter = new OutputStreamWriter(settingsOutputStream, Charset.forName("UTF-8"));
 			
 			settings.forEach(
-				(settingsName, value) -> properties.setProperty(settingsName, value)
+				(settingsName, value) -> {
+					System.out.println("Saving Settings: |" + settingsName);
+					properties.setProperty(settingsName, value);
+				}
 			);
 			
 			// save properties to project root folder

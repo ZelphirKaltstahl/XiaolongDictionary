@@ -1,6 +1,5 @@
 package dictionary;
 
-import com.sun.javafx.css.StyleManager;
 import dictionary.manager.CustomControlsInstanceManager;
 import dictionary.customcontrols.XLDBigCharacterBox;
 import dictionary.customcontrols.XLDMenuBar;
@@ -75,6 +74,7 @@ public class MainApp extends Application {
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
 		Settings.getInstance().readSettings();
+		//Settings.setDefaultValues();
 
 		setUserCSS();
 
@@ -201,7 +201,7 @@ public class MainApp extends Application {
 	}
 
 	private void addMenuBar() {
-		XLDMenuBar xldMenuBar = new XLDMenuBar();
+		XLDMenuBar xldMenuBar = new XLDMenuBar(primaryStage);
 		xldMenuBar.prefWidthProperty().bind(primaryStage.widthProperty());
 
 		topVBox.getChildren().add(xldMenuBar);
@@ -271,6 +271,7 @@ public class MainApp extends Application {
 			
 			if (response == Dialog.Actions.YES) {
 				Settings.getInstance().writeSettings();
+				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
 				DialogInstanceManager.closeAllDialogs();
 				primaryStage.close();
 			} else if (response == Dialog.Actions.NO) {

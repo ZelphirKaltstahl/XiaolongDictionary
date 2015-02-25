@@ -6,9 +6,28 @@
 
 package dictionary.customcontrols;
 
+import dictionary.exceptions.SettingNotFoundException;
+import dictionary.helpers.ControlFXDialogDisplayer;
+import dictionary.manager.DialogInstanceManager;
+import dictionary.manager.ManagerInstanceManager;
+import dictionary.manager.VocableFileManager;
+import dictionary.model.Settings;
+import dictionary.model.Vocable;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import org.controlsfx.control.action.Action;
+import org.controlsfx.dialog.Dialog;
 
 /**
  *
@@ -38,9 +57,13 @@ public class XLDMenuBar extends MenuBar {
 	private MenuItem helpMenu_help_menuItem;
 	private MenuItem helpMenu_info_menuItem;
 	
-	public XLDMenuBar() {
+	private Stage owner;
+	
+	public XLDMenuBar(Stage owner) {
+		this.owner = owner;
 		initializeUIControls();
 		addGUIControls();
+		addActionListeners();
 	}
 
 	private void initializeUIControls() {
@@ -95,5 +118,78 @@ public class XLDMenuBar extends MenuBar {
 		
 		helpMenu.getItems().add(helpMenu_help_menuItem);
 		helpMenu.getItems().add(helpMenu_info_menuItem);
+	}
+	
+	private void addActionListeners() {
+		fileMenu_createNewDictionary_menuItem.setOnAction((ActionEvent event) -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setTitle("Create new dictionary file");
+			fileChooser.setInitialFileName("new_vocables.xml");
+			File newVocableFile = fileChooser.showSaveDialog(owner);
+			/*List<Vocable> vocableList = new ArrayList<>();
+			
+			Vocable vocable = new Vocable();
+			vocable.setFirstLanguageTranslationsAsString("FLT");
+			vocable.setFirstLanguagePhoneticScriptsAsString("FLPS");
+			vocable.setSecondLanguageTranslationsAsString("SLT");
+			vocable.setSecondLanguagePhoneticScriptsAsString("SLPS");
+			vocable.setTopicsAsString("T");
+			vocable.setChaptersAsString("C");
+			vocable.setDescription("D");
+			vocable.setLearnLevel("5");
+			vocable.setRelevanceLevel("5");
+			vocableList.add(vocable);*/
+			
+			ManagerInstanceManager.getVocableManagerInstance().getVocableList().clear();
+			//ManagerInstanceManager.getVocableManagerInstance().getVocableList().add(vocable);
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, newVocableFile.getAbsolutePath());
+			ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+		});
+		
+		fileMenu_openDictionary_menuItem.setOnAction((ActionEvent event) -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setTitle("Open dictionary file");
+			File vocableFile = fileChooser.showOpenDialog(owner);
+			ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(vocableFile);
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, vocableFile.getAbsolutePath());
+		});
+		
+		fileMenu_exit_menuItem.setOnAction((ActionEvent event) -> {
+			owner.fireEvent(
+				new WindowEvent(owner, WindowEvent.WINDOW_CLOSE_REQUEST)
+			);
+		});
+		
+		fileMenu_saveDictionaryAs_menuItem.setOnAction((ActionEvent event) -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setTitle("Save dictionary as");
+			fileChooser.setInitialFileName("new_vocables.xml");
+			File vocableFile = fileChooser.showSaveDialog(owner);
+			
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, vocableFile.getAbsolutePath());
+			ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+		});
+		
+		fileMenu_saveDictionary_menuItem.setOnAction((ActionEvent event) -> {
+			ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+		});
+		
+		fileMenu_saveSearchResultAs_menuItem.setOnAction((ActionEvent event) -> {
+			FileChooser fileChooser = new FileChooser();
+			fileChooser.setTitle("Save search result as");
+			fileChooser.setInitialFileName("search_result.xml");
+			File vocableFile = fileChooser.showSaveDialog(owner);
+			
+			try {
+				String originalPath = Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME);
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, vocableFile.getAbsolutePath());
+				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, originalPath);
+			} catch (SettingNotFoundException ex) {
+				Logger.getLogger(XLDMenuBar.class.getName()).log(Level.SEVERE, null, ex);
+			}
+			
+		});
+		
 	}
 }

@@ -12,8 +12,10 @@ import dictionary.helpers.ListOperationsHelper;
 import dictionary.listeners.VocableListChangeListener;
 import dictionary.listeners.VocableListLoadedListener;
 import dictionary.listeners.VocableSearchPerformedListener;
+import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import dictionary.model.VocableSearchData;
+import java.io.File;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,7 +32,6 @@ public class VocableManager implements VocableListLoadedListener {
 
 	private final ArrayList<VocableListChangeListener> vocableListChangeListeners;
 	private final ArrayList<VocableSearchPerformedListener> vocableSearchPerformedListeners;
-	private String ignoredCharacters;
 	
 	//private boolean vocableIsInVocableList = false;
 
@@ -132,6 +133,11 @@ public class VocableManager implements VocableListLoadedListener {
 	public ObservableList<Vocable> getVocableList() {
 		return vocableList;
 	}
+	
+	/*public void setVocableList(List<Vocable> listOfVocables) {
+		this.vocableList = FXCollections.observableArrayList(listOfVocables);
+		notifyVocableListChangeListeners();
+	}*/
 
 	public ObservableList<Vocable> getSearchResultList() {
 		return searchResultVocableList;
@@ -178,11 +184,11 @@ public class VocableManager implements VocableListLoadedListener {
 	@Override
 	public void reactOnLoadedVocableList() {
 		System.out.println("Notified of: Vocable List Loaded");
-		vocableList = FXCollections.observableArrayList(ManagerInstanceManager.getVocableFileManagerInstance().getVocableListFromFile());
+		vocableList = FXCollections.observableArrayList((ArrayList<Vocable>) ManagerInstanceManager.getVocableFileManagerInstance().getVocableList());
 		notifyVocableListChangeListeners();
 	}
 	
-	public void setIgnoredCharacters(String ignoredCharacters) {
-		this.ignoredCharacters = ignoredCharacters;
+	public void saveVocables() {
+		ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList, new File(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
 	}
 }

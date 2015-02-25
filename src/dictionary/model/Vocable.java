@@ -70,6 +70,10 @@ public class Vocable {
 	public void setFirstLanugageTranslations(List<String> firstLanguageTranslations) {
 		this.firstLanguageTranslations = firstLanguageTranslations;
 	}
+	
+	public void setFirstLanguageTranslationsAsString(String firstLanguageTranslations) {
+		this.firstLanguageTranslations = separateString(firstLanguageTranslations);
+	}
 
 	public List<String> getFirstLanguagePhoneticScripts() {
 		return firstLanguagePhoneticScripts;
@@ -94,6 +98,10 @@ public class Vocable {
 		this.firstLanguagePhoneticScripts = firstLanguagePhoneticScripts;
 	}
 	
+	public void setFirstLanguagePhoneticScriptsAsString(String firstLanguagePhoneticScripts) {
+		this.firstLanguagePhoneticScripts = separateString(firstLanguagePhoneticScripts);
+	}
+	
 	public List<String> getSecondLanguageTranslations() {
 		return secondLanguageTranslations;
 	}
@@ -115,6 +123,10 @@ public class Vocable {
 
 	public void setSecondLanguageTranslations(List<String> secondLanguageTranslations) {
 		this.secondLanguageTranslations = secondLanguageTranslations;
+	}
+	
+	public void setSecondLanguageTranslationsAsString(String secondLanguageTranslations) {
+		this.secondLanguageTranslations = separateString(secondLanguageTranslations);
 	}
 
 	public List<String> getSecondLanguagePhoneticScripts() {
@@ -140,6 +152,11 @@ public class Vocable {
 		this.secondLanguagePhoneticScripts = secondLanguagePhoneticScripts;
 	}
 	
+	public void setSecondLanguagePhoneticScriptsAsString(String secondLanguagePhoneticScripts) {
+		this.secondLanguagePhoneticScripts = separateString(secondLanguagePhoneticScripts);
+	}
+	
+	
 	public List<String> getTopics() {
 		return topics;
 	}
@@ -161,6 +178,10 @@ public class Vocable {
 	
 	public void setTopic(List<String> topics) {
 		this.topics = topics;
+	}
+	
+	public void setTopicsAsString(String topics) {
+		this.topics = separateString(topics);
 	}
 	
 	public List<String> getChapters() {
@@ -186,6 +207,10 @@ public class Vocable {
 		this.chapters = chapters;
 	}
 
+	public void setChaptersAsString(String chapters) {
+		this.chapters = separateString(chapters);
+	}
+	
 	public String getLearnLevel() {
 		return learnLevel;
 	}
@@ -251,5 +276,14 @@ public class Vocable {
 		}
 		
 		return result;
+	}
+	
+	private List<String> separateString(String str) {
+		String[] tmp = str.split(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME, -1);
+		List<String> listOfElems = new ArrayList<>();
+		for(String elem : tmp) {
+			listOfElems.add(elem.trim());
+		}
+		return listOfElems;
 	}
 }
