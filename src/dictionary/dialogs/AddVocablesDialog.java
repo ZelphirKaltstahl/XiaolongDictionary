@@ -676,7 +676,7 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 	
 	@Override
 	public void update(String settingName, String settingValue) {
-		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		actionsForObservedSettingsChanges.get(settingName).execute(settingValue);
 	}
 
 	private void loadSettings() {
@@ -692,6 +692,24 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 	}
 
 	private void setActionsForNotifications() {
-		//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> firstLanguageLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> firstLanguagePhoneticScriptLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> secondLanguageLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> secondLanguagePhoneticScriptLabel.setText(value + ":")
+		);
 	}
 }

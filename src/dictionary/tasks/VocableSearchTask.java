@@ -203,14 +203,14 @@ public class VocableSearchTask extends Task {
 	private boolean updateCounter(Vocable vocable) {
 		counter++;
 		updateProgress(counter, listOfVocables.size());
-		System.out.println("Counter updated: " + counter);
+		//System.out.println("Counter updated: " + counter);
 		return true;
 	}
 	
 	private boolean updateResults(Vocable vocable) {
 		preliminaryResultList.add(vocable);
 		updateValue(preliminaryResultList);
-		System.out.println("Result updated.");
+		//System.out.println("Result updated.");
 		return true;
 	}
 	

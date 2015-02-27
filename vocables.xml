@@ -11793,14 +11793,14 @@
 		<relevanceLevel>2</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>test</firstLanguageTranslations>
-		<firstLanguagePhoneticScripts>test</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>test</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>test</secondLanguagePhoneticScripts>
-		<topics>test</topics>
-		<chapters>test</chapters>
-		<description>test</description>
-		<learnLevel>test</learnLevel>
-		<relevanceLevel>test</relevanceLevel>
+		<firstLanguageTranslations>alles lief problemlos / alles verlief ohne Schwierigkeiten / alles lief glatt</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>一切很顺利</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yīqièhěnshùnlì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 </list>
