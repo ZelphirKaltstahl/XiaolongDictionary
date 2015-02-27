@@ -6,7 +6,11 @@
 package dictionary.customcontrols;
 
 import dictionary.customdatastructures.DoubleLinkedList;
+import dictionary.listeners.SettingsPropertyChangeListener;
+import dictionary.model.Action;
+import dictionary.model.Settings;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -29,7 +33,7 @@ import javafx.scene.text.TextFlow;
  *
  * @author xiaolong
  */
-public class XLDBigCharacterBox extends VBox {
+public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeListener {
 
 	private final DoubleLinkedList<Character> characters;
 	private Text charactersText;
@@ -44,6 +48,8 @@ public class XLDBigCharacterBox extends VBox {
 	private Button previousButton;
 	
 	private String ignoredCharacters;
+	
+	private final HashMap<String, Action<String>> actionsForObservedSettingsChanges = new HashMap<>();
 
 	/**
 	 * This constructor creates a {@link XLDCharacterBox} with a label containing the String, which
@@ -85,6 +91,8 @@ public class XLDBigCharacterBox extends VBox {
 		initializeUIControls();
 		addControls();
 		addActionListeners();
+		registerAsListener();
+		setActionsForNotifications();
 	}
 
 	/**
@@ -200,5 +208,40 @@ public class XLDBigCharacterBox extends VBox {
 	
 	public void setIgnoredCharacters(String ignoredCharacters) {
 		this.ignoredCharacters = ignoredCharacters;
+	}
+	
+	private void registerAsListener() {
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_LOOP_SETTING_NAME, this);
+	}
+	
+	@Override
+	public void update(String settingName, String settingValue) {
+		actionsForObservedSettingsChanges.get(settingName).execute(settingValue);
+	}
+	
+	private void setActionsForNotifications() {
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME,
+			(Action<String>) (String value) -> {
+				charactersText.setFont(new Font(value, charactersText.getFont().getSize()));
+			}
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME,
+			(Action<String>) (String value) -> {
+				double fontSize = Double.parseDouble(value);
+				charactersText.setFont(new Font(charactersText.getFont().getName(), fontSize));
+			}
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().BIG_CHARACTER_BOX_LOOP_SETTING_NAME,
+			(Action<String>) (String value) -> {
+				System.out.println("Not yet implemented!");
+			}
+		);
 	}
 }

@@ -886,12 +886,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
 			(Action<String>) (String value) -> predefinedNewRelevanceLevelRadioButton.setSelected(Boolean.getBoolean(value) == Boolean.TRUE)
 		);
-		
-		// OTHER
-		actionsForObservedSettingsChanges.put(
-			Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME,
-			(Action<String>) (String value) -> xldBigCharacterBox.setIgnoredCharacters(value)
-		);
 	}
 	
 	@Override
