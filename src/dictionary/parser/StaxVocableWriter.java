@@ -4,9 +4,9 @@ import dictionary.model.Vocable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventWriter;
@@ -38,7 +38,7 @@ public class StaxVocableWriter {
 	private static final String LEARN_LEVEL = "learnLevel";
 	private static final String RELEVANCE_LEVEL = "relevanceLevel";
 	
-	public void saveVocablesToXML(List<Vocable> vocableList, File vocableFile) {
+	public void saveVocablesToXML(ObservableList<Vocable> vocableList, File vocableFile) {
 		
 		try {
 			// create an XMLOutputFactory
@@ -61,6 +61,7 @@ public class StaxVocableWriter {
 			StartElement configStartElement = eventFactory.createStartElement("", "", "list");
 			eventWriter.add(configStartElement);
 			eventWriter.add(newLine);
+			
 			
 			// write the different nodes
 			vocableList.forEach((Vocable vocable) -> {
@@ -111,8 +112,7 @@ public class StaxVocableWriter {
 		}
 	}
 
-	private void createNode(XMLEventWriter eventWriter, String name,
-			String value) throws XMLStreamException {
+	private void createNode(XMLEventWriter eventWriter, String name, String value) throws XMLStreamException {
 
 		XMLEventFactory eventFactory = XMLEventFactory.newInstance();
 		XMLEvent end = eventFactory.createCharacters("\n");

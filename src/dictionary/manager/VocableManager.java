@@ -193,7 +193,7 @@ public class VocableManager implements VocableListLoadedListener {
 		try {
 			System.out.println("Saving vocable list in:|" + Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME) + "|");
 			File saveFile = new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
-			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList.subList(0, vocableList.size()-1), saveFile);
+			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList, saveFile);
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -203,7 +203,7 @@ public class VocableManager implements VocableListLoadedListener {
 		try {
 			System.out.println("Saving search result vocable list in:|" + Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME) + "|");
 			File saveFile = new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
-			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(searchResultVocableList.subList(0, searchResultVocableList.size()-1), saveFile);
+			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(searchResultVocableList, saveFile);
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
 		}

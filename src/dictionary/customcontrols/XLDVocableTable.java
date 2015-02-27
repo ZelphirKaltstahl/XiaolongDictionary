@@ -12,7 +12,6 @@ import dictionary.model.Vocable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
@@ -183,13 +182,13 @@ public class XLDVocableTable<T> extends TableView {
 						setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
 
 					} else if (change.wasAdded()) {
-						System.out.println("KUCKUCK Added!");
+						System.out.println("Notified of: Vocable List Change (Add)");
 						change.getAddedSubList().stream().forEach((addedItem) -> {
 							getItems().add(addedItem);
 						});
 
 					} else if (change.wasRemoved()) {
-						System.out.println("KUCKUCK Removed!");
+						System.out.println("Notified of: Vocable List Change (Remove)");
 						change.getRemoved().stream().forEach((removedItem) -> {
 							getItems().remove(removedItem);
 						});

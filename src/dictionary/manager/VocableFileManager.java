@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -56,7 +57,7 @@ public class VocableFileManager {
 		System.out.println("Description:" + vocable.getDescription());
 	}
 
-	public void saveToXMLFile(List<Vocable> vocableList, File file) {
+	public void saveToXMLFile(ObservableList<Vocable> vocableList, File file) {
 		StaxVocableWriter staxVocableWriter = new StaxVocableWriter();
 		staxVocableWriter.saveVocablesToXML(vocableList, file);
 		

@@ -68,7 +68,7 @@ public class StaxVocableReader {
 					StartElement startElement = event.asStartElement();
 					
 					if (startElement.getName().getLocalPart().equals(VOCABLE)) {// If we have an item element, we create a new item
-						System.out.println("STARTING NEW VOCABLE");
+						//System.out.println("STARTING NEW VOCABLE");
 						vocable = new Vocable();
 						
 						// We read the attributes from this tag and add the date
@@ -86,7 +86,7 @@ public class StaxVocableReader {
 
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(FIRST_LANGUAGE_TRANSLATIONS)) {
-							System.out.println("STARTING FLT");
+							//System.out.println("STARTING FLT");
 							event = eventReader.nextEvent();
 							vocable.setFirstLanguageTranslationsAsString(event.asCharacters().getData());
 							continue;
@@ -95,7 +95,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(FIRST_LANGUAGE_PHONETIC_SCRIPTS)) {
-							System.out.println("STARTING FLPS");
+							//System.out.println("STARTING FLPS");
 							event = eventReader.nextEvent();
 							vocable.setFirstLanguagePhoneticScriptsAsString(event.asCharacters().getData());
 							continue;
@@ -104,7 +104,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(SECOND_LANGUAGE_TRANSLATIONS)) {
-							System.out.println("STARTING SLT");
+							//System.out.println("STARTING SLT");
 							event = eventReader.nextEvent();
 							vocable.setSecondLanguageTranslationsAsString(event.asCharacters().getData());
 							continue;
@@ -113,7 +113,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(SECOND_LANGUAGE_PHONETIC_SCRIPTS)) {
-							System.out.println("STARTING SLPS");
+							//System.out.println("STARTING SLPS");
 							event = eventReader.nextEvent();
 							vocable.setSecondLanguagePhoneticScriptsAsString(event.asCharacters().getData());
 							continue;
@@ -122,7 +122,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(TOPICS)) {
-							System.out.println("STARTING TOPIC");
+							//System.out.println("STARTING TOPIC");
 							event = eventReader.nextEvent();
 							vocable.setTopicsAsString(event.asCharacters().getData());
 							continue;
@@ -131,7 +131,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(CHAPTERS)) {
-							System.out.println("STARTING CHAPTER");
+							//System.out.println("STARTING CHAPTER");
 							event = eventReader.nextEvent();
 							vocable.setChaptersAsString(event.asCharacters().getData());
 							continue;
@@ -140,7 +140,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(DESCRIPTION)) {
-							System.out.println("STARTING DESC");
+							//System.out.println("STARTING DESC");
 							event = eventReader.nextEvent();
 							vocable.setDescription(event.asCharacters().getData());
 							continue;
@@ -149,7 +149,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(LEARN_LEVEL)) {
-							System.out.println("STARTING LEARN");
+							//System.out.println("STARTING LEARN");
 							event = eventReader.nextEvent();
 							vocable.setLearnLevel(event.asCharacters().getData());
 							continue;
@@ -158,7 +158,7 @@ public class StaxVocableReader {
 					
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart().equals(RELEVANCE_LEVEL)) {
-							System.out.println("STARTING RELE");
+							//System.out.println("STARTING RELE");
 							event = eventReader.nextEvent();
 							vocable.setRelevanceLevel(event.asCharacters().getData());
 							continue;
