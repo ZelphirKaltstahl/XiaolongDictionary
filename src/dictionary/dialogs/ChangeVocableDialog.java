@@ -9,6 +9,7 @@ import dictionary.buttons.InsertSpecialCharacterButton;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.DialogInstanceManager;
+import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.util.ArrayList;
@@ -679,6 +680,8 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private void changeVocableButtonActionPerformed() {
 		String separatorRegularExpression = null;
+		Vocable replacementVocable = new Vocable();
+		
 		try {
 			separatorRegularExpression = Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME);
 		} catch (SettingNotFoundException ex) {
@@ -690,58 +693,58 @@ public class ChangeVocableDialog extends XLDDialog implements SettingsPropertyCh
 		for(String firstLanguageTranslation : firstLanguageTranslations) {
 			changedFirstLanguageTranslations.add(firstLanguageTranslation.trim());
 		}
-		changingVocable.setFirstLanugageTranslations(changedFirstLanguageTranslations);
+		replacementVocable.setFirstLanugageTranslations(changedFirstLanguageTranslations);
 		
 		String[] firstLanguagePhoneticScripts = changedFirstLanguagePhoneticScriptTextField.getText().split(separatorRegularExpression, -1);
 		List<String> changedFirstLanguagePhoneticScripts = new ArrayList<>();
 		for(String firstLanguagePhoneticScript : firstLanguagePhoneticScripts) {
 			changedFirstLanguagePhoneticScripts.add(firstLanguagePhoneticScript.trim());
 		}
-		changingVocable.setFirstLanguagePhoneticScripts(changedFirstLanguagePhoneticScripts);
+		replacementVocable.setFirstLanguagePhoneticScripts(changedFirstLanguagePhoneticScripts);
 		
 		String[] secondLanguageTranslations = changedSecondLanguageTranslationTextField.getText().split(separatorRegularExpression, -1);
 		List<String> changedSecondLanguageTranslations = new ArrayList<>();
 		for(String secondLanguageTranslation : secondLanguageTranslations) {
 			changedSecondLanguageTranslations.add(secondLanguageTranslation.trim());
 		}
-		changingVocable.setSecondLanguageTranslations(changedSecondLanguageTranslations);
+		replacementVocable.setSecondLanguageTranslations(changedSecondLanguageTranslations);
 		
 		String[] secondLanguagePhoneticScripts = changedSecondLanguagePhoneticScriptTextField.getText().split(separatorRegularExpression, -1);
 		List<String> changedSecondLanguagePhoneticScripts = new ArrayList<>();
 		for(String secondLanguagePhoneticScript : secondLanguagePhoneticScripts) {
 			changedSecondLanguagePhoneticScripts.add(secondLanguagePhoneticScript.trim());
 		}
-		changingVocable.setSecondLanguagePhoneticScripts(changedSecondLanguagePhoneticScripts);
+		replacementVocable.setSecondLanguagePhoneticScripts(changedSecondLanguagePhoneticScripts);
 		
 		String[] chapters = changedChapterTextField.getText().split(separatorRegularExpression, -1);
 		List<String> changedChapters = new ArrayList<>();
 		for(String chapter : chapters) {
 			changedChapters.add(chapter.trim());
 		}
-		changingVocable.setChapters(changedChapters);
+		replacementVocable.setChapters(changedChapters);
 		
 		String[] topics = changedTopicTextField.getText().split(separatorRegularExpression, -1);
 		List<String> changedTopics = new ArrayList<>();
 		for(String topic : topics) {
 			changedTopics.add(topic.trim());
 		}
-		changingVocable.setTopic(changedTopics);
+		replacementVocable.setTopic(changedTopics);
 		
-		changingVocable.setDescription(changedDescriptionTextArea.getText());
+		replacementVocable.setDescription(changedDescriptionTextArea.getText());
 		
 		if(changedPredefinedLearnLevelRadioButton.isSelected()) {
-			changingVocable.setLearnLevel(changedLearnLevelComboBox.getSelectionModel().getSelectedItem());
+			replacementVocable.setLearnLevel(changedLearnLevelComboBox.getSelectionModel().getSelectedItem());
 		} else {
-			changingVocable.setLearnLevel(changedLearnLevelTextField.getText());
+			replacementVocable.setLearnLevel(changedLearnLevelTextField.getText());
 		}
 		
 		if(changedPredefinedRelevanceLevelRadioButton.isSelected()) {
-			changingVocable.setRelevanceLevel(changedRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
+			replacementVocable.setRelevanceLevel(changedRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
 		} else {
-			changingVocable.setRelevanceLevel(changedRelevanceLevelTextField.getText());
+			replacementVocable.setRelevanceLevel(changedRelevanceLevelTextField.getText());
 		}
 		
-		
+		ManagerInstanceManager.getVocableManagerInstance().changeVocable(changingVocable, replacementVocable);
 		hide();
 	}
 	

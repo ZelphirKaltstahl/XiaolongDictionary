@@ -1,21 +1,16 @@
 package dictionary.manager;
 
-import com.thoughtworks.xstream.XStream;
 import dictionary.listeners.VocableListLoadedListener;
 import dictionary.model.Vocable;
+import dictionary.parser.StaxVocableReader;
+import dictionary.parser.StaxVocableWriter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
-import java.io.Writer;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,9 +40,8 @@ public class VocableFileManager {
 		this.vocableListLoadedListeners = new ArrayList<>();
 	}
 	
-	public void loadVocablesFromFile(File vocableFile) {
-		vocableListFromFile = loadFromXMLFile(vocableFile);
-		notifyVocableListLoadedListeners();
+	public List<Vocable> loadVocablesFromFile(File vocableFile) {
+		return loadFromXMLFile(vocableFile);
 	}
 
 	private void printVocable(Vocable vocable) {
@@ -63,82 +57,113 @@ public class VocableFileManager {
 	}
 
 	public void saveToXMLFile(List<Vocable> vocableList, File file) {
-		if(vocableList != null && !vocableList.isEmpty()) {
-			System.out.println("NORMAL SAVING");
-			
-			XStream xstream = new XStream();
-			xstream.alias("vocable", Vocable.class);
-			xstream.alias("value", String.class);
-			xstream.setMode(XStream.NO_REFERENCES);
-
-			OutputStream outputStream = null;
-			Writer writer = null;
-
-			try {
-				outputStream = new FileOutputStream(file);
-				writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
-				xstream.toXML(vocableList, writer);
-
-			} catch (FileNotFoundException exp) {
-				System.out.println("Could not save vocable list!");
-				Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, exp);
-				exp.printStackTrace(System.out);
-
-			} finally {
-				try {
-					if (writer != null) {
-						writer.close();
-					}
-					if (outputStream != null) {
-						outputStream.close();
-					}
-				} catch (IOException ex) {
-					Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-				}
-			}
-		} else {
-			try {
-				System.out.println("WEIRD SAVING");
-				OutputStream outputStream = new FileOutputStream(file);
-				try (Writer writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"))) {
-					writer.write("");
-				}
-			} catch (FileNotFoundException ex) {
-				Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-			} catch (IOException ex) {
-				Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-			}
-		}
+		StaxVocableWriter staxVocableWriter = new StaxVocableWriter();
+		staxVocableWriter.saveVocablesToXML(vocableList, file);
+		
+//		//vocableList.forEach((Vocable vocable) -> (System.out.println(vocable.getFirstLanguageTranslationsAsString())));
+//		//Vocable[] vocableList = (Vocable[]) objectList;
+//		
+//		XStream xstream = new XStream();
+//		//xstream.registerConverter(new ListVocableConverter());
+//		//xstream.processAnnotations(dictionary.model.Vocable.class);
+//		xstream.alias("list", List.class);
+//		xstream.alias("vocable", Vocable.class);
+//		//xstream.addImplicitCollection(VocableList.class, "list");
+//		
+//		//xstream.alias("vocable_list", Object.class);
+//		xstream.setMode(XStream.NO_REFERENCES);
+//
+//		OutputStream outputStream = null;
+//		Writer writer = null;
+//
+//		try {
+//			outputStream = new FileOutputStream(file);
+//			writer = new OutputStreamWriter(outputStream, Charset.forName("UTF-8"));
+//			
+//			xstream.toXML(vocableList);
+//			/*
+//			for(Object vocable : vocableList) {
+//				xstream.toXML((Vocable) vocable, writer);
+//			}
+//			*/
+//
+//		} catch (FileNotFoundException exp) {
+//			System.out.println("Could not save vocable list!");
+//			Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, exp);
+//			exp.printStackTrace(System.out);
+//
+//		} finally {
+//			try {
+//				if (writer != null) {
+//					writer.close();
+//				}
+//				if (outputStream != null) {
+//					outputStream.close();
+//				}
+//			} catch (IOException ex) {
+//				Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
+//			}
+//		}
 	}
 
-	private List<Vocable> loadFromXMLFile(File file) {
-		List<Vocable> result = new ArrayList<>();
-		BufferedReader br;
-		
-		try {
-			br = new BufferedReader(new FileReader(file));
-			if (br.readLine() != null) {
-				InputStreamReader inputStreamReader = null;
-
-				try {
-					inputStreamReader = new InputStreamReader(new FileInputStream(file), Charset.forName("UTF-8"));
-				} catch (FileNotFoundException ex) {
-					Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-				}
-
-				XStream xstream = new XStream();
-				xstream.alias("vocable", Vocable.class);
-				xstream.alias("value", String.class);
-				result = (ArrayList<Vocable>) xstream.fromXML(inputStreamReader);
-			}
-		} catch (FileNotFoundException ex) {
-			Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-		} catch (IOException ex) {
-			Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
-		}
+	public List<Vocable> loadFromXMLFile(File file) {
+		StaxVocableReader staxVocableReader = new StaxVocableReader();
+		return staxVocableReader.readVocablesFromXMLFile(file);
 		
 		
-		return result;
+		
+		
+//		List<Vocable> result = new ArrayList<>();
+//		BufferedReader br;
+//		
+//		try {
+//			br = new BufferedReader(new FileReader(file));
+//			if (br.readLine() != null) {
+//				InputStreamReader inputStreamReader = null;
+//
+//				try {
+//					inputStreamReader = new InputStreamReader(new FileInputStream(file), Charset.forName("UTF-8"));
+//				} catch (FileNotFoundException ex) {
+//					Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
+//				}
+//
+//				XStream xstream = new XStream();
+//				xstream.processAnnotations(Vocable.class);
+//				xstream.registerConverter(new ListVocableConverter());
+//				xstream.alias("vocableList", java.util.List.class);
+//				xstream.alias("vocable", dictionary.model.Vocable.class);
+//				/*
+//				xstream.alias("first__language__translation", String.class);
+//				xstream.alias("first__language__phonetic__scripts", String.class);
+//				xstream.alias("second__language__translation", String.class);
+//				xstream.alias("second__language__phonetic__scripts", String.class);
+//				xstream.alias("topics", String.class);
+//				xstream.alias("chapters", String.class);
+//				xstream.alias("description", String.class);
+//				xstream.alias("learn__level", String.class);
+//				xstream.alias("relevance__level", String.class);
+//				*/
+//				//xstream.alias("value", String.class);
+//				
+//				//System.out.println(((Vocable) xstream.fromXML(inputStreamReader)).getFirstLanguageTranslationsAsString());
+//				
+//				result = (List<Vocable>) xstream.fromXML(inputStreamReader);
+//			}
+//		} catch (FileNotFoundException ex) {
+//			Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
+//		} catch (IOException ex) {
+//			Logger.getLogger(VocableFileManager.class.getName()).log(Level.SEVERE, null, ex);
+//		}
+//		
+//		System.out.println("!!! List Size:|"+result.size()+"|");
+//		XStream xstream = new XStream();
+//		xstream.alias("list", List.class);
+//		xstream.alias("vocable", Vocable.class);
+//		//xstream.addImplicitCollection(VocableList.class, "list");
+//		
+//		((List<Vocable>) xstream.fromXML(file)).forEach((Vocable vocable) -> System.out.println("FL:|"+vocable.getFirstLanguageTranslationsAsString()+"|"));
+//		
+//		return (List<Vocable>) xstream.fromXML(file);
 	}
 	
 	

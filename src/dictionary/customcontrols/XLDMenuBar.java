@@ -7,27 +7,18 @@
 package dictionary.customcontrols;
 
 import dictionary.exceptions.SettingNotFoundException;
-import dictionary.helpers.ControlFXDialogDisplayer;
-import dictionary.manager.DialogInstanceManager;
 import dictionary.manager.ManagerInstanceManager;
-import dictionary.manager.VocableFileManager;
 import dictionary.model.Settings;
-import dictionary.model.Vocable;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import org.controlsfx.control.action.Action;
-import org.controlsfx.dialog.Dialog;
 
 /**
  *
@@ -150,8 +141,9 @@ public class XLDMenuBar extends MenuBar {
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setTitle("Open dictionary file");
 			File vocableFile = fileChooser.showOpenDialog(owner);
-			ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(vocableFile);
+			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, vocableFile.getAbsolutePath());
+			ManagerInstanceManager.getVocableManagerInstance().loadVocables();
 		});
 		
 		fileMenu_exit_menuItem.setOnAction((ActionEvent event) -> {
@@ -182,9 +174,11 @@ public class XLDMenuBar extends MenuBar {
 			
 			try {
 				String originalPath = Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME);
+				
 				Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, vocableFile.getAbsolutePath());
-				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+				ManagerInstanceManager.getVocableManagerInstance().saveSearchResult();
 				Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, originalPath);
+				
 			} catch (SettingNotFoundException ex) {
 				Logger.getLogger(XLDMenuBar.class.getName()).log(Level.SEVERE, null, ex);
 			}

@@ -83,8 +83,8 @@ public class MainApp extends Application {
 		addActionListeners();
 		addExitListener();
 
-		ManagerInstanceManager.getVocableManagerInstance();
-		ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME)));
+		ManagerInstanceManager.getVocableManagerInstance().loadVocables();
+		//ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME)));
 		
 		stage.show();
 	}

@@ -33,6 +33,7 @@ public class ManagerInstanceManager {
 	public static VocableManager getVocableManagerInstance() {
 		if(ManagerInstanceManager.vocableManager == null) {
 			ManagerInstanceManager.vocableManager = new VocableManager();
+			ManagerInstanceManager.vocableManager.initialize();
 		}
 		return ManagerInstanceManager.vocableManager;
 	}

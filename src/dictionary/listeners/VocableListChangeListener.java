@@ -6,12 +6,15 @@
 
 package dictionary.listeners;
 
+import dictionary.model.Vocable;
+import javafx.collections.ListChangeListener.Change;
+
 /**
  *
  * @author XiaoLong
  */
 public interface VocableListChangeListener {
 	
-	public void updateOnVocableListChange();
+	public void updateOnVocableListChange(Change<Vocable> change);
 	
 }

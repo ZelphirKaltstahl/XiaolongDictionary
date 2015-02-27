@@ -1,4 +1,4 @@
-#Wed Feb 25 03:07:23 CET 2015
+#Thu Feb 26 03:16:46 CET 2015
 application_name=Xiaolong Dictionary
 application_path=/home/xiaolong/NetBeansProjects/XiaolongDictionary
 application_version=2.0
@@ -37,4 +37,4 @@ vocable_training_show_first_language=true
 vocable_training_show_first_language_phonetic_script=true
 vocable_training_show_second_language=false
 vocable_training_show_second_language_phonetic_script=false
-vocables_filename=/home/xiaolong/NetBeansProjects/XiaolongDictionary/new_vocables.xml
+vocables_filename=/home/xiaolong/NetBeansProjects/XiaolongDictionary/vocables.xml

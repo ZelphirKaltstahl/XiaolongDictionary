@@ -5,19 +5,21 @@
  */
 package dictionary.manager;
 
+import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
 import dictionary.tasks.VocableSearchTask;
 import dictionary.exceptions.VocableAlreadyExistsException;
 import dictionary.helpers.ListOperationsHelper;
-import dictionary.listeners.VocableListChangeListener;
 import dictionary.listeners.VocableListLoadedListener;
-import dictionary.listeners.VocableSearchPerformedListener;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import dictionary.model.VocableSearchData;
 import java.io.File;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 
@@ -29,50 +31,35 @@ public class VocableManager implements VocableListLoadedListener {
 
 	private ObservableList<Vocable> vocableList;
 	private ObservableList<Vocable> searchResultVocableList;
-
-	private final ArrayList<VocableListChangeListener> vocableListChangeListeners;
-	private final ArrayList<VocableSearchPerformedListener> vocableSearchPerformedListeners;
 	
 	//private boolean vocableIsInVocableList = false;
 
 	public VocableManager() {
-		this.vocableListChangeListeners = new ArrayList<>();
-		this.vocableSearchPerformedListeners = new ArrayList<>();
+		// empty
+	}
+	
+	public void initialize () {
+		vocableList = FXCollections.observableArrayList();
+		searchResultVocableList = FXCollections.observableArrayList();
+		
 		registerAsListener();
 	}
-
+	
 	private void registerAsListener() {
 		ManagerInstanceManager.getVocableFileManagerInstance().registerVocableListLoadedListener(this);
 	}
 
-	public void registerVocableListChangeListener(VocableListChangeListener vocableListChangeListener) {
-		vocableListChangeListeners.add(vocableListChangeListener);
+	public void addVocableListChangeListener(ListChangeListener<Vocable> listChangeListener) {
+		vocableList.addListener(listChangeListener);
 	}
 
-	public void registerVocableSearchPerformedListener(VocableSearchPerformedListener vocableSearchPerformedListener) {
-		vocableSearchPerformedListeners.add(vocableSearchPerformedListener);
-	}
-
-	public void notifyVocableListChangeListeners() {
-		vocableListChangeListeners.stream().forEach(
-				(vocableListChangeListener) -> {
-					vocableListChangeListener.updateOnVocableListChange();
-				}
-		);
-	}
-
-	public void notifyVocableSearchPerformedListeners() {
-		vocableSearchPerformedListeners.stream().forEach(
-				(vocableSearchPerformedListener) -> {
-					vocableSearchPerformedListener.updateOnSearchResultChange();
-				}
-		);
+	public void addSearchResultVocableListChangeListener(ListChangeListener<Vocable> listChangeListener) {
+		searchResultVocableList.addListener(listChangeListener);
 	}
 
 	public void addVocable(Vocable vocable) throws VocableAlreadyExistsException {
 		if (!isVocableInDictionary(vocable)) {
 			vocableList.add(vocable);
-			notifyVocableListChangeListeners();
 		} else {
 			throw new VocableAlreadyExistsException("Vocable is already in the dictionary.");
 		}
@@ -80,14 +67,24 @@ public class VocableManager implements VocableListLoadedListener {
 
 	public void deleteVocables(ObservableList<Vocable> listOfVocables) {
 		vocableList.removeAll(listOfVocables);
+		searchResultVocableList.removeAll(listOfVocables);
 	}
 
 	public void deleteVocable(Vocable vocable) {
 		vocableList.remove(vocable);
+		searchResultVocableList.remove(vocable);
 	}
 
 	public void changeVocable(Vocable oldVocable, Vocable changedVocable) {
-		System.out.println("DO NOT USE THIS METHOD");
+		int indexOfOldVocable = vocableList.indexOf(oldVocable);
+		if(indexOfOldVocable != -1) {
+			vocableList.set(indexOfOldVocable, changedVocable);
+		}
+		
+		indexOfOldVocable = searchResultVocableList.indexOf(oldVocable);
+		if(indexOfOldVocable != -1) {
+			searchResultVocableList.set(indexOfOldVocable, changedVocable);
+		}
 	}
 
 	public void searchVocables(VocableSearchData vocableSearchData) {
@@ -104,8 +101,10 @@ public class VocableManager implements VocableListLoadedListener {
 		
 		
 		vocableSearchTask.setOnSucceeded((Event workerStateEvent) -> {
+			
 			if (vocableSearchData.isANDSearch()) {
-				searchResultVocableList = (ObservableList<Vocable>) vocableSearchTask.getValue();
+				searchResultVocableList.clear();
+				searchResultVocableList.addAll((ObservableList<Vocable>) vocableSearchTask.getValue());
 				
 			} else if (vocableSearchData.isORSearch()) {
 				((ObservableList<Vocable>) vocableSearchTask.getValue())
@@ -114,9 +113,9 @@ public class VocableManager implements VocableListLoadedListener {
 					.forEach((vocable) -> searchResultVocableList.add(vocable));
 				
 			} else {
-				searchResultVocableList = (ObservableList<Vocable>) vocableSearchTask.getValue();
+				searchResultVocableList.clear();
+				searchResultVocableList.addAll((ObservableList<Vocable>) vocableSearchTask.getValue());
 			}
-			notifyVocableSearchPerformedListeners();
 		});
 		
 		vocableSearchTask.setOnCancelled((workerStateEvent) -> {
@@ -144,6 +143,7 @@ public class VocableManager implements VocableListLoadedListener {
 	}
 
 	private boolean isVocableInDictionary(Vocable checkedVocable) {
+		// Since the gui needs to react on this, there is no speed increasement if done in a task another thread than the gui thread
 		// assume vocable is in vocable list until proven otherwise
 		/*vocableIsInVocableList = true;
 		
@@ -184,11 +184,61 @@ public class VocableManager implements VocableListLoadedListener {
 	@Override
 	public void reactOnLoadedVocableList() {
 		System.out.println("Notified of: Vocable List Loaded");
-		vocableList = FXCollections.observableArrayList((ArrayList<Vocable>) ManagerInstanceManager.getVocableFileManagerInstance().getVocableList());
-		notifyVocableListChangeListeners();
+		vocableList.clear();
+		vocableList.addAll(ManagerInstanceManager.getVocableFileManagerInstance().getVocableList());
+		//notifyVocableListChangeListeners();
 	}
 	
 	public void saveVocables() {
-		ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList, new File(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
+		try {
+			System.out.println("Saving vocable list in:|" + Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME) + "|");
+			File saveFile = new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
+			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList.subList(0, vocableList.size()-1), saveFile);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+	
+	public void saveSearchResult() {
+		try {
+			System.out.println("Saving search result vocable list in:|" + Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME) + "|");
+			File saveFile = new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
+			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(searchResultVocableList.subList(0, searchResultVocableList.size()-1), saveFile);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+	
+	public void loadVocables() {
+		String path = null;
+		try {
+			path = Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		System.out.println("Now loading vocable file from file:|"+path+"|.");
+		
+		List<Vocable> newList = null;
+		try {
+			newList = ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(
+				new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME))
+			);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
+		System.out.println("Size of new list:|" + newList.size() + "|");
+		
+		vocableList.clear();
+		vocableList.addAll(newList);
+		System.out.println("Vocable list updated.");
+		
+		searchResultVocableList.clear();
+		searchResultVocableList.addAll(newList);
+		System.out.println("Search result vocable list updated.");
+		
+		/*searchResultVocableList.forEach((Vocable vocable) -> System.out.println(
+			"|"+vocable.getFirstLanguageTranslations()+"|")
+		);*/
 	}
 }
