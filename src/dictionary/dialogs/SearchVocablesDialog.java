@@ -14,18 +14,21 @@ import dictionary.model.Settings;
 import dictionary.model.VocableSearchData;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -87,6 +90,7 @@ public class SearchVocablesDialog extends XLDDialog {
 	private Label learnLevelLabel;
 	private Label relevanceLevelLabel;
 	private Label descriptionLabel;
+	
 
 	private TextField firstLanguageTranslationsTextField;
 	private TextField firstLanguagePhoneticScriptTextField;
@@ -94,10 +98,22 @@ public class SearchVocablesDialog extends XLDDialog {
 	private TextField secondLanguagePhoneticScriptTextField;
 	private TextField topicTextField;
 	private TextField chapterTextField;
-	private TextField learnLevelTextField;
-	private TextField relevanceLevelTextField;
 	private TextField descriptionTextField;
 
+	private GridPane learnLevelGridPane;
+	private ToggleGroup learnLevelRadioButtonsToggleGroup;
+	private RadioButton customLearnLevelRadioButton;
+	private RadioButton predefinedLearnLevelRadioButton;
+	private ComboBox<String> learnLevelComboBox;
+	private TextField learnLevelTextField;
+	
+	private GridPane relevanceLevelGridPane;
+	private ToggleGroup relevanceLevelRadioButtonsToggleGroup;
+	private RadioButton customRelevanceLevelRadioButton;
+	private RadioButton predefinedRelevanceLevelRadioButton;
+	private ComboBox<String> relevanceLevelComboBox;
+	private TextField relevanceLevelTextField;
+	
 	public SearchVocablesDialog(Modality modality) {
 		super(modality);
 	}
@@ -199,8 +215,79 @@ public class SearchVocablesDialog extends XLDDialog {
 		secondLanguagePhoneticScriptTextField = new TextField();
 		topicTextField = new TextField();
 		chapterTextField = new TextField();
+		
+		// ===========
+		// learn level
+		// ===========
+		learnLevelGridPane = new GridPane();
+		learnLevelGridPane.setHgap(2);
+		learnLevelGridPane.setVgap(2);
+		learnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		learnLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+		learnLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		learnLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
+		learnLevelGridPane.setMaxWidth(300);
+		
+		learnLevelRadioButtonsToggleGroup = new ToggleGroup();
+		customLearnLevelRadioButton = new RadioButton("Custom");
+		predefinedLearnLevelRadioButton = new RadioButton("Predefined");			
+		learnLevelRadioButtonsToggleGroup.getToggles().add(customLearnLevelRadioButton);
+		learnLevelRadioButtonsToggleGroup.getToggles().add(predefinedLearnLevelRadioButton);
+
 		learnLevelTextField = new TextField();
+		learnLevelTextField.setPrefColumnCount(20);
+		learnLevelTextField.disableProperty().bindBidirectional(predefinedLearnLevelRadioButton.selectedProperty());
+
+		String[] changedPredefinedLearnLevelChoices = null;
+		try {
+			changedPredefinedLearnLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		ObservableList<String> changedLearnLevelChoices = FXCollections.observableArrayList(changedPredefinedLearnLevelChoices);
+		learnLevelComboBox = new ComboBox<>(changedLearnLevelChoices);
+		learnLevelComboBox.disableProperty().bindBidirectional(customLearnLevelRadioButton.selectedProperty());
+
+		predefinedLearnLevelRadioButton.setSelected(false);
+		customLearnLevelRadioButton.setSelected(true);
+		learnLevelComboBox.getSelectionModel().select(0);
+		
+		// =========
+		// RELEVANCE
+		// =========
+		relevanceLevelGridPane = new GridPane();
+		relevanceLevelGridPane.setHgap(2);
+		relevanceLevelGridPane.setVgap(2);
+		relevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		relevanceLevelGridPane.getColumnConstraints().get(0).setPercentWidth(40);
+		relevanceLevelGridPane.getColumnConstraints().add(new ColumnConstraints());
+		relevanceLevelGridPane.getColumnConstraints().get(1).setPercentWidth(60);
+		relevanceLevelGridPane.setMaxWidth(300);
+		
+		relevanceLevelRadioButtonsToggleGroup = new ToggleGroup();
+		customRelevanceLevelRadioButton = new RadioButton("Custom");
+		predefinedRelevanceLevelRadioButton = new RadioButton("Predefined");			
+		relevanceLevelRadioButtonsToggleGroup.getToggles().add(customRelevanceLevelRadioButton);
+		relevanceLevelRadioButtonsToggleGroup.getToggles().add(predefinedRelevanceLevelRadioButton);
+
 		relevanceLevelTextField = new TextField();
+		relevanceLevelTextField.setPrefColumnCount(20);
+		relevanceLevelTextField.disableProperty().bindBidirectional(predefinedRelevanceLevelRadioButton.selectedProperty());
+
+		String[] changedPredefinedRelevanceLevelChoices = null;
+		try {
+			changedPredefinedRelevanceLevelChoices = Settings.getInstance().getSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME).split(",", -1);
+		} catch (SettingNotFoundException ex) {
+			Logger.getLogger(AddVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		ObservableList<String> changedRelevanceLevelChoices = FXCollections.observableArrayList(changedPredefinedRelevanceLevelChoices);
+		relevanceLevelComboBox = new ComboBox<>(changedRelevanceLevelChoices);
+		relevanceLevelComboBox.disableProperty().bindBidirectional(customRelevanceLevelRadioButton.selectedProperty());
+
+		predefinedRelevanceLevelRadioButton.setSelected(false);
+		customRelevanceLevelRadioButton.setSelected(true);
+		relevanceLevelComboBox.getSelectionModel().select(0);
+		
 		descriptionTextField = new TextField();
 		
 		lastActiveTextInputControl = firstLanguageTranslationsTextField;
@@ -241,13 +328,23 @@ public class SearchVocablesDialog extends XLDDialog {
 		gridPane.add(searchLearnLevelCheckBox, 0, 6);
 		gridPane.add(negateLearnLevelCheckBox, 1, 6);
 		gridPane.add(learnLevelLabel, 2, 6);
-		gridPane.add(learnLevelTextField, 3, 6);
-
+		gridPane.add(learnLevelGridPane, 3, 6);
+		
+		learnLevelGridPane.add(customLearnLevelRadioButton, 0, 0);
+		learnLevelGridPane.add(learnLevelTextField, 1, 0);
+		learnLevelGridPane.add(predefinedLearnLevelRadioButton, 0, 1);
+		learnLevelGridPane.add(learnLevelComboBox, 1, 1);
+		
 		gridPane.add(searchRelevanceLevelCheckBox, 0, 7);
 		gridPane.add(negateRelevanceLevelCheckBox, 1, 7);
 		gridPane.add(relevanceLevelLabel, 2, 7);
-		gridPane.add(relevanceLevelTextField, 3, 7);
-
+		gridPane.add(relevanceLevelGridPane, 3, 7);
+		
+		relevanceLevelGridPane.add(customRelevanceLevelRadioButton, 0, 0);
+		relevanceLevelGridPane.add(relevanceLevelTextField, 1, 0);
+		relevanceLevelGridPane.add(predefinedRelevanceLevelRadioButton, 0, 1);
+		relevanceLevelGridPane.add(relevanceLevelComboBox, 1, 1);
+		
 		gridPane.add(searchDescriptionCheckBox, 0, 8);
 		gridPane.add(negateDescriptionCheckBox, 1, 8);
 		gridPane.add(descriptionLabel, 2, 8);
@@ -298,133 +395,103 @@ public class SearchVocablesDialog extends XLDDialog {
 
 	@Override
 	protected void addFocusChangeListeners() {
-		firstLanguageTranslationsTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = firstLanguageTranslationsTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		firstLanguageTranslationsTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = firstLanguageTranslationsTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		firstLanguagePhoneticScriptTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = firstLanguagePhoneticScriptTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		firstLanguagePhoneticScriptTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = firstLanguagePhoneticScriptTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		secondLanguageTranslationsTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = secondLanguageTranslationsTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		secondLanguageTranslationsTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = secondLanguageTranslationsTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		secondLanguagePhoneticScriptTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = secondLanguagePhoneticScriptTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		secondLanguagePhoneticScriptTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = secondLanguagePhoneticScriptTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		topicTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = topicTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		topicTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = topicTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		chapterTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = chapterTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		chapterTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = chapterTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		topicTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = topicTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		topicTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = topicTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		learnLevelTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = learnLevelTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		learnLevelTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = learnLevelTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		relevanceLevelTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = relevanceLevelTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		relevanceLevelTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = relevanceLevelTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 		
-		descriptionTextField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (newValue) {
-					lastActiveTextInputControl = descriptionTextField;
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
-					DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
-				} else {
-					caretPosition = lastActiveTextInputControl.getCaretPosition();
-				}
+		descriptionTextField.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+			if (newValue) {
+				lastActiveTextInputControl = descriptionTextField;
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveParent(DialogInstanceManager.getSearchVocablesDialogInstance());
+				DialogInstanceManager.getInsertSpecialCharacterDialogInstance().setActiveTextField(lastActiveTextInputControl);
+			} else {
+				caretPosition = lastActiveTextInputControl.getCaretPosition();
 			}
 		});
 	}
@@ -449,43 +516,58 @@ public class SearchVocablesDialog extends XLDDialog {
 	
 	private void searchButtonActionPerformed() {
 		if (isAtLeastOneSearchAttributeUsed()) {
+			String learnLevel = null;
+			String relevanceLevel = null;
+			
+			if (customLearnLevelRadioButton.isSelected()) {
+				learnLevel = learnLevelTextField.getText();
+			} else if (predefinedLearnLevelRadioButton.isSelected()) {
+				learnLevel = learnLevelComboBox.getSelectionModel().getSelectedItem();
+			}
+			
+			if (customRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevel = relevanceLevelTextField.getText();
+			} else if (predefinedRelevanceLevelRadioButton.isSelected()) {
+				relevanceLevel = learnLevelComboBox.getSelectionModel().getSelectedItem();
+			}
+			
 			VocableSearchData vocableSearchData = new VocableSearchData(
-					searchFirstLanguageTranslationsCheckBox.isSelected(), 
-					searchFirstLanguagePhoneticScriptCheckBox.isSelected(), 
-					searchSecondLanguageTranslationsCheckBox.isSelected(), 
-					searchSecondLanguagePhoneticScriptCheckBox.isSelected(), 
-					searchTopicCheckBox.isSelected(), 
-					searchChapterCheckBox.isSelected(), 
-					searchLearnLevelCheckBox.isSelected(), 
-					searchRelevanceLevelCheckBox.isSelected(), 
-					searchDescriptionCheckBox.isSelected(), 
-					
-					negateFirstLanguageTranslationsCheckBox.isSelected(),
-					negateFirstLanguagePhoneticScriptCheckBox.isSelected(),
-					negateSecondLanguageTranslationsCheckBox.isSelected(),
-					negateSecondLanguagePhoneticScriptCheckBox.isSelected(),
-					negateTopicCheckBox.isSelected(),
-					negateChapterCheckBox.isSelected(),
-					negateLearnLevelCheckBox.isSelected(),
-					negateRelevanceLevelCheckBox.isSelected(),
-					negateDescriptionCheckBox.isSelected(),
-					
-					firstLanguageTranslationsTextField.getText(), 
-					firstLanguagePhoneticScriptTextField.getText(), 
-					secondLanguageTranslationsTextField.getText(), 
-					secondLanguagePhoneticScriptTextField.getText(), 
-					topicTextField.getText(), 
-					chapterTextField.getText(), 
-					learnLevelTextField.getText(), 
-					relevanceLevelTextField.getText(), 
-					descriptionTextField.getText(), 
-					
-					negateSearchCheckBox.isSelected(), 
-					andSearchRadioButton.isSelected(), 
-					orSearchRadioButton.isSelected(), 
-					standardSearchRadioButton.isSelected(),
-					caseSensitiveCheckBox.isSelected(), 
-					wholeWordCheckBox.isSelected()
+				searchFirstLanguageTranslationsCheckBox.isSelected(), 
+				searchFirstLanguagePhoneticScriptCheckBox.isSelected(), 
+				searchSecondLanguageTranslationsCheckBox.isSelected(), 
+				searchSecondLanguagePhoneticScriptCheckBox.isSelected(), 
+				searchTopicCheckBox.isSelected(), 
+				searchChapterCheckBox.isSelected(), 
+				searchLearnLevelCheckBox.isSelected(), 
+				searchRelevanceLevelCheckBox.isSelected(), 
+				searchDescriptionCheckBox.isSelected(), 
+
+				negateFirstLanguageTranslationsCheckBox.isSelected(),
+				negateFirstLanguagePhoneticScriptCheckBox.isSelected(),
+				negateSecondLanguageTranslationsCheckBox.isSelected(),
+				negateSecondLanguagePhoneticScriptCheckBox.isSelected(),
+				negateTopicCheckBox.isSelected(),
+				negateChapterCheckBox.isSelected(),
+				negateLearnLevelCheckBox.isSelected(),
+				negateRelevanceLevelCheckBox.isSelected(),
+				negateDescriptionCheckBox.isSelected(),
+
+				firstLanguageTranslationsTextField.getText(), 
+				firstLanguagePhoneticScriptTextField.getText(), 
+				secondLanguageTranslationsTextField.getText(), 
+				secondLanguagePhoneticScriptTextField.getText(), 
+				topicTextField.getText(), 
+				chapterTextField.getText(), 
+				learnLevel,
+				relevanceLevel,
+				descriptionTextField.getText(), 
+
+				negateSearchCheckBox.isSelected(), 
+				andSearchRadioButton.isSelected(), 
+				orSearchRadioButton.isSelected(), 
+				standardSearchRadioButton.isSelected(),
+				caseSensitiveCheckBox.isSelected(), 
+				wholeWordCheckBox.isSelected()
 			);
 			//vocableSearchData.print();
 			ManagerInstanceManager.getVocableManagerInstance().searchVocables(vocableSearchData);
@@ -496,13 +578,13 @@ public class SearchVocablesDialog extends XLDDialog {
 
 	private boolean isAtLeastOneSearchAttributeUsed() {
 		return searchFirstLanguageTranslationsCheckBox.isSelected()
-				|| searchFirstLanguagePhoneticScriptCheckBox.isSelected()
-				|| searchSecondLanguageTranslationsCheckBox.isSelected()
-				|| searchSecondLanguagePhoneticScriptCheckBox.isSelected()
-				|| searchTopicCheckBox.isSelected()
-				|| searchChapterCheckBox.isSelected()
-				|| searchLearnLevelCheckBox.isSelected()
-				|| searchRelevanceLevelCheckBox.isSelected()
-				|| searchDescriptionCheckBox.isSelected();
+			|| searchFirstLanguagePhoneticScriptCheckBox.isSelected()
+			|| searchSecondLanguageTranslationsCheckBox.isSelected()
+			|| searchSecondLanguagePhoneticScriptCheckBox.isSelected()
+			|| searchTopicCheckBox.isSelected()
+			|| searchChapterCheckBox.isSelected()
+			|| searchLearnLevelCheckBox.isSelected()
+			|| searchRelevanceLevelCheckBox.isSelected()
+			|| searchDescriptionCheckBox.isSelected();
 	}
 }
