@@ -9,9 +9,12 @@ import dictionary.manager.DialogInstanceManager;
 import dictionary.buttons.InsertSpecialCharacterButton;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
+import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.ManagerInstanceManager;
+import dictionary.model.Action;
 import dictionary.model.Settings;
 import dictionary.model.VocableSearchData;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ObservableValue;
@@ -38,7 +41,7 @@ import javafx.stage.Modality;
  *
  * @author XiaoLong
  */
-public class SearchVocablesDialog extends XLDDialog {
+public class SearchVocablesDialog extends XLDDialog implements SettingsPropertyChangeListener {
 
 	private Scene scene;
 	private VBox containingVBox;
@@ -114,6 +117,9 @@ public class SearchVocablesDialog extends XLDDialog {
 	private ComboBox<String> relevanceLevelComboBox;
 	private TextField relevanceLevelTextField;
 	
+	
+	private final HashMap<String, Action<String>> actionsForObservedSettingsChanges = new HashMap<>();
+	
 	public SearchVocablesDialog(Modality modality) {
 		super(modality);
 	}
@@ -123,6 +129,8 @@ public class SearchVocablesDialog extends XLDDialog {
 		addControls();
 		addActionListeners();
 		addFocusChangeListeners();
+		setActionsForNotifications();
+		registerAsListener();
 	}
 	
 	@Override
@@ -586,5 +594,39 @@ public class SearchVocablesDialog extends XLDDialog {
 			|| searchLearnLevelCheckBox.isSelected()
 			|| searchRelevanceLevelCheckBox.isSelected()
 			|| searchDescriptionCheckBox.isSelected();
+	}
+
+	@Override
+	public void update(String settingName, String settingValue) {
+		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	}
+	
+	private void registerAsListener() {
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
+	}
+	
+	private void setActionsForNotifications() {
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> firstLanguageTranslationsLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().FIRST_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> firstLanguagePhoneticScriptLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME,
+			(Action<String>) (String value) -> secondLanguageTranslationsLabel.setText(value + ":")
+		);
+		
+		actionsForObservedSettingsChanges.put(
+			Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME,
+			(Action<String>) (String value) -> secondLanguagePhoneticScriptLabel.setText(value + ":")
+		);
 	}
 }
