@@ -166,37 +166,38 @@ public class XLDVocableTable<T> extends TableView {
 		
 		ManagerInstanceManager.getVocableManagerInstance().addSearchResultVocableListChangeListener(
 			(Change<? extends Vocable> change) -> {
-				while (change.next()) {
-					if (change.wasPermutated()) {
-						/*for (int i = change.getFrom(); i < change.getTo(); ++i) {
-						}
-						System.out.println("Notified of: Vocable List Change (Permutation)");*/
-						System.out.println("The list of vocables of the vocable table (items) was permutated and no one does something about it!");
-
-					} else if (change.wasUpdated()) {
-						setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
-						System.out.println("Notified of: Vocable List Change (Update)");
-
-					} else if (change.wasReplaced()) {
-						System.out.println("Notified of: Vocable List Change (Replace)");
-						setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
-
-					} else if (change.wasAdded()) {
-						System.out.println("Notified of: Vocable List Change (Add)");
-						change.getAddedSubList().stream().forEach((addedItem) -> {
-							getItems().add(addedItem);
-						});
-
-					} else if (change.wasRemoved()) {
-						System.out.println("Notified of: Vocable List Change (Remove)");
-						change.getRemoved().stream().forEach((removedItem) -> {
-							getItems().remove(removedItem);
-						});
-
-					} else {
-						System.out.println("Something happened to the list of vocables of the vocable table (items) and no one does something about it!");
-					} 
-				}
+//				while (change.next()) {
+//					if (change.wasPermutated()) {
+//						/*for (int i = change.getFrom(); i < change.getTo(); ++i) {
+//						}
+//						System.out.println("Notified of: Vocable List Change (Permutation)");*/
+//						System.out.println("The list of vocables of the vocable table (items) was permutated and no one does something about it!");
+//
+//					} else if (change.wasUpdated()) {
+//						setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
+//						System.out.println("Notified of: Vocable List Change (Update)");
+//
+//					} else if (change.wasReplaced()) {
+//						System.out.println("Notified of: Vocable List Change (Replace)");
+//						setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
+//
+//					} else if (change.wasAdded()) {
+//						System.out.println("Notified of: Vocable List Change (Add)");
+//						change.getAddedSubList().stream().forEach((addedItem) -> {
+//							getItems().add(addedItem);
+//						});
+//
+//					} else if (change.wasRemoved()) {
+//						System.out.println("Notified of: Vocable List Change (Remove)");
+//						change.getRemoved().stream().forEach((removedItem) -> {
+//							getItems().remove(removedItem);
+//						});
+//
+//					} else {
+//						System.out.println("Something happened to the list of vocables of the vocable table (items) and no one does something about it!");
+//					} 
+//				}
+				setItems(ManagerInstanceManager.getVocableManagerInstance().getSearchResultList());
 			}
 		);
 	}

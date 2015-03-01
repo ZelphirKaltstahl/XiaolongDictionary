@@ -140,8 +140,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	public void setTrainingVocables(List<Vocable> listOfVocables) {
 		this.trainingVocables = listOfVocables;
 		
-		currentVocableNumber.set(0);
-		learnedVocablesProgress.set(0);
+		//currentVocableNumber.set(0);
+		//learnedVocablesProgress.set(0);
 		
 		// no vocable is initially learned - TODO: change so that vocables which have a level that indicates that they are "learned" already count as learned vocables
 		listOfVocables.forEach((vocable) -> learnedVocablesHashMap.put(vocable, Boolean.FALSE));
@@ -194,6 +194,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			descriptionTextArea.setText(HIDDEN_TEXT);
 		}
 		
+		System.out.println("BEFORE IF");
 		if(newLearnLevelComboBox.getItems().contains(vocable.getLearnLevel())) {
 			predefinedNewLearnLevelRadioButton.setSelected(true);
 			customNewLearnLevelRadioButton.setSelected(false);
@@ -223,7 +224,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 	
 	private void nextVocable() {
-		if(customNewLearnLevelRadioButton.isSelected()) {
+		/*if(customNewLearnLevelRadioButton.isSelected()) {
 			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelTextField.getText());
 		} else {
 			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelComboBox.getSelectionModel().getSelectedItem());
@@ -233,14 +234,14 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelTextField.getText());
 		} else {
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
-		}
+		}*/
 		
 		currentVocableNumber.set((currentVocableNumber.getValue() + 1) % trainingVocables.size());
-		setVocable(currentVocableNumber.get());
+		//setVocable(currentVocableNumber.get());
 	}
 	
 	private void previousVocable() {
-		if(customNewLearnLevelRadioButton.isSelected()) {
+		/*if(customNewLearnLevelRadioButton.isSelected()) {
 			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelTextField.getText());
 		} else {
 			trainingVocables.get(currentVocableNumber.get()).setLearnLevel(newLearnLevelComboBox.getSelectionModel().getSelectedItem());
@@ -250,14 +251,14 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelTextField.getText());
 		} else {
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
-		}
+		}*/
 		
 		if(currentVocableNumber.get() > 0) {
 			currentVocableNumber.set(currentVocableNumber.get() - 1);
 		} else {
 			currentVocableNumber.set(trainingVocables.size()-1);
 		}
-		setVocable(currentVocableNumber.get());
+		//setVocable(currentVocableNumber.get());
 	}
 	
 	private void restartTraining() {
@@ -266,10 +267,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	
 	private void stopTraining() {
 		hide();
-	}
-	
-	private void startVocableTraining() {
-		setVocable(0);
 	}
 	
 	private void loadSettings() {
@@ -297,6 +294,28 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(TrainVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
 		}
+	}
+	
+	public void initialize(List<Vocable> listOfVocables) {
+		setTrainingVocables(listOfVocables);
+		loadSettings();
+		
+		initializeControls();
+		addCSSClasses();
+		addControls();
+		
+		setMinimumSizes();
+		
+		applySettings();
+		
+		addActionListeners();
+		addFocusChangeListeners();
+		addPropertyChangeListeners();
+		
+		registerAsListener();
+		setActionsForNotifications();
+		
+		setVocable(0);
 	}
 	
 	/**
@@ -341,28 +360,6 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		*/
 	}
 	
-	public void initialize(List<Vocable> listOfVocables) {
-		setTrainingVocables(listOfVocables);
-		loadSettings();
-		
-		initializeControls();
-		addCSSClasses();
-		addControls();
-		
-		setMinimumSizes();
-		
-		applySettings();
-		
-		addActionListeners();
-		addFocusChangeListeners();
-		System.out.println("In Initialize");
-		addPropertyChangeListeners();
-		
-		registerAsListener();
-		setActionsForNotifications();
-		
-		startVocableTraining();
-	}
 	
 	@Override
 	protected void initializeControls() {
@@ -474,7 +471,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 				)
 			);
 			
-			vocableNumberSlider = new Slider(0, trainingVocables.size()-1, currentVocableNumber.get());
+			vocableNumberSlider = new Slider(0, trainingVocables.size()-1, 0);
 			vocableNumberSlider.setOrientation(Orientation.HORIZONTAL);
 			
 			vocableNumberSlider.setBlockIncrement(1);
@@ -621,7 +618,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		});
 		
 		restartVocableTrainingButton.setOnAction((actionEvent) -> {
-			setVocable(0);
+			currentVocableNumber.set(0);
 			learnedVocablesHashMap.forEach((vocable, learned) -> learnedVocablesHashMap.put(vocable, false));
 			learnedVocablesProgress.set(0.0);
 		});
@@ -631,9 +628,9 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		System.out.println("Adding change listener");
 		currentVocableNumber.addListener(
 			(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
-				if(!oldValue.equals(newValue)) {
+				//if(!oldValue.equals(newValue)) {
 					setVocable(newValue.intValue());
-				}
+				//}
 			}
 		);
 	}
