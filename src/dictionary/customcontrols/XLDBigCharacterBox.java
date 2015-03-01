@@ -12,6 +12,7 @@ import dictionary.model.Settings;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.function.Predicate;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -113,7 +114,13 @@ public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeLi
 		charactersTextFlow = new TextFlow();
 		charactersTextFlow.setTextAlignment(TextAlignment.CENTER);
 		charactersText = new Text(String.valueOf(characters.getCurrentValue()));
-		charactersText.setFont(new Font("Dialog", 50));
+		
+		//Predicate<Font> fontPred = (font) -> font.getFamily().contains("WenQuanYi");
+		if(Font.getFamilies().stream().anyMatch(fontFamily -> fontFamily.contains("WenQuanYi Zen Hei"))) {
+			charactersText.setFont(new Font("WenQuanYi Zen Hei", 50));
+		} else {
+			charactersText.setFont(new Font("Dialog", 50));
+		}
 
 		buttonHBox = new HBox();
 		buttonHBox.setAlignment(Pos.CENTER);
