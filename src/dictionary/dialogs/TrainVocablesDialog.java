@@ -196,10 +196,12 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		
 		System.out.println("BEFORE IF");
 		if(newLearnLevelComboBox.getItems().contains(vocable.getLearnLevel())) {
+			System.out.println("Settings predefined learn level");
 			predefinedNewLearnLevelRadioButton.setSelected(true);
 			customNewLearnLevelRadioButton.setSelected(false);
 			newLearnLevelComboBox.getSelectionModel().select(vocable.getLearnLevel());
 		} else {
+			System.out.println("Settings custom learn level");
 			predefinedNewLearnLevelRadioButton.setSelected(false);
 			customNewLearnLevelRadioButton.setSelected(true);
 			newLearnLevelComboBox.getSelectionModel().clearSelection();
@@ -207,10 +209,12 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		}
 		
 		if(newRelevanceLevelComboBox.getItems().contains(vocable.getRelevanceLevel())) {
+			System.out.println("Settings predefined relevance level");
 			predefinedNewRelevanceLevelRadioButton.setSelected(true);
 			customNewRelevanceLevelRadioButton.setSelected(false);
 			newRelevanceLevelComboBox.getSelectionModel().select(vocable.getRelevanceLevel());
 		} else {
+			System.out.println("Settings custom relevance level");
 			predefinedNewRelevanceLevelRadioButton.setSelected(false);
 			customNewRelevanceLevelRadioButton.setSelected(true);
 			newRelevanceLevelComboBox.getSelectionModel().clearSelection();
@@ -236,6 +240,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
 		}*/
 		
+		updateVocable();
 		currentVocableNumber.set((currentVocableNumber.getValue() + 1) % trainingVocables.size());
 		//setVocable(currentVocableNumber.get());
 	}
@@ -252,6 +257,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		} else {
 			trainingVocables.get(currentVocableNumber.get()).setRelevanceLevel(newRelevanceLevelComboBox.getSelectionModel().getSelectedItem());
 		}*/
+		updateVocable();
 		
 		if(currentVocableNumber.get() > 0) {
 			currentVocableNumber.set(currentVocableNumber.get() - 1);
@@ -259,6 +265,43 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			currentVocableNumber.set(trainingVocables.size()-1);
 		}
 		//setVocable(currentVocableNumber.get());
+	}
+	
+	private void updateVocable() {
+		String learnLevel = null;
+		String relevanceLevel = null;
+		
+		if (customNewLearnLevelRadioButton.isSelected()) {
+			learnLevel = newLearnLevelTextField.getText();
+		} else if (predefinedNewLearnLevelRadioButton.isSelected()) {
+			learnLevel = newLearnLevelComboBox.getSelectionModel().getSelectedItem();
+		}
+		
+		if (customNewRelevanceLevelRadioButton.isSelected()) {
+			relevanceLevel = newRelevanceLevelTextField.getText();
+		} else if (predefinedNewRelevanceLevelRadioButton.isSelected()) {
+			relevanceLevel = newRelevanceLevelComboBox.getSelectionModel().getSelectedItem();
+		}
+		
+		
+		//Vocable changedVocable = new Vocable();
+		Vocable currentVocable = trainingVocables.get(currentVocableNumber.get());
+		/*
+		changedVocable.setFirstLanugageTranslations(currentVocable.getFirstLanguageTranslations());
+		changedVocable.setFirstLanguagePhoneticScripts(currentVocable.getFirstLanguagePhoneticScripts());
+		changedVocable.setSecondLanguageTranslations(currentVocable.getSecondLanguageTranslations());
+		changedVocable.setSecondLanguagePhoneticScripts(currentVocable.getSecondLanguagePhoneticScripts());
+		changedVocable.setChapters(currentVocable.getChapters());
+		changedVocable.setTopic(currentVocable.getTopics());
+		changedVocable.setDescription(currentVocable.getDescription());
+		
+		changedVocable.setLearnLevel(learnLevel);
+		changedVocable.setRelevanceLevel(relevanceLevel);
+		*/
+		//ManagerInstanceManager.getVocableManagerInstance().changeVocable(trainingVocables.get(currentVocableNumber.get()), changedVocable);
+		currentVocable.setLearnLevel(learnLevel);
+		currentVocable.setRelevanceLevel(relevanceLevel);
+		//trainingVocables.set(currentVocableNumber.get(), changedVocable);
 	}
 	
 	private void restartTraining() {
@@ -585,52 +628,56 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	protected void addActionListeners() {
 		System.out.println("Adding Action Listeners");
 		
-		showHideFirstLanguageButton.setOnAction((actionEvent) -> {
-			toggleFirstLanguageVisibility();
-		});
+		showHideFirstLanguageButton.setOnAction(
+			(actionEvent) -> toggleFirstLanguageVisibility()
+		);
 		
-		showHideFirstLanguagePhoneticScriptButton.setOnAction((actionEvent) -> {
-			toggleFirstLanguagePhoneticScriptVisibility();
-		});
+		showHideFirstLanguagePhoneticScriptButton.setOnAction(
+			(actionEvent) -> toggleFirstLanguagePhoneticScriptVisibility()
+		);
 		
-		showHideSecondLanguageButton.setOnAction((actionEvent) -> {
-			toggleSecondLanguageVisibility();
-		});
+		showHideSecondLanguageButton.setOnAction(
+			(actionEvent) -> toggleSecondLanguageVisibility()
+		);
 		
-		showHideSecondLanguagePhoneticScriptButton.setOnAction((actionEvent) -> {
-			toggleSecondLanguagePhoneticScriptVisibility();
-		});
+		showHideSecondLanguagePhoneticScriptButton.setOnAction(
+			(actionEvent) -> toggleSecondLanguagePhoneticScriptVisibility()
+		);
 		
-		showHideDescriptionButton.setOnAction((actionEvent) -> {
-			toggleDescriptionVisibility();
-		});
+		showHideDescriptionButton.setOnAction(
+			(actionEvent) -> toggleDescriptionVisibility()
+		);
 		
-		previousVocableButton.setOnAction((actionEvent) -> {
-			previousVocable();
-		});
+		previousVocableButton.setOnAction(
+			(actionEvent) -> previousVocable()
+		);
 		
-		nextVocableButton.setOnAction((actionEvent) -> {
-			nextVocable();
-		});
+		nextVocableButton.setOnAction(
+			(actionEvent) -> nextVocable()
+		);
 		
-		stopVocableTrainingButton.setOnAction((actionEvent) -> {
-			stopTraining();
-		});
+		stopVocableTrainingButton.setOnAction(
+			(actionEvent) -> stopTraining()
+		);
 		
-		restartVocableTrainingButton.setOnAction((actionEvent) -> {
-			currentVocableNumber.set(0);
-			learnedVocablesHashMap.forEach((vocable, learned) -> learnedVocablesHashMap.put(vocable, false));
-			learnedVocablesProgress.set(0.0);
-		});
+		restartVocableTrainingButton.setOnAction(
+			(actionEvent) -> {
+				currentVocableNumber.set(0);
+				learnedVocablesHashMap.forEach((vocable, learned) -> learnedVocablesHashMap.put(vocable, false));
+				learnedVocablesProgress.set(0.0);
+			}
+		);
+		
+		changeVocableButton.setOnAction(
+			(actionEvent) -> updateVocable()
+		);
 	}
 	
 	private void addPropertyChangeListeners() {
 		System.out.println("Adding change listener");
 		currentVocableNumber.addListener(
 			(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
-				//if(!oldValue.equals(newValue)) {
-					setVocable(newValue.intValue());
-				//}
+				setVocable(newValue.intValue());
 			}
 		);
 	}

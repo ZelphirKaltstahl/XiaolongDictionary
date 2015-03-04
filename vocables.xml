@@ -760,12 +760,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>Student, der im Ausland studiert/Auslandsstudent</firstLanguageTranslations>
+		<firstLanguageTranslations>Student, der im Ausland studiert / Auslandsstudent</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>留学生</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>liúxuésheng</secondLanguagePhoneticScripts>
+		<secondLanguagePhoneticScripts>liúxuéshēng</secondLanguagePhoneticScripts>
 		<topics>Berufe</topics>
-		<chapters>PC09/NPC14</chapters>
+		<chapters>PC09 / NPC14</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -943,7 +943,7 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>1</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1240,7 +1240,7 @@
 		<topics>---</topics>
 		<chapters>PC11Z/LSC01/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>1</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1504,7 +1504,7 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC13Z/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1526,7 +1526,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC13Z/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
