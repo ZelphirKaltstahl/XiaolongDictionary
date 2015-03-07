@@ -1,8 +1,19 @@
-build/*
+# notes / mockup graphics / ...
+VocableDetailBox.graphml
 Train vocables dialog mockup.png
-dist/*
+VocableDetailBox.png
+
+# old files
 encodingTestFile.xml
 hs_err_pid*.log
 oldvocabulary
 xld_settings.xml
+trash/
+
+# binaries
+build/*
+dist/*
+
+# netbeans stuff
 nbproject/private
+org/
