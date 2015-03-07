@@ -126,10 +126,8 @@ public class XLDVocableTable<T> extends TableView {
 			}
 		});
 		
-		System.out.println("ADDING LISTENER FOR VOCABLE DETAILS BOX");
 		getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 			if (getSelectionModel().getSelectedItem() != null) {
-				System.out.println("NOTIFYING THE VOC DET BOX");
 				xldVocableDetailsBox.setVocable((Vocable) newValue);
 			}
 		});

@@ -6,7 +6,7 @@
 		<secondLanguageTranslations>你</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǐ</secondLanguagePhoneticScripts>
 		<topics>Personalpronomen</topics>
-		<chapters>PC01/LSC01/NPC01</chapters>
+		<chapters>PC01 / LSC01 / NPC01</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -754,7 +754,7 @@
 		<secondLanguageTranslations>问</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wèn</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC09/NPC04/NPC05/NPC07</chapters>
+		<chapters>PC09 / NPC04 / NPC05 / NPC07</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -881,7 +881,7 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>Korea</firstLanguageTranslations>
+		<firstLanguageTranslations>Nordkorea</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>朝鲜</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>cháoxiǎn</secondLanguagePhoneticScripts>
