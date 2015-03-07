@@ -17,3 +17,10 @@ dist/*
 # netbeans stuff
 nbproject/private
 org/
+
+# not used code
+src/dictionary/model/ListVocableConverter.java
+src/dictionary/model/VocableConverter.java
+src/dictionary/model/VocableList.java
+src/dictionary/parser/TestStaxVocableReader.java
+src/dictionary/parser/TestStaxVocableWriter.java
