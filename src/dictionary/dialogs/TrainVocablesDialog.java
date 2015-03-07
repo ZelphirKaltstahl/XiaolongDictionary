@@ -268,8 +268,8 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 	}
 	
 	private void updateVocable() {
-		String learnLevel = null;
-		String relevanceLevel = null;
+		String learnLevel = "";
+		String relevanceLevel = "";
 		
 		if (customNewLearnLevelRadioButton.isSelected()) {
 			learnLevel = newLearnLevelTextField.getText();
@@ -283,6 +283,22 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			relevanceLevel = newRelevanceLevelComboBox.getSelectionModel().getSelectedItem();
 		}
 		
+		// set the no information string for empty values
+		if(learnLevel.isEmpty()) {
+			try {
+				learnLevel = Settings.getInstance().getSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME);
+			} catch (SettingNotFoundException ex) {
+				Logger.getLogger(TrainVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+		
+		if(relevanceLevel.isEmpty()) {
+			try {
+				relevanceLevel = Settings.getInstance().getSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME);
+			} catch (SettingNotFoundException ex) {
+				Logger.getLogger(TrainVocablesDialog.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
 		
 		//Vocable changedVocable = new Vocable();
 		Vocable currentVocable = trainingVocables.get(currentVocableNumber.get());

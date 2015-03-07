@@ -12,6 +12,8 @@ import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -314,7 +316,11 @@ public class MainApp extends Application {
 	private void trainVocablesButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
 			ObservableList<Vocable> listOfSelectedVocables = (ObservableList <Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
-			TrainVocablesDialog trainVocablesDialog = DialogInstanceManager.getTrainVocablesDialogInstanceForVocables(listOfSelectedVocables);
+			List<Vocable> trainingVocables = new ArrayList<>();
+			
+			listOfSelectedVocables.stream().forEach((vocable) -> trainingVocables.add(vocable));
+			
+			TrainVocablesDialog trainVocablesDialog = DialogInstanceManager.getTrainVocablesDialogInstanceForVocables(trainingVocables);
 			trainVocablesDialog.show();
 			trainVocablesDialog.requestFocus();
 		} else {

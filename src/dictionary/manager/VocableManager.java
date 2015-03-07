@@ -89,16 +89,12 @@ public class VocableManager implements VocableListLoadedListener {
 
 	public void searchVocables(VocableSearchData vocableSearchData) {
 		VocableSearchTask vocableSearchTask;
-		ObservableList<Vocable> listOfVocables;
 
 		if (vocableSearchData.isANDSearch()) {
-			listOfVocables = searchResultVocableList;
+			vocableSearchTask = new VocableSearchTask(vocableSearchData, searchResultVocableList);
 		} else { //OR and normal search
-			listOfVocables = vocableList;
+			vocableSearchTask = new VocableSearchTask(vocableSearchData, vocableList);
 		}
-
-		vocableSearchTask = new VocableSearchTask(vocableSearchData, listOfVocables);
-		
 		
 		vocableSearchTask.setOnSucceeded((Event workerStateEvent) -> {
 			

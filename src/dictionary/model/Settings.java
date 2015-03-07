@@ -64,6 +64,8 @@ public class Settings {
 	public final String SEPARATOR_CHARACTER_SETTING_NAME = "separator_character";
 	public final String SEPARATOR_REGEX_SETTING_NAME = "separator_regular_expression";
 	
+	public final String NO_INFORMATION_STRING_SETTING_NAME = "no_information_string";
+	
 	// big character box settings
 	public final String IGNORED_CHARACTERS_SETTING_NAME = "ignored_characters";
 	public final String BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME = "big_character_box_font_size";
@@ -140,6 +142,8 @@ public class Settings {
 		SEPARATOR_CHARACTER_SETTING_NAME,
 		SEPARATOR_REGEX_SETTING_NAME,
 		
+		NO_INFORMATION_STRING_SETTING_NAME,
+		
 		IGNORED_CHARACTERS_SETTING_NAME,
 		
 		SPECIAL_CHARACTERS_SETTING_NAME,
@@ -200,7 +204,7 @@ public class Settings {
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME, "/");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SEPARATOR_REGEX_SETTING_NAME, "\\s*"+Settings.getInstance().getSettingsProperty(Settings.getInstance().SEPARATOR_CHARACTER_SETTING_NAME)+"\\s*");
 			
-			
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME, "---");
 			
 			// special characters
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SPECIAL_CHARACTERS_SETTING_NAME, "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ");
@@ -262,7 +266,9 @@ public class Settings {
 			properties.load(inputStreamReader);
 			
 			for(String settingName : ALL_SETTINGS_NAMES) {
-				settings.put(settingName, properties.getProperty(settingName));
+				if(properties.getProperty(settingName) != null) {
+					settings.put(settingName, properties.getProperty(settingName));
+				}
 			}
 			
 			settings.forEach(

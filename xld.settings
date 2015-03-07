@@ -1,4 +1,4 @@
-#Wed Mar 04 11:40:40 CET 2015
+#Sat Mar 07 12:51:22 CET 2015
 application_name=Xiaolong Dictionary
 application_path=/home/xiaolong/NetBeansProjects/XiaolongDictionary
 application_version=2.0
@@ -10,6 +10,7 @@ first_language_phonetic_script_name=IPA
 ignored_characters=abcdefghijklmnopqrstuvwxyzäöüß ,/ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ
 main_window_height=400
 main_window_width=500
+no_information_string=---
 preserve_chapter_selected=false
 preserve_description_selected=false
 preserve_first_language_phonetic_script_selected=false
@@ -37,4 +38,4 @@ vocable_training_show_first_language=true
 vocable_training_show_first_language_phonetic_script=true
 vocable_training_show_second_language=false
 vocable_training_show_second_language_phonetic_script=false
-vocables_filename=/home/xiaolong/NetBeansProjects/XiaolongDictionary/vocables.xml
+vocables_filename=vocables.xml

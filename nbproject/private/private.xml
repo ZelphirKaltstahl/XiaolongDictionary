@@ -12,8 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/MainApp.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/ChangeVocableDialog.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/TrainVocablesDialog.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/SearchVocablesDialog.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/VocableManager.java</file>
         </group>
     </open-files>
 </project-private>
