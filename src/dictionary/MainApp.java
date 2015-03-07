@@ -3,6 +3,7 @@ package dictionary;
 import dictionary.manager.CustomControlsInstanceManager;
 import dictionary.customcontrols.XLDBigCharacterBox;
 import dictionary.customcontrols.XLDMenuBar;
+import dictionary.customcontrols.XLDVocableDetailsBox;
 import dictionary.customcontrols.XLDVocableTable;
 import dictionary.dialogs.TrainVocablesDialog;
 import dictionary.manager.DialogInstanceManager;
@@ -11,13 +12,11 @@ import dictionary.helpers.ControlFXDialogDisplayer;
 import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -25,9 +24,17 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
@@ -72,7 +79,13 @@ public class MainApp extends Application {
 	
 	//Big character box
 	private static final String INITIAL_BIG_CHARACTER_BOX_STRING = "中";
-
+	
+	// Vocable details box
+	private XLDVocableDetailsBox xldVocableDetailsBox;
+	private ScrollPane vocableDetailsScrollPane;
+	private GridPane centerGridPane;
+	
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
@@ -131,9 +144,31 @@ public class MainApp extends Application {
 		searchVocablesButton = new Button("Search vocables");
 		searchVocablesButton.setMaxWidth(Double.MAX_VALUE);
 
+		centerGridPane = new GridPane();
+		centerGridPane.setMaxWidth(Double.MAX_VALUE);
+		centerGridPane.setMaxHeight(Double.MAX_VALUE);
+		centerGridPane.getColumnConstraints().add(new ColumnConstraints());
+		centerGridPane.getColumnConstraints().get(0).setPercentWidth(100);
+		centerGridPane.getRowConstraints().add(new RowConstraints());
+		centerGridPane.getRowConstraints().get(0).setPercentHeight(80);
+		centerGridPane.getRowConstraints().add(new RowConstraints());
+		centerGridPane.getRowConstraints().get(1).setPercentHeight(20);
+		
+		//centerVBox.setAlignment(Pos.TOP_CENTER);
+		//centerVBox.setPrefWidth(Double.MAX_VALUE);
+		
 		//vocable table
 		xldVocableTable = new XLDVocableTable<>();
 		xldVocableTable.initializeVocableTable();
+		
+		xldVocableDetailsBox = ManagerInstanceManager.getCustomControlsInstanceManager().getXLDVocableDetailsBox();
+		
+		vocableDetailsScrollPane = new ScrollPane();
+		vocableDetailsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+		vocableDetailsScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+		vocableDetailsScrollPane.setMaxWidth(Double.MAX_VALUE);
+		vocableDetailsScrollPane.setMaxHeight(Double.MAX_VALUE);
+		vocableDetailsScrollPane.setFitToWidth(true);
 		
 		// Big Character
 		xldBigCharacterBoxHBox = new VBox();
@@ -148,6 +183,7 @@ public class MainApp extends Application {
 			Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		xldVocableTable.bindXLDBigCharacterBox(xldBigCharacterBox);
+		xldVocableTable.bindXLDVocableDetailsBox(xldVocableDetailsBox);
 
 		// Status Labels
 		statusLabelHBox = new HBox();
@@ -190,7 +226,7 @@ public class MainApp extends Application {
 	private void addControls() {
 		addGUIControlsToTop();
 		addVocableActionButtons();
-		addVocableTable();
+		addControlsCenter();
 		addBigCharacterBox();
 		addStatusLabel();
 
@@ -221,7 +257,16 @@ public class MainApp extends Application {
 		vocableActionsVBox.getChildren().add(searchVocablesButton);
 		root.setLeft(vocableActionsVBox);
 	}
-
+	
+	private void addControlsCenter() {
+		root.setCenter(centerGridPane);
+		centerGridPane.add(xldVocableTable, 0, 0);
+		vocableDetailsScrollPane.setContent(xldVocableDetailsBox);
+		HBox stretchBox = new HBox();
+		centerGridPane.add(vocableDetailsScrollPane, 0, 1);
+		//addVocableTable();
+	}
+	
 	private void addVocableTable() {
 		root.setCenter(xldVocableTable);
 	}

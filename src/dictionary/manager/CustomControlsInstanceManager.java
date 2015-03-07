@@ -6,12 +6,15 @@
 package dictionary.manager;
 
 import dictionary.customcontrols.XLDBigCharacterBox;
+import dictionary.customcontrols.XLDVocableDetailsBox;
 
 /**
  *
  * @author xiaolong
  */
 public class CustomControlsInstanceManager {
+	
+	private XLDVocableDetailsBox xldVocableDetailsBoxInstance;
 	
 	/**
 	 * Creates a new instance of {@link XLDBigCharacterBox}, initializes it and then returns this instance.
@@ -29,4 +32,12 @@ public class CustomControlsInstanceManager {
 		xldBigCharacterBox.init();
 		return xldBigCharacterBox;
 	}
+	
+	public XLDVocableDetailsBox getXLDVocableDetailsBox() {
+		if(xldVocableDetailsBoxInstance == null) {
+			xldVocableDetailsBoxInstance = new XLDVocableDetailsBox();
+			xldVocableDetailsBoxInstance.init();
+		}
+		return xldVocableDetailsBoxInstance;
+ 	}
 }

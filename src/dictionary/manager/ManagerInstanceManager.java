@@ -15,6 +15,7 @@ public class ManagerInstanceManager {
 	private static SearchHistoryManager searchHistoryManager;
 	private static VocableFileManager vocableFileManager;
 	private static VocableManager vocableManager;
+	private static CustomControlsInstanceManager customControlsManager;
 	
 	public static SearchHistoryManager getSearchHistoryManagerInstance() {
 		if(ManagerInstanceManager.searchHistoryManager == null) {
@@ -36,5 +37,12 @@ public class ManagerInstanceManager {
 			ManagerInstanceManager.vocableManager.initialize();
 		}
 		return ManagerInstanceManager.vocableManager;
+	}
+	
+	public static CustomControlsInstanceManager getCustomControlsInstanceManager() {
+		if (ManagerInstanceManager.customControlsManager == null) {
+			ManagerInstanceManager.customControlsManager = new CustomControlsInstanceManager();
+		}
+		return customControlsManager;
 	}
 }
