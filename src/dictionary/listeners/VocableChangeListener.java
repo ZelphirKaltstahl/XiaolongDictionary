@@ -6,10 +6,14 @@
 
 package dictionary.listeners;
 
+import dictionary.model.Vocable;
+
 /**
  *
  * @author XiaoLong
  */
-public class VocableChangedListener {
+public interface VocableChangeListener {
+	
+	public void updateOnVocableChange(Vocable oldVocable, Vocable changedVocable);
 	
 }

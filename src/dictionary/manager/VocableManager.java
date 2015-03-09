@@ -10,11 +10,13 @@ import dictionary.helpers.ControlFXDialogDisplayer;
 import dictionary.tasks.VocableSearchTask;
 import dictionary.exceptions.VocableAlreadyExistsException;
 import dictionary.helpers.ListOperationsHelper;
+import dictionary.listeners.VocableChangeListener;
 import dictionary.listeners.VocableListLoadedListener;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import dictionary.model.VocableSearchData;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +34,8 @@ public class VocableManager implements VocableListLoadedListener {
 	private ObservableList<Vocable> vocableList;
 	private ObservableList<Vocable> searchResultVocableList;
 	
+	private final List<VocableChangeListener> vocableChangeListeners = new ArrayList<>();
+	
 	//private boolean vocableIsInVocableList = false;
 
 	public VocableManager() {
@@ -47,6 +51,14 @@ public class VocableManager implements VocableListLoadedListener {
 	
 	private void registerAsListener() {
 		ManagerInstanceManager.getVocableFileManagerInstance().registerVocableListLoadedListener(this);
+	}
+	
+	public void registerVocableChangeListener(VocableChangeListener vocableChangeListener) {
+		vocableChangeListeners.add(vocableChangeListener);
+	}
+	
+	private void notifyVocableChangeListeners(Vocable oldVocable, Vocable changedVocable) {
+		vocableChangeListeners.forEach((vocableChangeListener) -> vocableChangeListener.updateOnVocableChange(oldVocable, changedVocable));
 	}
 
 	public void addVocableListChangeListener(ListChangeListener<Vocable> listChangeListener) {
@@ -85,6 +97,8 @@ public class VocableManager implements VocableListLoadedListener {
 		if(indexOfOldVocable != -1) {
 			searchResultVocableList.set(indexOfOldVocable, changedVocable);
 		}
+		
+		notifyVocableChangeListeners(oldVocable, changedVocable);
 	}
 
 	public void searchVocables(VocableSearchData vocableSearchData) {

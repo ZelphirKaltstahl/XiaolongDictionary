@@ -19,7 +19,7 @@
 		<topics>---</topics>
 		<chapters>PC01/LSC01/NPC01</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -30,7 +30,7 @@
 		<topics>Grammatik/Fragepartikel</topics>
 		<chapters>PC02/LSC01/NPC01</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -41,7 +41,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC02/LSC01/NPC01</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -52,7 +52,7 @@
 		<topics>Adjektive</topics>
 		<chapters>PC02/LSC01/NPC01</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -63,7 +63,7 @@
 		<topics>Grammatik/Modalpartikel</topics>
 		<chapters>PC02/NPC01</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -74,7 +74,7 @@
 		<topics>---</topics>
 		<chapters>PC03/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -85,7 +85,7 @@
 		<topics>---</topics>
 		<chapters>PC03/LSC01/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -96,7 +96,7 @@
 		<topics>Familie</topics>
 		<chapters>PC03/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -107,7 +107,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC03/LSC01/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -118,7 +118,7 @@
 		<topics>Familie</topics>
 		<chapters>PC03/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -129,7 +129,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC03/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -140,18 +140,18 @@
 		<topics>Personen</topics>
 		<chapters>PC03/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Arzt</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>大夫/医生</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>dàifu/yīsheng</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>大夫 / 医生</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>dàifu / yīsheng</secondLanguagePhoneticScripts>
 		<topics>Berufe</topics>
-		<chapters>PC05/NPC03</chapters>
+		<chapters>PC05 / NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -162,7 +162,7 @@
 		<topics>Grammatik/Strukturpartikel</topics>
 		<chapters>PC05/LSC01/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -173,7 +173,7 @@
 		<topics>Verkehr</topics>
 		<chapters>PC05/NPC08Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -184,7 +184,7 @@
 		<topics>grammatik/personalpronomen</topics>
 		<chapters>PC05/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -195,7 +195,7 @@
 		<topics>---</topics>
 		<chapters>PC05/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -206,7 +206,7 @@
 		<topics>Literatur</topics>
 		<chapters>PC05/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -239,7 +239,7 @@
 		<topics>Grammatik/Fragepartikel</topics>
 		<chapters>PC06/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -250,7 +250,7 @@
 		<topics>Laender</topics>
 		<chapters>PC06/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -261,7 +261,7 @@
 		<topics>---</topics>
 		<chapters>PC06/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -272,7 +272,7 @@
 		<topics>Grammatik/Fragepartikel</topics>
 		<chapters>PC06/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -283,7 +283,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC06/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -294,7 +294,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC06/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -305,7 +305,7 @@
 		<topics>Sprachen</topics>
 		<chapters>PC06/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -316,7 +316,7 @@
 		<topics>Laender</topics>
 		<chapters>PC06/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -349,7 +349,7 @@
 		<topics>Laender</topics>
 		<chapters>PC06Z/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -382,7 +382,7 @@
 		<topics>---</topics>
 		<chapters>PC04/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -393,7 +393,7 @@
 		<topics>---</topics>
 		<chapters>PC04/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -404,7 +404,7 @@
 		<topics>Personen</topics>
 		<chapters>PC04/LSC01/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -415,7 +415,7 @@
 		<topics>Familie</topics>
 		<chapters>PC04/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -426,7 +426,7 @@
 		<topics>Familie</topics>
 		<chapters>PC04/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -437,7 +437,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC04/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -448,7 +448,7 @@
 		<topics>Grammatik/Fragepartikel</topics>
 		<chapters>PC07/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -470,7 +470,7 @@
 		<topics>Wahrnehmung</topics>
 		<chapters>PC07/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -481,7 +481,7 @@
 		<topics>Staedte</topics>
 		<chapters>PC07/LSC01/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -547,8 +547,8 @@
 		<topics>Geografie</topics>
 		<chapters>PC07Z/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Afrika</firstLanguageTranslations>
@@ -591,7 +591,7 @@
 		<topics>---</topics>
 		<chapters>PC08/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -602,7 +602,7 @@
 		<topics>Essen/Trinken</topics>
 		<chapters>PC08/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -613,7 +613,7 @@
 		<topics>Getraenke</topics>
 		<chapters>PC08/NPC09Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -624,7 +624,7 @@
 		<topics>Grammatik/Personalpronomen</topics>
 		<chapters>PC08/LSC01/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -635,7 +635,7 @@
 		<topics>---</topics>
 		<chapters>PC08/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -657,8 +657,8 @@
 		<topics>---</topics>
 		<chapters>PC08/LSC01/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>hoeflich</firstLanguageTranslations>
@@ -679,8 +679,8 @@
 		<topics>---</topics>
 		<chapters>PC08/NPC11Z</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>2</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Bier</firstLanguageTranslations>
@@ -690,8 +690,8 @@
 		<topics>Getraenke</topics>
 		<chapters>PC08Z/PC19/NPC09Z</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Milch</firstLanguageTranslations>
@@ -701,8 +701,8 @@
 		<topics>Getraenke</topics>
 		<chapters>PC08Z/PC25Z/NPC09Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Herr</firstLanguageTranslations>
@@ -712,8 +712,8 @@
 		<topics>Anrede</topics>
 		<chapters>PC08Z/PC12/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Frau</firstLanguageTranslations>
@@ -734,8 +734,8 @@
 		<topics>Name</topics>
 		<chapters>PC09/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Darf ich fragen ... ?/Gestatten Sie mir die Frage, ... ?</firstLanguageTranslations>
@@ -745,8 +745,8 @@
 		<topics>Floskeln</topics>
 		<chapters>PC09/LSC01/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>fragen</firstLanguageTranslations>
@@ -756,8 +756,8 @@
 		<topics>Verben</topics>
 		<chapters>PC09 / NPC04 / NPC05 / NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Student, der im Ausland studiert / Auslandsstudent</firstLanguageTranslations>
@@ -767,8 +767,8 @@
 		<topics>Berufe</topics>
 		<chapters>PC09 / NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>heißen/Nachname</firstLanguageTranslations>
@@ -778,8 +778,8 @@
 		<topics>Name</topics>
 		<chapters>PC09/LSC01/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>heißen / jn. oder etw. rufen</firstLanguageTranslations>
@@ -789,8 +789,8 @@
 		<topics>Verben/Name</topics>
 		<chapters>PC09/LSC01/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Fremdsprache</firstLanguageTranslations>
@@ -800,8 +800,8 @@
 		<topics>Sprachen</topics>
 		<chapters>PC09/NPC03</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Institut/die Hochschule</firstLanguageTranslations>
@@ -811,7 +811,7 @@
 		<topics>Schule/Studium</topics>
 		<chapters>PC09/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -822,7 +822,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC09/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -833,7 +833,7 @@
 		<topics>Verben</topics>
 		<chapters>PC09/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -844,7 +844,7 @@
 		<topics>Verben</topics>
 		<chapters>PC09/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -855,7 +855,7 @@
 		<topics>Anrede</topics>
 		<chapters>PC09Z/PC19/NPC05</chapters>
 		<description>Achtung! Diese Anrede hat einen Bedeutungswandel durchlaufen und kann eventuell sehr missverstanden werden!</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -899,7 +899,7 @@
 		<topics>Laender</topics>
 		<chapters>PC09Z/PC13Z/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -910,7 +910,7 @@
 		<topics>---</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -921,7 +921,7 @@
 		<topics>Verben</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -929,10 +929,10 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>哪儿</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǎr</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC10/NPC05</chapters>
+		<topics>Grammatik / Fragepartikel</topics>
+		<chapters>PC10 / NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -943,8 +943,8 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>wohnen</firstLanguageTranslations>
@@ -954,7 +954,7 @@
 		<topics>Verben</topics>
 		<chapters>PC10/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -965,7 +965,7 @@
 		<topics>Grammatik/Fragepartikel</topics>
 		<chapters>PC10/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -976,7 +976,7 @@
 		<topics>Zeit</topics>
 		<chapters>PC10/PC20/LSC01/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -987,7 +987,7 @@
 		<topics>Zahlen</topics>
 		<chapters>PC10/LSC01/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -998,7 +998,7 @@
 		<topics>ZEW</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1020,7 +1020,7 @@
 		<topics>Zahlen</topics>
 		<chapters>PC10/LSC01/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1053,7 +1053,7 @@
 		<topics>Zahlen</topics>
 		<chapters>PC10/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1064,7 +1064,7 @@
 		<topics>Gebaeude/Gesundheit</topics>
 		<chapters>PC10Z/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1075,8 +1075,8 @@
 		<topics>---</topics>
 		<chapters>PC10Z/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>hier</firstLanguageTranslations>
@@ -1086,7 +1086,7 @@
 		<topics>---</topics>
 		<chapters>PC10Z/PC16/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1097,7 +1097,7 @@
 		<topics>Verben</topics>
 		<chapters>PC11/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1108,8 +1108,8 @@
 		<topics>Literatur</topics>
 		<chapters>PC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Woerterbuch/das Lexikon</firstLanguageTranslations>
@@ -1119,8 +1119,8 @@
 		<topics>Literatur</topics>
 		<chapters>PC11/NPC08Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>jetzt/heutzutage</firstLanguageTranslations>
@@ -1130,7 +1130,7 @@
 		<topics>Grammatik/Zeitwoerter</topics>
 		<chapters>PC11/LSC01/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1141,7 +1141,7 @@
 		<topics>Verben</topics>
 		<chapters>PC11/NPC15</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1152,18 +1152,18 @@
 		<topics>Zeitangaben</topics>
 		<chapters>PC11/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>Auf Wiedersehen</firstLanguageTranslations>
+		<firstLanguageTranslations>auf Wiedersehen / aufwiedersehen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>再见</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zàijiàn</secondLanguagePhoneticScripts>
-		<topics>Verabschiedung/Gruß</topics>
-		<chapters>PC11/NPC05</chapters>
+		<topics>Verabschiedung / Gruß</topics>
+		<chapters>PC11 / NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1240,7 +1240,7 @@
 		<topics>---</topics>
 		<chapters>PC11Z/LSC01/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1262,7 +1262,7 @@
 		<topics>Geschlecht</topics>
 		<chapters>PC12/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1273,7 +1273,7 @@
 		<topics>Verben</topics>
 		<chapters>PC12/LCS01/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1284,7 +1284,7 @@
 		<topics>Sprachen</topics>
 		<chapters>PC12/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1306,7 +1306,7 @@
 		<topics>---</topics>
 		<chapters>PC12/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1317,7 +1317,7 @@
 		<topics>Verben</topics>
 		<chapters>PC12/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1339,7 +1339,7 @@
 		<topics>Name</topics>
 		<chapters>PC13/LSC01/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1350,7 +1350,7 @@
 		<topics>Gruß/Begrueßung</topics>
 		<chapters>PC13/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1361,7 +1361,7 @@
 		<topics>---</topics>
 		<chapters>PC13/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1383,7 +1383,7 @@
 		<topics>Verben</topics>
 		<chapters>PC13/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1394,7 +1394,7 @@
 		<topics>---</topics>
 		<chapters>PC13/NPC10Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1416,7 +1416,7 @@
 		<topics>Verben</topics>
 		<chapters>PC13/NPC04</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1427,7 +1427,7 @@
 		<topics>Verben</topics>
 		<chapters>PC13/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1438,7 +1438,7 @@
 		<topics>Geschlecht</topics>
 		<chapters>PC13/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1449,7 +1449,7 @@
 		<topics>---</topics>
 		<chapters>PC13/LSC01/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1460,7 +1460,7 @@
 		<topics>Grammatik/Zeitwoerter/Modalpartikel</topics>
 		<chapters>PC13/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1471,7 +1471,7 @@
 		<topics>---</topics>
 		<chapters>PC13/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1482,7 +1482,7 @@
 		<topics>Verben</topics>
 		<chapters>PC13/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1493,7 +1493,7 @@
 		<topics>Papierzeug</topics>
 		<chapters>PC13Z/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1526,7 +1526,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC13Z/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1548,7 +1548,7 @@
 		<topics>Verben</topics>
 		<chapters>PC14/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1559,7 +1559,7 @@
 		<topics>Verben</topics>
 		<chapters>PC14/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1570,8 +1570,8 @@
 		<topics>---</topics>
 		<chapters>PC14/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>haben/es gibt</firstLanguageTranslations>
@@ -1581,7 +1581,7 @@
 		<topics>---</topics>
 		<chapters>PC14/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1592,8 +1592,8 @@
 		<topics>---</topics>
 		<chapters>PC14/NPC08</chapters>
 		<description>Dieses "nicht" wird fuer die Vergangenheitsform verwendet.</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die juengere Schwester</firstLanguageTranslations>
@@ -11797,6 +11797,28 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>一切很顺利</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yīqièhěnshùnlì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Interview / das Bewerbungsgespraech</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>面试</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>miànshì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Bewerbungsgespraech</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>面试工作</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>miànshìgōngzuò</secondLanguagePhoneticScripts>
 		<topics>---</topics>
 		<chapters>---</chapters>
 		<description>---</description>
