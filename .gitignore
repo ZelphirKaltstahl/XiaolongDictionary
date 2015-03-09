@@ -12,7 +12,8 @@ trash/
 
 # binaries
 build/*
-dist/*
+dist/run*
+
 
 # netbeans stuff
 nbproject/private

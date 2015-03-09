@@ -1,46 +1,22 @@
 package dictionary.model;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import dictionary.exceptions.SettingNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-@XStreamAlias("vocable")
 public class Vocable {
 	
-	//@XStreamAlias("firstLanguageTranslations")
-	@XStreamImplicit(itemFieldName="firstLanguageTranslations")
 	private List<String> firstLanguageTranslations;
-	
-	//@XStreamAlias("firstLanguagePhoneticScripts")
-	@XStreamImplicit(itemFieldName="firstLanguagePhoneticScripts")
 	private List<String> firstLanguagePhoneticScripts;
-	
-	//@XStreamAlias("secondLanguageTranslations")
-	@XStreamImplicit(itemFieldName="secondLanguageTranslations")
 	private List<String> secondLanguageTranslations;
-	
-	//@XStreamAlias("secondLanguagePhoneticScripts")
-	@XStreamImplicit(itemFieldName="secondLanguagePhoneticScripts")
 	private List<String> secondLanguagePhoneticScripts;
 	
-	//@XStreamAlias("topics")
-	@XStreamImplicit(itemFieldName="topics")
 	private List<String> topics;
-	
-	
-	//@XStreamAlias("chapters")
-	@XStreamImplicit(itemFieldName="chapters")
 	private List<String> chapters;
 	
-	@XStreamAlias("learnLevel")
 	private String learnLevel;
-	@XStreamAlias("relevanceLevel")
 	private String relevanceLevel;
-	@XStreamAlias("description")
+	
 	private String description;
 
 	public Vocable() {

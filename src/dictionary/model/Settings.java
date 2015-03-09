@@ -6,15 +6,11 @@
 
 package dictionary.model;
 
-import com.thoughtworks.xstream.XStream;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.listeners.SettingsPropertyChangeListener;
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -372,7 +368,7 @@ public class Settings {
 		}
 	}
 	
-	
+	/*
 	private boolean writeSettingsToXMLFile(Object object, File file) {
 		XStream xStream = new XStream();
 		OutputStream outputStream = null;
@@ -408,7 +404,8 @@ public class Settings {
 
 		return true;
 	}
-	
+	*/
+	/*
 	private void readSettingsFromFile(File file) {
 		XStream xStream = new XStream();
 		try {
@@ -420,4 +417,5 @@ public class Settings {
 		}
 		instance = (Settings) xStream.fromXML(file);
 	}
+	*/
 }
