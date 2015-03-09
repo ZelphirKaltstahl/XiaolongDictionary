@@ -18,6 +18,7 @@ import javafx.geometry.VPos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -125,6 +126,7 @@ public class XLDVocableDetailsBox extends GridPane implements VocableChangeListe
 			
 			descriptionLabel = new Label("Description:");
 			
+			// ALIGNMENT OF LABELS
 			GridPane.setValignment(firstLanguageTranslationsLabel, VPos.TOP);
 			GridPane.setValignment(firstLanguagePhoneticScriptsLabel, VPos.TOP);
 			GridPane.setValignment(secondLanguageTranslationsLabel, VPos.TOP);
@@ -134,24 +136,6 @@ public class XLDVocableDetailsBox extends GridPane implements VocableChangeListe
 			GridPane.setValignment(learnLevelLabel, VPos.TOP);
 			GridPane.setValignment(relevanceLevelLabel, VPos.TOP);
 			GridPane.setValignment(descriptionLabel, VPos.TOP);
-			
-			/*
-			firstLanguageTranslationsLabel.setAlignment(Pos.TOP_LEFT);
-			firstLanguagePhoneticScriptsLabel.setAlignment(Pos.TOP_LEFT);
-			secondLanguageTranslationsLabel.setAlignment(Pos.TOP_LEFT);
-			secondLanguagePhoneticScriptsLabel.setAlignment(Pos.TOP_LEFT);
-			*/
-			/*
-			firstLanguageTranslationsLabel.setMaxWidth(Double.MAX_VALUE);
-			firstLanguagePhoneticScriptsLabel.setMaxWidth(Double.MAX_VALUE);
-			secondLanguageTranslationsLabel.setMaxWidth(Double.MAX_VALUE);
-			secondLanguagePhoneticScriptsLabel.setMaxWidth(Double.MAX_VALUE);
-			topicsLabel.setMaxWidth(Double.MAX_VALUE);
-			chaptersLabel.setMaxWidth(Double.MAX_VALUE);
-			learnLevelLabel.setMaxWidth(Double.MAX_VALUE);
-			relevanceLevelLabel.setMaxWidth(Double.MAX_VALUE);
-			descriptionLabel.setMaxWidth(Double.MAX_VALUE);
-			*/
 			
 			// TEXTS
 			firstLanguageTranslationsText = new Text(Settings.getInstance().getSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME));
@@ -166,6 +150,8 @@ public class XLDVocableDetailsBox extends GridPane implements VocableChangeListe
 			relevanceLevelText = new Text(Settings.getInstance().getSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME));
 			
 			descriptionText = new Text(Settings.getInstance().getSettingsProperty(Settings.getInstance().NO_INFORMATION_STRING_SETTING_NAME));
+			
+			
 			
 			// TEXTFLOWS
 			firstLanguageTranslationsTextFlow = new TextFlow();
