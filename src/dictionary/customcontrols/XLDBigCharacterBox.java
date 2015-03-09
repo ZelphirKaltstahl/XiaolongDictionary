@@ -7,12 +7,14 @@ package dictionary.customcontrols;
 
 import dictionary.customdatastructures.DoubleLinkedList;
 import dictionary.listeners.SettingsPropertyChangeListener;
+import dictionary.listeners.VocableChangeListener;
+import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Action;
 import dictionary.model.Settings;
+import dictionary.model.Vocable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.function.Predicate;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -34,8 +36,9 @@ import javafx.scene.text.TextFlow;
  *
  * @author xiaolong
  */
-public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeListener {
-
+public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeListener, VocableChangeListener {
+	private Vocable bigCharacterBoxVocable;
+	
 	private final DoubleLinkedList<Character> characters;
 	private Text charactersText;
 	//private int currentCharacterPosition;
@@ -162,7 +165,7 @@ public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeLi
 	 *
 	 * @param newCharacters characters, which the {@link XLDBigCharacterBox} will be displaying
 	 */
-	public void setCharacters(String newCharacters) {
+	private void setCharacters(String newCharacters) {
 		List<Character> listOfCharacters = new ArrayList<>();
 		for (Character character : newCharacters.toCharArray()) {
 			if(!ignoredCharacters.contains(character.toString())) {
@@ -173,6 +176,11 @@ public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeLi
 			characters.setValues(listOfCharacters);
 			showCharacter(characters.getCurrentValue());
 		}
+	}
+	
+	public void setVocable(Vocable vocable) {
+		bigCharacterBoxVocable = vocable;
+		setCharacters(vocable.getSecondLanguageTranslationsAsString());
 	}
 
 	/**
@@ -221,6 +229,8 @@ public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeLi
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CHARACTER_BOX_LOOP_SETTING_NAME, this);
+		
+		ManagerInstanceManager.getVocableManagerInstance().registerVocableChangeListener(this);
 	}
 	
 	@Override
@@ -250,5 +260,12 @@ public class XLDBigCharacterBox extends VBox implements SettingsPropertyChangeLi
 				System.out.println("Not yet implemented!");
 			}
 		);
+	}
+
+	@Override
+	public void updateOnVocableChange(Vocable oldVocable, Vocable changedVocable) {
+		if (oldVocable == bigCharacterBoxVocable) {
+			setVocable(changedVocable);
+		}
 	}
 }

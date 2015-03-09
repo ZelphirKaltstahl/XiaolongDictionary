@@ -122,7 +122,7 @@ public class XLDVocableTable<T> extends TableView {
 				ObservableList<Vocable> selectedItems = selectionModel.getSelectedItems();
 
 				if (selectedItems.size() == 1) {
-					xldBigCharacterBox.setCharacters(selectedItems.get(0).getSecondLanguageTranslationsAsString());
+					xldBigCharacterBox.setVocable(selectedItems.get(0));
 				}
 			}
 		});

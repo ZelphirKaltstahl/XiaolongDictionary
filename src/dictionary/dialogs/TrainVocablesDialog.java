@@ -182,9 +182,9 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		}
 		
 		if(secondLanguageTranslationShown) {
-			xldBigCharacterBox.setCharacters(vocable.getSecondLanguageTranslationsAsString());
+			xldBigCharacterBox.setVocable(vocable);
 		} else {
-			xldBigCharacterBox.setCharacters(vocable.getSecondLanguageTranslationsAsString());
+			xldBigCharacterBox.setVocable(vocable);
 			xldBigCharacterBox.hideCharacters();
 		}
 		
