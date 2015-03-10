@@ -34,12 +34,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>ich/mir/mich</firstLanguageTranslations>
+		<firstLanguageTranslations>ich / mir / mich</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>我</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wǒ</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Personalpronomen</topics>
-		<chapters>PC02/LSC01/NPC01</chapters>
+		<topics>Grammatik / Personalpronomen</topics>
+		<chapters>PC02 / LSC01 / NPC01</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -11819,6 +11819,17 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>面试工作</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>miànshìgōngzuò</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>bevorzugen / die Präferenz</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>喜好</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xǐhào</secondLanguagePhoneticScripts>
 		<topics>---</topics>
 		<chapters>---</chapters>
 		<description>---</description>

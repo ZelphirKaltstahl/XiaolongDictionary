@@ -5,21 +5,12 @@
             <url>src/dictionary/model/Vocable.java</url>
             <bookmark id="3">
                 <name/>
-                <line>166</line>
+                <line>142</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/AddVocablesDialog.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/customcontrols/XLDVocableDetailsBox.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/model/Vocable.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/CustomControlsInstanceManager.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/ManagerInstanceManager.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/MainApp.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/customcontrols/XLDVocableTable.java</file>
-            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/VocableManager.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
