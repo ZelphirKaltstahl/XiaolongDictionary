@@ -11,6 +11,7 @@ import dictionary.dialogs.ChangeVocableDialog;
 import dictionary.dialogs.InsertSpecialCharacterDialog;
 import dictionary.dialogs.SearchVocablesDialog;
 import dictionary.dialogs.TrainVocablesDialog;
+import dictionary.dialogs.options.BigCharacterBoxOptionsDialog;
 import dictionary.model.Vocable;
 import java.util.List;
 import javafx.stage.Modality;
@@ -25,6 +26,9 @@ public class DialogInstanceManager {
 	private static TrainVocablesDialog trainVocablesDialogInstance;
 	private static SearchVocablesDialog searchVocablesDialogInstance;
 	private static InsertSpecialCharacterDialog insertSpecialCharacterDialogInstance;
+	
+	// OPTIONS
+	private static BigCharacterBoxOptionsDialog bigCharacterBoxOptionsDialogInstance;
 	
 	public static AddVocablesDialog getAddVocablesDialogInstance() {
 		if(addVocablesDialogInstance == null) {
@@ -65,6 +69,16 @@ public class DialogInstanceManager {
 		trainVocablesDialogInstance = new TrainVocablesDialog(Modality.NONE);
 		trainVocablesDialogInstance.initialize(trainingVocables);
 		return trainVocablesDialogInstance;
+	}
+	
+	
+	public static BigCharacterBoxOptionsDialog getBigCharacterBoxOptionsDialogInstance() {
+		if (bigCharacterBoxOptionsDialogInstance == null) {
+			System.out.println("creating new instance of big character box options dialog");
+			bigCharacterBoxOptionsDialogInstance = new BigCharacterBoxOptionsDialog();
+			bigCharacterBoxOptionsDialogInstance.initialize();
+		}
+		return bigCharacterBoxOptionsDialogInstance;
 	}
 	
 	public static void closeAllDialogs() {

@@ -1,9 +1,10 @@
-#Tue Mar 10 01:27:02 CET 2015
+#Wed Mar 11 14:52:48 CET 2015
 application_name=Xiaolong Dictionary
 application_path=/home/xiaolong/NetBeansProjects/XiaolongDictionary
 application_version=2.0
 big_character_box_font_name=Dialog
 big_character_box_font_size=50
+big_character_box_font_style=Regular
 big_character_box_loop=false
 first_language_name=German
 first_language_phonetic_script_name=IPA

@@ -7,6 +7,7 @@
 package dictionary.customcontrols;
 
 import dictionary.exceptions.SettingNotFoundException;
+import dictionary.manager.DialogInstanceManager;
 import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Settings;
 import java.io.File;
@@ -48,13 +49,14 @@ public class XLDMenuBar extends MenuBar {
 	private MenuItem helpMenu_help_menuItem;
 	private MenuItem helpMenu_info_menuItem;
 	
-	private Stage owner;
+	private final Stage owner;
 	
 	public XLDMenuBar(Stage owner) {
 		this.owner = owner;
 		initializeUIControls();
 		addGUIControls();
-		addActionListeners();
+		addActionListenersToFileMenuItems();
+		addActionListenersToOptionsMenuItems();
 	}
 
 	private void initializeUIControls() {
@@ -111,7 +113,7 @@ public class XLDMenuBar extends MenuBar {
 		helpMenu.getItems().add(helpMenu_info_menuItem);
 	}
 	
-	private void addActionListeners() {
+	private void addActionListenersToFileMenuItems() {
 		fileMenu_createNewDictionary_menuItem.setOnAction((ActionEvent event) -> {
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setTitle("Create new dictionary file");
@@ -185,5 +187,13 @@ public class XLDMenuBar extends MenuBar {
 			
 		});
 		
+	}
+	
+	private void addActionListenersToOptionsMenuItems() {
+		optionsMenu_bigCharacterBox_menuItem.setOnAction(
+			(actionEvent) -> {
+				DialogInstanceManager.getBigCharacterBoxOptionsDialogInstance().show();
+			}
+		);
 	}
 }

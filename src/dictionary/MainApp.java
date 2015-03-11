@@ -90,7 +90,7 @@ public class MainApp extends Application {
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
 		Settings.getInstance().readSettings();
-		//Settings.setDefaultValues();
+		Settings.setDefaultValues();
 
 		setUserCSS();
 
@@ -178,7 +178,7 @@ public class MainApp extends Application {
 		xldBigCharacterBoxLabel.setTextAlignment(TextAlignment.CENTER);*/
 		xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(MainApp.INITIAL_BIG_CHARACTER_BOX_STRING, "Characters");
 		try {
-			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME));
+			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME));
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
 		}

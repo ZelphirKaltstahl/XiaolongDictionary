@@ -483,7 +483,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 			showHideSecondLanguagePhoneticScriptButton = new Button("Show");
 			
 			xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(trainingVocables.get(0).getSecondLanguageTranslationsAsString(), "Characters");
-			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME));
+			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME));
 			xldBigCharacterBox.setAlignment(Pos.TOP_RIGHT);
 			
 			descriptionLabel = new Label("Description" + ":");
@@ -869,7 +869,7 @@ public class TrainVocablesDialog extends XLDDialog implements SettingsPropertyCh
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME, this);
 		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME, this);
 		
-		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME, this);
+		Settings.getInstance().registerSettingsPropertyChangeListener(Settings.getInstance().BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME, this);
 	}
 	
 	private void setActionsForNotifications() {

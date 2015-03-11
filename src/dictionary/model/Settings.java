@@ -28,6 +28,7 @@ import java.util.Properties;
 import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.text.Font;
 
 /**
  *
@@ -63,9 +64,10 @@ public class Settings {
 	public final String NO_INFORMATION_STRING_SETTING_NAME = "no_information_string";
 	
 	// big character box settings
-	public final String IGNORED_CHARACTERS_SETTING_NAME = "ignored_characters";
+	public final String BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME = "ignored_characters";
 	public final String BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME = "big_character_box_font_size";
 	public final String BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME = "big_character_box_font_name";
+	public final String BIG_CHARACTER_BOX_FONT_STYLE_SETTING_NAME = "big_character_box_font_style";
 	public final String BIG_CHARACTER_BOX_LOOP_SETTING_NAME = "big_character_box_loop";
 	
 	// special character settings
@@ -140,12 +142,13 @@ public class Settings {
 		
 		NO_INFORMATION_STRING_SETTING_NAME,
 		
-		IGNORED_CHARACTERS_SETTING_NAME,
+		BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME,
 		
 		SPECIAL_CHARACTERS_SETTING_NAME,
 		
 		BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME,
 		BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME,
+		BIG_CHARACTER_BOX_FONT_STYLE_SETTING_NAME,
 		BIG_CHARACTER_BOX_LOOP_SETTING_NAME,
 		
 		ADD_VOCABLE_DIALOG_PRESERVE_FIRST_LANGUAGE_SELECTED_SETTING_NAME,
@@ -205,13 +208,12 @@ public class Settings {
 			// special characters
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SPECIAL_CHARACTERS_SETTING_NAME, "āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ");
 			
-			
-			
 			// big character box settings
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_FONT_NAME_SETTING_NAME, "Dialog");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_FONT_SIZE_SETTING_NAME, "50");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_FONT_STYLE_SETTING_NAME, "Regular");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CHARACTER_BOX_LOOP_SETTING_NAME, "false");
-			Settings.getInstance().changeSettingsProperty(Settings.getInstance().IGNORED_CHARACTERS_SETTING_NAME, "abcdefghijklmnopqrstuvwxyzäöüß ,/ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ");
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME, "abcdefghijklmnopqrstuvwxyzäöüß ,/ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ");
 			
 			// dialogs settings
 			// add vocable dialog settings

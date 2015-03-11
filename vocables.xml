@@ -1229,8 +1229,8 @@
 		<topics>Literatur/Papierzeug</topics>
 		<chapters>PC11Z/PC15/NPC16Z</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Telefon/der Anruf</firstLanguageTranslations>
@@ -1504,8 +1504,8 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC13Z/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>2</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Briefmarke</firstLanguageTranslations>
@@ -1603,8 +1603,8 @@
 		<topics>Familie</topics>
 		<chapters>PC14/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die aeltere Schwester</firstLanguageTranslations>
@@ -1614,8 +1614,8 @@
 		<topics>Familie</topics>
 		<chapters>PC14/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Bank/das Geldinstitut</firstLanguageTranslations>
@@ -1625,7 +1625,7 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC14/NPC15</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1647,8 +1647,8 @@
 		<topics>Gebaeude</topics>
 		<chapters>PC14/NPC10Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Kind</firstLanguageTranslations>
@@ -1658,8 +1658,8 @@
 		<topics>Familie</topics>
 		<chapters>PC14/NPC08Z/NPC16Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>geben/fuer/zu/zu Gunsten von jemandem</firstLanguageTranslations>
@@ -1669,8 +1669,8 @@
 		<topics>---</topics>
 		<chapters>PC14/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>schreiben</firstLanguageTranslations>
@@ -1680,8 +1680,8 @@
 		<topics>Verben</topics>
 		<chapters>PC14/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Brief</firstLanguageTranslations>
@@ -1691,8 +1691,8 @@
 		<topics>Papierzeug</topics>
 		<chapters>PC14/NPC15</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>5</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>erzaehlen/jemanden etwas mitteilen</firstLanguageTranslations>
@@ -1702,8 +1702,8 @@
 		<topics>Verben</topics>
 		<chapters>PC14/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Angestellter</firstLanguageTranslations>
@@ -1725,7 +1725,7 @@
 		<chapters>PC14Z/NPC08Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Manager/der Direktor/der Geschaeftsfuehrer</firstLanguageTranslations>
@@ -1735,8 +1735,8 @@
 		<topics>Berufe</topics>
 		<chapters>PC14Z/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Firma/das Unternehmen</firstLanguageTranslations>
@@ -1746,8 +1746,8 @@
 		<topics>---</topics>
 		<chapters>PC14Z/LSC01/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Chinesisch</firstLanguageTranslations>
@@ -1757,8 +1757,8 @@
 		<topics>Sprachen</topics>
 		<chapters>PC15/NPC07</chapters>
 		<description>Allgemeiner Ausdruck fuer Chinesisch, auch geschriebene Sprache und Dialekte</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Fakultaet/der Fachbereich</firstLanguageTranslations>
@@ -1768,8 +1768,8 @@
 		<topics>Studium</topics>
 		<chapters>PC15/NPC07</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>(ZEW fuer Menschen)</firstLanguageTranslations>
@@ -1779,8 +1779,8 @@
 		<topics>ZEW</topics>
 		<chapters>PC15/NPC08</chapters>
 		<description>allgemeines Zaehleinheitswort, kann man benutzen wenn man das richtige Zaehleinheitswort nicht kennt</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>wieviel/wie viele/einige</firstLanguageTranslations>
@@ -1790,8 +1790,8 @@
 		<topics>Grammatik/Fragepartikel/Anzahl</topics>
 		<chapters>PC15/NPC08</chapters>
 		<description>Man benutzt dieses Fragewort, wenn man eine Anzahl von bis zu zehn in der Antwort auf die Frage erwartet.</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>lehren/unterrichten</firstLanguageTranslations>
@@ -1801,8 +1801,8 @@
 		<topics>Studium</topics>
 		<chapters>PC15/NPC07/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Grammatik</firstLanguageTranslations>
@@ -1823,8 +1823,8 @@
 		<topics>---</topics>
 		<chapters>PC15/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Schriftzeichen</firstLanguageTranslations>
@@ -1845,8 +1845,8 @@
 		<topics>---</topics>
 		<chapters>PC15/NPC08/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>gesprochene Sprache</firstLanguageTranslations>
@@ -1856,8 +1856,8 @@
 		<topics>Sprachen</topics>
 		<chapters>PC15/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>zu viel der Ehre</firstLanguageTranslations>
@@ -1889,8 +1889,8 @@
 		<topics>---</topics>
 		<chapters>PC15/NPC13Z/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Lesesaal</firstLanguageTranslations>
@@ -3899,18 +3899,18 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>洗澡间</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xǐzǎojiān</secondLanguagePhoneticScripts>
-		<topics>Raeume</topics>
+		<topics>Raeume, waschen</topics>
 		<chapters>PC22</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>ein Bad nehmen</firstLanguageTranslations>
+		<firstLanguageTranslations>ein Bad nehmen / baden</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>洗澡</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xǐzǎo</secondLanguagePhoneticScripts>
-		<topics>Verben</topics>
+		<topics>Verben, waschen</topics>
 		<chapters>PC22</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
@@ -8097,11 +8097,11 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>die eMail</firstLanguageTranslations>
+		<firstLanguageTranslations>die E-Mail</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>电子邮件</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>diànzǐyóujiàn</secondLanguagePhoneticScripts>
-		<topics>Kommunikationsmittel</topics>
+		<secondLanguageTranslations>邮件</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yóujiàn</secondLanguagePhoneticScripts>
+		<topics>Kommunikationsmittel, IT</topics>
 		<chapters>LSC01</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
@@ -9164,12 +9164,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>Computer</firstLanguageTranslations>
+		<firstLanguageTranslations>der Computer</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>电脑</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diànnǎo</secondLanguagePhoneticScripts>
-		<topics>---</topics>
-		<chapters>NPC08Z/NPC16</chapters>
+		<topics>IT</topics>
+		<chapters>NPC08Z / NPC16</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -9461,11 +9461,11 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>eMail-Adresse</firstLanguageTranslations>
+		<firstLanguageTranslations>die E-Mail-Adresse</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>邮件地址</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yóujiàndìzhǐ</secondLanguagePhoneticScripts>
-		<topics>Personendaten</topics>
+		<topics>Personendaten, IT, Kommunilationsmittel</topics>
 		<chapters>ShuoHanYu</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
@@ -10730,7 +10730,7 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>洗</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xǐ</secondLanguagePhoneticScripts>
-		<topics>---</topics>
+		<topics>waschen</topics>
 		<chapters>NPC14</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
@@ -11835,5 +11835,115 @@
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Programm / die Applikation</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>程式</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>chéngshì</secondLanguagePhoneticScripts>
+		<topics>Informatik</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Programm / die Applikation</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>应用程式</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yìngyòngchéngshì</secondLanguagePhoneticScripts>
+		<topics>Informatik</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>programmieren / coden</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>编程</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>biānchéng</secondLanguagePhoneticScripts>
+		<topics>Informatik</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>programmierbar</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>可编程</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>kěbiānchéng</secondLanguagePhoneticScripts>
+		<topics>Informatik</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Quellcode / der Programmcode</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>源码</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yuánmǎ</secondLanguagePhoneticScripts>
+		<topics>Informatik</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>sich die Zähne putzen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>刷牙</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shuāyá</secondLanguagePhoneticScripts>
+		<topics>waschen</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>duschen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>淋浴</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>línyù</secondLanguagePhoneticScripts>
+		<topics>waschen</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>duschen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>洗淋浴</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xǐlínyù</secondLanguagePhoneticScripts>
+		<topics>waschen</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>baden</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>沐浴</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>mùyù</secondLanguagePhoneticScripts>
+		<topics>waschen</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Computer</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>计算机</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>jìsuànjī</secondLanguagePhoneticScripts>
+		<topics>IT</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 </list>
