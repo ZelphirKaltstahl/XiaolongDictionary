@@ -1702,7 +1702,7 @@
 		<topics>Verben</topics>
 		<chapters>PC14/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1724,7 +1724,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC14Z/NPC08Z</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1735,7 +1735,7 @@
 		<topics>Berufe</topics>
 		<chapters>PC14Z/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1746,7 +1746,7 @@
 		<topics>---</topics>
 		<chapters>PC14Z/LSC01/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1812,7 +1812,7 @@
 		<topics>Grammatik</topics>
 		<chapters>PC15/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1889,7 +1889,7 @@
 		<topics>---</topics>
 		<chapters>PC15/NPC13Z/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1911,8 +1911,8 @@
 		<topics>Papierzeug</topics>
 		<chapters>PC15/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>(ZEW fuer Buecher, Papierbloecke und Hefte)</firstLanguageTranslations>
@@ -1922,8 +1922,8 @@
 		<topics>ZEW</topics>
 		<chapters>PC15/NPC10Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Bibliothek</firstLanguageTranslations>
@@ -1933,8 +1933,8 @@
 		<topics>Raeume</topics>
 		<chapters>PC15/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>dort</firstLanguageTranslations>
@@ -1944,8 +1944,8 @@
 		<topics>---</topics>
 		<chapters>PC15/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Klasse/die Gruppe</firstLanguageTranslations>
@@ -1999,8 +1999,8 @@
 		<topics>---</topics>
 		<chapters>PC15Z/PC24/NPC14</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>(lange Dinge/Hose/Straße)</firstLanguageTranslations>
@@ -2032,8 +2032,8 @@
 		<topics>Zahlen</topics>
 		<chapters>PC16/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Karte/das Billett</firstLanguageTranslations>
@@ -2055,7 +2055,7 @@
 		<chapters>PC16/NPC06</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>1</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Abend/abends</firstLanguageTranslations>
@@ -2065,8 +2065,8 @@
 		<topics>Zeiten</topics>
 		<chapters>PC16/NPC09Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>zu/sehr/aeußerst</firstLanguageTranslations>
@@ -2076,8 +2076,8 @@
 		<topics>---</topics>
 		<chapters>PC16/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>von (irgendwo)</firstLanguageTranslations>
@@ -2087,8 +2087,8 @@
 		<topics>---</topics>
 		<chapters>PC16/NPC15</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>5</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>suchen/jemanden rufen/jemandem Wechselgeld herausgeben</firstLanguageTranslations>
@@ -2098,8 +2098,8 @@
 		<topics>Verben</topics>
 		<chapters>PC16/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>alt</firstLanguageTranslations>
@@ -2121,7 +2121,7 @@
 		<chapters>PC16/NPC12</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>(ZEW Oberbekleidung, Arbeit, abstrakte Dinge)</firstLanguageTranslations>
@@ -2131,8 +2131,8 @@
 		<topics>ZEW</topics>
 		<chapters>PC16/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>1</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Hemd/die Bluse</firstLanguageTranslations>
@@ -2164,8 +2164,8 @@
 		<topics>---</topics>
 		<chapters>PC16/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>weiß</firstLanguageTranslations>
@@ -2263,8 +2263,8 @@
 		<topics>ZEW/Zeit</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Speisesaal/die Mensa</firstLanguageTranslations>
@@ -2285,8 +2285,8 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Minute</firstLanguageTranslations>
@@ -2307,8 +2307,8 @@
 		<topics>ZEW/Zeit</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Unterricht haben/Unterricht anfangen/zum Unterricht gehen</firstLanguageTranslations>
@@ -2318,8 +2318,8 @@
 		<topics>Schule</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Untericht/Vorlesung/Lektion</firstLanguageTranslations>
@@ -2329,8 +2329,8 @@
 		<topics>Schule</topics>
 		<chapters>PC17/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Unterrichtsschluss haben/den Unterricht beenden</firstLanguageTranslations>
@@ -2340,8 +2340,8 @@
 		<topics>Schule</topics>
 		<chapters>PC17/NPC11Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>spaeter/in Zukunft</firstLanguageTranslations>
@@ -2362,8 +2362,8 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>zurueckgehen/zurueckkehren</firstLanguageTranslations>
@@ -2373,8 +2373,8 @@
 		<topics>Verben</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>mit/folgen/begleiten/mit jemandem/jemandem folgen</firstLanguageTranslations>
@@ -2384,8 +2384,8 @@
 		<topics>Verben</topics>
 		<chapters>PC17/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>zusammen/gemeinsam</firstLanguageTranslations>
@@ -2395,8 +2395,8 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Film</firstLanguageTranslations>
@@ -2406,8 +2406,8 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Café</firstLanguageTranslations>
@@ -2428,8 +2428,8 @@
 		<topics>Getraenke</topics>
 		<chapters>PC17/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>halb/Haelfte</firstLanguageTranslations>
@@ -2439,8 +2439,8 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>---</firstLanguageTranslations>
