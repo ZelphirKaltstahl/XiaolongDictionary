@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -35,6 +36,8 @@ public class VocableManager implements VocableListLoadedListener {
 	private ObservableList<Vocable> searchResultVocableList;
 	
 	private final List<VocableChangeListener> vocableChangeListeners = new ArrayList<>();
+	
+	private final SimpleBooleanProperty vocablesSaved = new SimpleBooleanProperty(true);
 	
 	//private boolean vocableIsInVocableList = false;
 
@@ -72,6 +75,7 @@ public class VocableManager implements VocableListLoadedListener {
 	public void addVocable(Vocable vocable) throws VocableAlreadyExistsException {
 		if (!isVocableInDictionary(vocable)) {
 			vocableList.add(vocable);
+			vocablesSaved.set(false);
 		} else {
 			throw new VocableAlreadyExistsException("Vocable is already in the dictionary.");
 		}
@@ -80,11 +84,13 @@ public class VocableManager implements VocableListLoadedListener {
 	public void deleteVocables(ObservableList<Vocable> listOfVocables) {
 		vocableList.removeAll(listOfVocables);
 		searchResultVocableList.removeAll(listOfVocables);
+		vocablesSaved.set(false);
 	}
 
 	public void deleteVocable(Vocable vocable) {
 		vocableList.remove(vocable);
 		searchResultVocableList.remove(vocable);
+		vocablesSaved.set(false);
 	}
 
 	public void changeVocable(Vocable oldVocable, Vocable changedVocable) {
@@ -98,6 +104,7 @@ public class VocableManager implements VocableListLoadedListener {
 			searchResultVocableList.set(indexOfOldVocable, changedVocable);
 		}
 		
+		vocablesSaved.set(false);
 		notifyVocableChangeListeners(oldVocable, changedVocable);
 	}
 
@@ -204,6 +211,7 @@ public class VocableManager implements VocableListLoadedListener {
 			System.out.println("Saving vocable list in:|" + Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME) + "|");
 			File saveFile = new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME));
 			ManagerInstanceManager.getVocableFileManagerInstance().saveToXMLFile(vocableList, saveFile);
+			vocablesSaved.set(true);
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(VocableManager.class.getName()).log(Level.SEVERE, null, ex);
 		}
@@ -221,6 +229,7 @@ public class VocableManager implements VocableListLoadedListener {
 	
 	public void loadVocables() {
 		String path = null;
+		
 		try {
 			path = Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME);
 		} catch (SettingNotFoundException ex) {
@@ -228,7 +237,7 @@ public class VocableManager implements VocableListLoadedListener {
 		}
 		System.out.println("Now loading vocable file from file:|"+path+"|.");
 		
-		List<Vocable> newList = null;
+		List<Vocable> newList = new ArrayList<>();
 		try {
 			newList = ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(
 				new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME))
@@ -250,5 +259,10 @@ public class VocableManager implements VocableListLoadedListener {
 		/*searchResultVocableList.forEach((Vocable vocable) -> System.out.println(
 			"|"+vocable.getFirstLanguageTranslations()+"|")
 		);*/
+		vocablesSaved.set(true);
+	}
+	
+	public SimpleBooleanProperty getVocableSavedProperty() {
+		return vocablesSaved;
 	}
 }

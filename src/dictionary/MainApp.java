@@ -6,9 +6,12 @@ import dictionary.customcontrols.XLDMenuBar;
 import dictionary.customcontrols.XLDVocableDetailsBox;
 import dictionary.customcontrols.XLDVocableTable;
 import dictionary.dialogs.TrainVocablesDialog;
+import dictionary.dialogs.confirmations.Decision;
+import dictionary.dialogs.confirmations.SaveVocablesConfirmationDialog;
 import dictionary.manager.DialogInstanceManager;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
+import dictionary.listeners.DecisionListener;
 import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
@@ -26,11 +29,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.BorderStroke;
-import javafx.scene.layout.BorderStrokeStyle;
-import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -43,7 +42,7 @@ import javafx.stage.WindowEvent;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.dialog.Dialog;
 
-public class MainApp extends Application {
+public class MainApp extends Application implements DecisionListener {
 
 	//Parents
 	private Scene scene;
@@ -318,8 +317,16 @@ public class MainApp extends Application {
 			Action response = ControlFXDialogDisplayer.showExitConfirmationDialog(primaryStage);
 			
 			if (response == Dialog.Actions.YES) {
+				
+				SaveVocablesConfirmationDialog saveVocablesConfirmationDialog = new SaveVocablesConfirmationDialog();
+				saveVocablesConfirmationDialog.registerDecisionListener(this);
+				saveVocablesConfirmationDialog.initialize();
+				saveVocablesConfirmationDialog.show();
+				
 				Settings.getInstance().writeSettings();
-				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+				if (!ManagerInstanceManager.getVocableManagerInstance().getVocableSavedProperty().get()) {
+					ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+				}
 				DialogInstanceManager.closeAllDialogs();
 				primaryStage.close();
 			} else if (response == Dialog.Actions.NO) {
@@ -376,5 +383,10 @@ public class MainApp extends Application {
 	private void searchVocablesButtonActionPerformed() {
 		DialogInstanceManager.getSearchVocablesDialogInstance().show();
 		DialogInstanceManager.getSearchVocablesDialogInstance().requestFocus();
+	}
+
+	@Override
+	public void reactOnDecision(Decision decision) {
+		System.out.println("Decision was:" + decision.name());
 	}
 }

@@ -11749,11 +11749,11 @@
 		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>das Teehaus/der Teeraum</firstLanguageTranslations>
+		<firstLanguageTranslations>das Teehaus / der Teeraum</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>茶楼</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chálóu</secondLanguagePhoneticScripts>
-		<topics>Raeume/Gebaeude</topics>
+		<topics>Raeume / Gebaeude</topics>
 		<chapters>NPC16Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
