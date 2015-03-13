@@ -6,7 +6,8 @@ import dictionary.customcontrols.XLDVocableDetailsBox;
 import dictionary.customcontrols.XLDMenuBar;
 import dictionary.customcontrols.XLDVocableTable;
 import dictionary.dialogs.TrainVocablesDialog;
-import dictionary.dialogs.confirmations.Decision;
+import dictionary.dialogs.confirmations.XLDGenericMessageDialog;
+import dictionary.model.Decision;
 import dictionary.manager.DialogInstanceManager;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
@@ -36,6 +37,7 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import org.controlsfx.control.action.Action;
@@ -74,16 +76,15 @@ public class MainApp extends Application {
 	private Label versionLabel;
 	private Label lastActionLabel;
 	private Label currentModeLabel;
-	
+
 	//Big character box
 	private static final String INITIAL_BIG_CHARACTER_BOX_STRING = "中";
-	
+
 	// Vocable details box
 	private XLDVocableDetailsBox xldVocableDetailsBox;
 	private ScrollPane vocableDetailsScrollPane;
 	private GridPane centerGridPane;
-	
-	
+
 	@Override
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
@@ -99,7 +100,7 @@ public class MainApp extends Application {
 
 		ManagerInstanceManager.getVocableManagerInstance().loadVocables();
 		//ManagerInstanceManager.getVocableFileManagerInstance().loadVocablesFromFile(new File(Settings.getInstance().getSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME)));
-		
+
 		stage.show();
 	}
 
@@ -151,29 +152,28 @@ public class MainApp extends Application {
 		centerGridPane.getRowConstraints().get(0).setPercentHeight(80);
 		centerGridPane.getRowConstraints().add(new RowConstraints());
 		centerGridPane.getRowConstraints().get(1).setPercentHeight(20);
-		
+
 		//centerVBox.setAlignment(Pos.TOP_CENTER);
 		//centerVBox.setPrefWidth(Double.MAX_VALUE);
-		
 		//vocable table
 		xldVocableTable = new XLDVocableTable<>();
 		xldVocableTable.initializeVocableTable();
-		
+
 		xldVocableDetailsBox = ManagerInstanceManager.getCustomControlsInstanceManager().getXLDVocableDetailsBox();
-		
+
 		vocableDetailsScrollPane = new ScrollPane();
 		vocableDetailsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 		vocableDetailsScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		vocableDetailsScrollPane.setMaxWidth(Double.MAX_VALUE);
 		vocableDetailsScrollPane.setMaxHeight(Double.MAX_VALUE);
 		vocableDetailsScrollPane.setFitToWidth(true);
-		
+
 		// Big Character
 		xldBigCharacterBoxHBox = new VBox();
 		xldBigCharacterBoxHBox.setAlignment(Pos.TOP_CENTER);
 		/*xldBigCharacterBoxLabel = new Label("Characters");
-		xldBigCharacterBoxLabel.setAlignment(Pos.CENTER);
-		xldBigCharacterBoxLabel.setTextAlignment(TextAlignment.CENTER);*/
+		 xldBigCharacterBoxLabel.setAlignment(Pos.CENTER);
+		 xldBigCharacterBoxLabel.setTextAlignment(TextAlignment.CENTER);*/
 		xldBigCharacterBox = CustomControlsInstanceManager.createXLDBigCharacterBoxInstance(MainApp.INITIAL_BIG_CHARACTER_BOX_STRING, "Characters");
 		try {
 			xldBigCharacterBox.setIgnoredCharacters(Settings.getInstance().getSettingsProperty(Settings.getInstance().BIG_CAHRACTER_BOX_IGNORED_CHARACTERS_SETTING_NAME));
@@ -191,7 +191,7 @@ public class MainApp extends Application {
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		
+
 		lastActionLabel = new Label("Last action: No last action");
 		currentModeLabel = new Label("Mode: Browsing vocables");
 
@@ -255,7 +255,7 @@ public class MainApp extends Application {
 		vocableActionsVBox.getChildren().add(searchVocablesButton);
 		root.setLeft(vocableActionsVBox);
 	}
-	
+
 	private void addControlsCenter() {
 		root.setCenter(centerGridPane);
 		centerGridPane.add(xldVocableTable, 0, 0);
@@ -264,19 +264,19 @@ public class MainApp extends Application {
 		centerGridPane.add(vocableDetailsScrollPane, 0, 1);
 		//addVocableTable();
 	}
-	
+
 	private void addVocableTable() {
 		root.setCenter(xldVocableTable);
 	}
 
 	private void addBigCharacterBox() {
 		/*
-		bigCharacterTextFlow.getChildren().addAll(initialBigCharacterBoxText);
-		bigCharacterBoxVBox.getChildren().add(bigCharacterTextFlow);
+		 bigCharacterTextFlow.getChildren().addAll(initialBigCharacterBoxText);
+		 bigCharacterBoxVBox.getChildren().add(bigCharacterTextFlow);
 
-		bigCharacterBoxButtonHBox.getChildren().addAll(previousCharacterButton, nextCharacterButton);
-		bigCharacterBoxVBox.getChildren().addAll(bigCharacterBoxButtonHBox);
-		*/
+		 bigCharacterBoxButtonHBox.getChildren().addAll(previousCharacterButton, nextCharacterButton);
+		 bigCharacterBoxVBox.getChildren().addAll(bigCharacterBoxButtonHBox);
+		 */
 		//xldBigCharacterBoxHBox.getChildren().add(xldBigCharacterBoxLabel);
 		xldBigCharacterBoxHBox.getChildren().add(xldBigCharacterBox);
 		root.setRight(xldBigCharacterBoxHBox);
@@ -292,19 +292,19 @@ public class MainApp extends Application {
 		addVocableButton.setOnAction((ActionEvent event) -> {
 			addVocableButtonActionPerformed();
 		});
-		
+
 		changeVocablesButton.setOnAction((ActionEvent event) -> {
 			changeVocableButtonActionPerformed();
 		});
-		
+
 		deleteVocablesButton.setOnAction((ActionEvent event) -> {
 			deleteVocablesButtonActionPerformed();
 		});
-		
+
 		trainVocablesButton.setOnAction((ActionEvent) -> {
 			trainVocablesButtonActionPerformed();
 		});
-		
+
 		searchVocablesButton.setOnAction((ActionEvent event) -> {
 			searchVocablesButtonActionPerformed();
 		});
@@ -314,89 +314,92 @@ public class MainApp extends Application {
 		primaryStage.setOnCloseRequest((WindowEvent event) -> {
 			event.consume();
 			Action response = ControlFXDialogDisplayer.showExitConfirmationDialog(primaryStage);
-			
+
 			if (response == Dialog.Actions.YES) {
-				
+
 				if (!ManagerInstanceManager.getVocableManagerInstance().getVocableSavedProperty().get()) {
-					
+
 					try {
 						if (Settings.getInstance().getSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME).equals(Boolean.toString(true))) {
+							/*
+							 DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+							 Decision.YES,
+							 (dictionary.model.Action) (Object value) -> {
+							 ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+							 exit();
+							 }
+							 );
 							
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
-								Decision.YES,
-								(dictionary.model.Action) (Object value) -> {
-									ManagerInstanceManager.getVocableManagerInstance().saveVocables();
-									exit();
-								}
-							);
+							 DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+							 Decision.YES_REMEMBER,
+							 (dictionary.model.Action) (Object value) -> {
+							 Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+							 Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
+							 ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+							 exit();
+							 }
+							 );
 							
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
-								Decision.YES_REMEMBER,
-								(dictionary.model.Action) (Object value) -> {
-									Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
-									Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
-									ManagerInstanceManager.getVocableManagerInstance().saveVocables();
-									exit();
-								}
-							);
+							 DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+							 Decision.NO,
+							 (dictionary.model.Action) (Object value) -> {
+							 exit();
+							 }
+							 );
 							
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
-								Decision.NO,
-								(dictionary.model.Action) (Object value) -> {
-									exit();
-								}
-							);
+							 DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+							 Decision.NO_REMEMBER,
+							 (dictionary.model.Action) (Object value) -> {
+							 Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+							 Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
+							 exit();
+							 }
+							 );
 							
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
-								Decision.NO_REMEMBER,
-								(dictionary.model.Action) (Object value) -> {
-									Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
-									Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
-									exit();
-								}
-							);
-							
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().show();
-							
+							 DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().show();
+							 */
+
+							showSaveVocableChangesConfirmationDialog();
+
 						} else {
-							
+
 							if (Settings.getInstance().getSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME).equals(Boolean.toString(true))) {
 								ManagerInstanceManager.getVocableManagerInstance().saveVocables();
 							}
-							
+
 							exit();
 						}
 					} catch (SettingNotFoundException ex) {
 						Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
 					}
-					
+
 				} else {
 					exit();
 				}
 			}
 		});
 	}
-	
+
 	private void addVocableButtonActionPerformed() {
 		DialogInstanceManager.getAddVocablesDialogInstance().show();
 		DialogInstanceManager.getAddVocablesDialogInstance().requestFocus();
 	}
-	
+
 	private void deleteVocablesButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
 			Action response = ControlFXDialogDisplayer.showDeleteVocablesConfirmationDialog(primaryStage);
-			
+
 			if (response == Dialog.Actions.YES) {
-				ObservableList<Vocable> listOfSelectedVocables = (ObservableList <Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
+				ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
 				ManagerInstanceManager.getVocableManagerInstance().deleteVocables(listOfSelectedVocables);
 				//xldVocableTable.getSelectionModel().clearSelection();
-				
+
 			}
 		} else {
 			ControlFXDialogDisplayer.showNoVocablesSelectedForDeletionDialog(primaryStage);
 		}
 	}
-	
+
 	private void changeVocableButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
 			Vocable changingVocable = (Vocable) xldVocableTable.getSelectionModel().getSelectedItem();
@@ -406,14 +409,14 @@ public class MainApp extends Application {
 			ControlFXDialogDisplayer.showNoVocableSelectedForChangeVocableDialog(primaryStage);
 		}
 	}
-	
+
 	private void trainVocablesButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
-			ObservableList<Vocable> listOfSelectedVocables = (ObservableList <Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
+			ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
 			List<Vocable> trainingVocables = new ArrayList<>();
-			
+
 			listOfSelectedVocables.stream().forEach((vocable) -> trainingVocables.add(vocable));
-			
+
 			TrainVocablesDialog trainVocablesDialog = DialogInstanceManager.getTrainVocablesDialogInstanceForVocables(trainingVocables);
 			trainVocablesDialog.show();
 			trainVocablesDialog.requestFocus();
@@ -421,12 +424,67 @@ public class MainApp extends Application {
 			ControlFXDialogDisplayer.showNoVocablesSelectedForTrainingDialog(primaryStage);
 		}
 	}
-	
+
 	private void searchVocablesButtonActionPerformed() {
 		DialogInstanceManager.getSearchVocablesDialogInstance().show();
 		DialogInstanceManager.getSearchVocablesDialogInstance().requestFocus();
 	}
-	
+
+	private void showSaveVocableChangesConfirmationDialog() {
+		String dialogTitle = "Save vocable changes confirmation";
+		String dialogMessage = "There are unsaved vocable changes. Do you want to save these changes?";
+		boolean dialogDisplaysDoNotShowAgainCheckBox = true;
+		boolean dialogHasData = false;
+
+		XLDGenericMessageDialog<Object> saveVocableChangesDialog = new XLDGenericMessageDialog<>(
+				dialogTitle,
+				dialogMessage,
+				dialogDisplaysDoNotShowAgainCheckBox,
+				dialogHasData,
+				XLDGenericMessageDialog.YES_BUTTON, XLDGenericMessageDialog.NO_BUTTON
+		);
+
+		saveVocableChangesDialog.initModality(Modality.APPLICATION_MODAL);
+		saveVocableChangesDialog.initOwner(primaryStage);
+		saveVocableChangesDialog.initialize();
+
+		saveVocableChangesDialog.setActionForDecision(
+				Decision.YES,
+				(dictionary.model.Action) (Object value) -> {
+					ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+					exit();
+				}
+		);
+
+		saveVocableChangesDialog.setActionForDecision(
+				Decision.YES_REMEMBER,
+				(dictionary.model.Action) (Object value) -> {
+					Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+					Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
+					ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+					exit();
+				}
+		);
+
+		saveVocableChangesDialog.setActionForDecision(
+				Decision.NO,
+				(dictionary.model.Action) (Object value) -> {
+					exit();
+				}
+		);
+
+		saveVocableChangesDialog.setActionForDecision(
+				Decision.NO_REMEMBER,
+				(dictionary.model.Action) (Object value) -> {
+					Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+					Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
+					exit();
+				}
+		);
+
+		saveVocableChangesDialog.show();
+	}
+
 	private void exit() {
 		Settings.getInstance().writeSettings();
 		DialogInstanceManager.closeAllDialogs();

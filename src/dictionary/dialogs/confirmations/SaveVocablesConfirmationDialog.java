@@ -5,6 +5,7 @@
  */
 package dictionary.dialogs.confirmations;
 
+import dictionary.model.Decision;
 import dictionary.listeners.DecisionListener;
 import dictionary.model.Action;
 import java.util.ArrayList;
@@ -41,10 +42,6 @@ public class SaveVocablesConfirmationDialog extends Stage {
 	private Button noButton;
 	
 	private CheckBox rememberMyDecisionCheckBox;
-	
-	private Decision response;
-	
-	private final List<DecisionListener> decisionListeners = new ArrayList<>();
 	
 	private HashMap<Decision, Action<Object>> actions = new HashMap<>();
 	
@@ -108,7 +105,6 @@ public class SaveVocablesConfirmationDialog extends Stage {
 				executeActionForDecision(Decision.YES);
 			}
 			hide();
-			notifyDecisionListeners();
 		});
 		
 		noButton.setOnAction((actionEvent) -> {
@@ -118,7 +114,6 @@ public class SaveVocablesConfirmationDialog extends Stage {
 				executeActionForDecision(Decision.NO);
 			}
 			hide();
-			notifyDecisionListeners();
 		});
 		
 		setOnCloseRequest((WindowEvent event) -> {
@@ -129,19 +124,5 @@ public class SaveVocablesConfirmationDialog extends Stage {
 	
 	private void executeActionForDecision(Decision decision) {
 		actions.get(decision).execute(null);
-	}
-	
-	public void registerDecisionListener(DecisionListener decisionListener) {
-		decisionListeners.add(decisionListener);
-	}
-	
-	public void unregisterListeners() {
-		decisionListeners.clear();
-	}
-	
-	private void notifyDecisionListeners() {
-		decisionListeners.stream().forEach((decisionListener) -> {
-			decisionListener.reactOnDecision(this, response);
-		});
 	}
 }

@@ -5,7 +5,7 @@
  */
 package dictionary.listeners;
 
-import dictionary.dialogs.confirmations.Decision;
+import dictionary.model.Decision;
 
 /**
  *
