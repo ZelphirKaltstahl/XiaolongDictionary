@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 /**
  *
  * @author xiaolong
+ * @param <T> the type of the data carried by this dialog
  */
 public class XLDGenericMessageDialog<T> extends Stage {
 	
@@ -36,7 +37,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	public static final Button CANCEL_BUTTON = new Button("Cancel");
 	public static final Button EXIT_BUTTON = new Button("Exit");
 	
-	private HashMap<Decision, Action<Object>> actions = new HashMap<>();
+	private final HashMap<Decision, Action<Object>> actions = new HashMap<>();
 	private final List<Button> buttons = new ArrayList<>();
 	
 	private Scene scene;
@@ -52,10 +53,17 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	private boolean displayDoNotShowAgainCheckBox = false;
 	private String message = "No message";
 	private String title = "No title";
-	private String settingName;
 	private boolean hasData = false;
 	private T data;
 	
+	/**
+	 * 
+	 * @param title the title of the dialog
+	 * @param message the message displayed by the dialog
+	 * @param displayDoNotShowAgainCheckBox whether or not the dialog shall show a checkbox for the user to decide whether or not the dialog shall be shown again in the future
+	 * @param hasData whether or not this dialog carries any data, which is used in the actions set for the decisions connected to the buttons of this dialog
+	 * @param buttons an arbitrary number ob buttons, which will be displayed in the dialog
+	 */
 	public XLDGenericMessageDialog(String title, String message, boolean displayDoNotShowAgainCheckBox, boolean hasData, Button... buttons) {
 		this.buttons.addAll(Arrays.asList(buttons));
 		
@@ -128,7 +136,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					if (hasData) {
 						value = data;
 					}
-
+					
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
 						executeActionForDecision(Decision.YES_REMEMBER, value);
 					} else {
@@ -142,6 +150,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					if (hasData) {
 						value = data;
 					}
+					
 
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
 						executeActionForDecision(Decision.NO_REMEMBER, value);
@@ -184,7 +193,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					if (hasData) {
 						value = data;
 					}
-
+					
 					executeActionForDecision(Decision.CANCEL, value);
 				});
 			}
@@ -194,12 +203,6 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	public void setActionForDecision(Decision decision, Action action) {
 		actions.put(decision, action);
 	}
-	
-	/*
-	public void setDisplaySettingName(String settingName) {
-		this.settingName = settingName;
-	}
-	*/
 	
 	private void executeActionForDecision(Decision decision, T value) {
 		actions.get(decision).execute(value);
