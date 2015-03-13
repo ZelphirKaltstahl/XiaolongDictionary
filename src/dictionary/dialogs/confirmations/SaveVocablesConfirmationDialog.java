@@ -6,7 +6,9 @@
 package dictionary.dialogs.confirmations;
 
 import dictionary.listeners.DecisionListener;
+import dictionary.model.Action;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -43,6 +45,8 @@ public class SaveVocablesConfirmationDialog extends Stage {
 	private Decision response;
 	
 	private final List<DecisionListener> decisionListeners = new ArrayList<>();
+	
+	private HashMap<Decision, Action<Object>> actions = new HashMap<>();
 	
 	public SaveVocablesConfirmationDialog() {
 		
@@ -92,12 +96,16 @@ public class SaveVocablesConfirmationDialog extends Stage {
 		containingVBox.getChildren().add(buttonHBox);
 	}
 	
+	public void setActionForDecision(Decision decision, Action action) {
+		actions.put(decision, action);
+	}
+	
 	private void addEventHandlers() {
 		yesButton.setOnAction((actionEvent) -> {
 			if(rememberMyDecisionCheckBox.isSelected()) {
-				response = Decision.YES_REMEMBER;
+				executeActionForDecision(Decision.YES_REMEMBER);
 			} else {
-				response = Decision.YES;
+				executeActionForDecision(Decision.YES);
 			}
 			hide();
 			notifyDecisionListeners();
@@ -105,9 +113,9 @@ public class SaveVocablesConfirmationDialog extends Stage {
 		
 		noButton.setOnAction((actionEvent) -> {
 			if(rememberMyDecisionCheckBox.isSelected()) {
-				response = Decision.NO_REMEMBER;
+				executeActionForDecision(Decision.NO_REMEMBER);
 			} else {
-				response = Decision.NO;
+				executeActionForDecision(Decision.NO);
 			}
 			hide();
 			notifyDecisionListeners();
@@ -115,12 +123,13 @@ public class SaveVocablesConfirmationDialog extends Stage {
 		
 		setOnCloseRequest((WindowEvent event) -> {
 			event.consume();
-			response = Decision.NO;
-			hide();
-			notifyDecisionListeners();
+			executeActionForDecision(Decision.NO);
 		});
 	}
 	
+	private void executeActionForDecision(Decision decision) {
+		actions.get(decision).execute(null);
+	}
 	
 	public void registerDecisionListener(DecisionListener decisionListener) {
 		decisionListeners.add(decisionListener);

@@ -88,7 +88,7 @@ public class ExitConfirmationDialog {
 		content.add(new Label("Password"), 0, 1);
 		content.add(txPassword, 1, 1);
 		
-		dialog.setGraphic(new ImageView(HelloDialog.class.getResource("login.png").toString()));
+		dialog.setGraphic(new ImageView(getClass().getResource("login.png").toString()));
 		dialog.setContent(content);
 		dialog.getActions().addAll(actionLogin, Dialog.Actions.CANCEL);
 		

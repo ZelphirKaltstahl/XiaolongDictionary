@@ -78,12 +78,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>nein/nicht</firstLanguageTranslations>
+		<firstLanguageTranslations>nein / nicht</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>不</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>bù</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC03/LSC01/NPC02</chapters>
+		<chapters>PC03 / LSC01 / NPC02</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -122,12 +122,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>sie/ihnen</firstLanguageTranslations>
+		<firstLanguageTranslations>sie / ihnen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>他们</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tāmen</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Personalpronomen</topics>
-		<chapters>PC03/NPC02</chapters>
+		<topics>Grammatik / Personalpronomen</topics>
+		<chapters>PC03 / NPC02</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -159,8 +159,8 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>的</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>de</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Strukturpartikel</topics>
-		<chapters>PC05/LSC01/NPC04</chapters>
+		<topics>Grammatik / Strukturpartikel</topics>
+		<chapters>PC05 / LSC01 / NPC04</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -243,12 +243,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>das Land/das Reich</firstLanguageTranslations>
+		<firstLanguageTranslations>das Land / das Reich</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>国</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>guó</secondLanguagePhoneticScripts>
 		<topics>Laender</topics>
-		<chapters>PC06/NPC03</chapters>
+		<chapters>PC06 / NPC03</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>

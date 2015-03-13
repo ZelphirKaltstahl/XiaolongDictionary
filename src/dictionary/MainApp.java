@@ -41,7 +41,7 @@ import javafx.stage.WindowEvent;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.dialog.Dialog;
 
-public class MainApp extends Application implements DecisionListener {
+public class MainApp extends Application {
 
 	//Parents
 	private Scene scene;
@@ -321,8 +321,41 @@ public class MainApp extends Application implements DecisionListener {
 					
 					try {
 						if (Settings.getInstance().getSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME).equals(Boolean.toString(true))) {
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().unregisterListeners();
-							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().registerDecisionListener(this);
+							
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+								Decision.YES,
+								(dictionary.model.Action) (Object value) -> {
+									ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+									exit();
+								}
+							);
+							
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+								Decision.YES_REMEMBER,
+								(dictionary.model.Action) (Object value) -> {
+									Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+									Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
+									ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+									exit();
+								}
+							);
+							
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+								Decision.NO,
+								(dictionary.model.Action) (Object value) -> {
+									exit();
+								}
+							);
+							
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().setActionForDecision(
+								Decision.NO_REMEMBER,
+								(dictionary.model.Action) (Object value) -> {
+									Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+									Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
+									exit();
+								}
+							);
+							
 							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().show();
 							
 						} else {
@@ -392,24 +425,6 @@ public class MainApp extends Application implements DecisionListener {
 	private void searchVocablesButtonActionPerformed() {
 		DialogInstanceManager.getSearchVocablesDialogInstance().show();
 		DialogInstanceManager.getSearchVocablesDialogInstance().requestFocus();
-	}
-
-	@Override
-	public void reactOnDecision(Object responder, Decision decision) {
-		if (responder == DialogInstanceManager.getSaveVocablesConfirmationDialogInstance()) {
-			if (decision == Decision.YES) {
-				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
-			} else if (decision == Decision.YES_REMEMBER) {
-				Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
-				Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
-				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
-			} else if (decision == Decision.NO_REMEMBER) {
-				Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
-				Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
-			}
-			
-			exit();
-		}
 	}
 	
 	private void exit() {
