@@ -2,12 +2,11 @@ package dictionary;
 
 import dictionary.manager.CustomControlsInstanceManager;
 import dictionary.customcontrols.XLDBigCharacterBox;
-import dictionary.customcontrols.XLDMenuBar;
 import dictionary.customcontrols.XLDVocableDetailsBox;
+import dictionary.customcontrols.XLDMenuBar;
 import dictionary.customcontrols.XLDVocableTable;
 import dictionary.dialogs.TrainVocablesDialog;
 import dictionary.dialogs.confirmations.Decision;
-import dictionary.dialogs.confirmations.SaveVocablesConfirmationDialog;
 import dictionary.manager.DialogInstanceManager;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
@@ -89,7 +88,7 @@ public class MainApp extends Application implements DecisionListener {
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
 		Settings.getInstance().readSettings();
-		Settings.setDefaultValues();
+		//Settings.setDefaultValues();
 
 		setUserCSS();
 
@@ -318,19 +317,29 @@ public class MainApp extends Application implements DecisionListener {
 			
 			if (response == Dialog.Actions.YES) {
 				
-				SaveVocablesConfirmationDialog saveVocablesConfirmationDialog = new SaveVocablesConfirmationDialog();
-				saveVocablesConfirmationDialog.registerDecisionListener(this);
-				saveVocablesConfirmationDialog.initialize();
-				saveVocablesConfirmationDialog.show();
-				
-				Settings.getInstance().writeSettings();
 				if (!ManagerInstanceManager.getVocableManagerInstance().getVocableSavedProperty().get()) {
-					ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+					
+					try {
+						if (Settings.getInstance().getSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME).equals(Boolean.toString(true))) {
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().unregisterListeners();
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().registerDecisionListener(this);
+							DialogInstanceManager.getSaveVocablesConfirmationDialogInstance().show();
+							
+						} else {
+							
+							if (Settings.getInstance().getSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME).equals(Boolean.toString(true))) {
+								ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+							}
+							
+							exit();
+						}
+					} catch (SettingNotFoundException ex) {
+						Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+					}
+					
+				} else {
+					exit();
 				}
-				DialogInstanceManager.closeAllDialogs();
-				primaryStage.close();
-			} else if (response == Dialog.Actions.NO) {
-				
 			}
 		});
 	}
@@ -386,7 +395,26 @@ public class MainApp extends Application implements DecisionListener {
 	}
 
 	@Override
-	public void reactOnDecision(Decision decision) {
-		System.out.println("Decision was:" + decision.name());
+	public void reactOnDecision(Object responder, Decision decision) {
+		if (responder == DialogInstanceManager.getSaveVocablesConfirmationDialogInstance()) {
+			if (decision == Decision.YES) {
+				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+			} else if (decision == Decision.YES_REMEMBER) {
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
+				ManagerInstanceManager.getVocableManagerInstance().saveVocables();
+			} else if (decision == Decision.NO_REMEMBER) {
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+				Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(false));
+			}
+			
+			exit();
+		}
+	}
+	
+	private void exit() {
+		Settings.getInstance().writeSettings();
+		DialogInstanceManager.closeAllDialogs();
+		primaryStage.close();
 	}
 }

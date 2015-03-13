@@ -94,18 +94,18 @@
 		<secondLanguageTranslations>哥哥</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gēge</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC03/NPC02</chapters>
+		<chapters>PC03 / NPC02</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>er/ihm/ihn</firstLanguageTranslations>
+		<firstLanguageTranslations>er / ihm / ihn</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>他</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tā</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Personalpronomen</topics>
-		<chapters>PC03/LSC01/NPC02</chapters>
+		<topics>Grammatik / Personalpronomen</topics>
+		<chapters>PC03 / LSC01 / NPC02</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -116,7 +116,7 @@
 		<secondLanguageTranslations>弟弟</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dìdi</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC03/NPC02</chapters>
+		<chapters>PC03 / NPC02</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -171,29 +171,29 @@
 		<secondLanguageTranslations>车</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chē</secondLanguagePhoneticScripts>
 		<topics>Verkehr</topics>
-		<chapters>PC05/NPC08Z</chapters>
+		<chapters>PC05 / NPC08Z</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>sie/ihr</firstLanguageTranslations>
+		<firstLanguageTranslations>sie / ihr</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>她</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tā</secondLanguagePhoneticScripts>
-		<topics>grammatik/personalpronomen</topics>
-		<chapters>PC05/LSC01/NPC03</chapters>
+		<topics>grammatik / personalpronomen</topics>
+		<chapters>PC05 / LSC01 / NPC03</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>jener/jene/jenes/das (dort)</firstLanguageTranslations>
+		<firstLanguageTranslations>jener / jene / jenes / das (dort)</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>那</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC05/NPC03</chapters>
+		<chapters>PC05 / NPC03</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -204,7 +204,7 @@
 		<secondLanguageTranslations>书</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shū</secondLanguagePhoneticScripts>
 		<topics>Literatur</topics>
-		<chapters>PC05/NPC10</chapters>
+		<chapters>PC05 / NPC10</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -232,12 +232,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>welcher/welche/welches</firstLanguageTranslations>
+		<firstLanguageTranslations>welcher / welche / welches</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>哪</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǎ</secondLanguagePhoneticScripts>
-		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC06/NPC03</chapters>
+		<topics>Grammatik / Fragepartikel</topics>
+		<chapters>PC06 / NPC03</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -11742,7 +11742,7 @@
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>广东</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>Guǎngdōng</secondLanguagePhoneticScripts>
-		<topics>Provinzen/China</topics>
+		<topics>Provinzen / China</topics>
 		<chapters>NPC16Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>

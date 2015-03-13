@@ -182,7 +182,7 @@ public class XLDMenuBar extends MenuBar {
 				Settings.getInstance().changeSettingsProperty(Settings.getInstance().XLD_VOCABLE_FILENAME_SETTING_NAME, originalPath);
 				
 			} catch (SettingNotFoundException ex) {
-				Logger.getLogger(XLDMenuBar.class.getName()).log(Level.SEVERE, null, ex);
+				Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
 			}
 			
 		});

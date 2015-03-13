@@ -1,4 +1,4 @@
-#Thu Mar 12 16:51:51 CET 2015
+#Fri Mar 13 03:41:33 CET 2015
 application_name=Xiaolong Dictionary
 application_path=/home/xiaolong/NetBeansProjects/XiaolongDictionary
 application_version=2.0
@@ -6,6 +6,7 @@ big_character_box_font_name=Dialog
 big_character_box_font_size=50
 big_character_box_font_style=Regular
 big_character_box_loop=false
+dialog_show_save_vocable_changes_confirmation=false
 first_language_name=German
 first_language_phonetic_script_name=IPA
 ignored_characters=abcdefghijklmnopqrstuvwxyzäöüß ,/ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ
@@ -21,6 +22,7 @@ preserve_relevance_selected=false
 preserve_second_language_phonetic_script_selected=false
 preserve_second_language_selected=false
 preserve_topic_selected=false
+save_vocable_changes_on_exit=true
 second_language_name=Mandarin
 second_language_phonetic_script_name=Pīnyīn
 separator_character=/

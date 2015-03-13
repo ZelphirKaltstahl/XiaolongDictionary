@@ -11,6 +11,7 @@ import dictionary.dialogs.ChangeVocableDialog;
 import dictionary.dialogs.InsertSpecialCharacterDialog;
 import dictionary.dialogs.SearchVocablesDialog;
 import dictionary.dialogs.TrainVocablesDialog;
+import dictionary.dialogs.confirmations.SaveVocablesConfirmationDialog;
 import dictionary.dialogs.options.BigCharacterBoxOptionsDialog;
 import dictionary.model.Vocable;
 import java.util.List;
@@ -26,6 +27,7 @@ public class DialogInstanceManager {
 	private static TrainVocablesDialog trainVocablesDialogInstance;
 	private static SearchVocablesDialog searchVocablesDialogInstance;
 	private static InsertSpecialCharacterDialog insertSpecialCharacterDialogInstance;
+	private static SaveVocablesConfirmationDialog saveVocablesConfirmationDialogInstance;
 	
 	// OPTIONS
 	private static BigCharacterBoxOptionsDialog bigCharacterBoxOptionsDialogInstance;
@@ -81,11 +83,21 @@ public class DialogInstanceManager {
 		return bigCharacterBoxOptionsDialogInstance;
 	}
 	
+	public static SaveVocablesConfirmationDialog getSaveVocablesConfirmationDialogInstance() {
+		if (saveVocablesConfirmationDialogInstance == null) {
+			saveVocablesConfirmationDialogInstance = new SaveVocablesConfirmationDialog();
+			saveVocablesConfirmationDialogInstance.initialize();
+		}
+		return saveVocablesConfirmationDialogInstance;
+	}
+	
 	public static void closeAllDialogs() {
 		if (addVocablesDialogInstance != null) addVocablesDialogInstance.close();
 		if (searchVocablesDialogInstance != null) searchVocablesDialogInstance.close();
 		if (insertSpecialCharacterDialogInstance != null) insertSpecialCharacterDialogInstance.close();
 		if (trainVocablesDialogInstance != null) trainVocablesDialogInstance.close();
 		if (changeVocableDialogInstance != null) changeVocableDialogInstance.close();
+		if (bigCharacterBoxOptionsDialogInstance != null) bigCharacterBoxOptionsDialogInstance.close();
+		if (saveVocablesConfirmationDialogInstance != null) saveVocablesConfirmationDialogInstance.close();
 	}
 }

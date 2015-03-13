@@ -103,10 +103,15 @@ public class Settings {
 	public final String VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME = "vocable_training_predefined_new_learn_levels";
 	public final String VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME = "vocable_training_predefined_new_relevance_levels";
 	
+	// DIALOGS
+	public final String DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME = "dialog_show_save_vocable_changes_confirmation";
+	
+	public final String SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME = "save_vocable_changes_on_exit";
 	
 	// other values
 	private final String FIRST_LANGUAGE_TO_SECOND_LANGUAGE_TRAINING_DIRECTION = Boolean.toString(true);
 	private final String SECOND_LANGUAGE_TO_FIRST_LANGUAGE_TRAINING_DIRECTION = Boolean.toString(false);
+	
 	
 	// private constructor -> singleton
 	private Settings() {
@@ -172,7 +177,10 @@ public class Settings {
 		VOCABLE_TRAINING_CUSTOM_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
 		VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME,
 		VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME,
-		VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME
+		VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME,
+		
+		DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME,
+		SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME
 	};
 	
 	private final HashMap<String, String> settings = new HashMap<>();
@@ -239,6 +247,9 @@ public class Settings {
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_TRAINING_PREDEFINED_NEW_RELEVANCE_LEVEL_SELECTED_SETTING_NAME, Boolean.toString(true));
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_LEARN_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
+			
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
 			
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
@@ -309,7 +320,7 @@ public class Settings {
 			
 			settings.forEach(
 				(settingsName, value) -> {
-					System.out.println("Saving Settings: |" + settingsName);
+					System.out.println("Saving SETTING:|" + settingsName + "| VALUE:|" + value + "|");
 					properties.setProperty(settingsName, value);
 				}
 			);
