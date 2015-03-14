@@ -5,6 +5,7 @@
  */
 package dictionary.dialogs.confirmations;
 
+import dictionary.customcontrols.XLDGenericMessageDialogButton;
 import dictionary.model.Decision;
 import dictionary.model.Action;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	public static final Button EXIT_BUTTON = new Button("Exit");
 	
 	private final HashMap<Decision, Action<Object>> actions = new HashMap<>();
-	private final List<Button> buttons = new ArrayList<>();
+	private final List<XLDGenericMessageDialogButton> buttons = new ArrayList<>();
 	
 	private Scene scene;
 	
@@ -64,7 +65,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	 * @param hasData whether or not this dialog carries any data, which is used in the actions set for the decisions connected to the buttons of this dialog
 	 * @param buttons an arbitrary number ob buttons, which will be displayed in the dialog
 	 */
-	public XLDGenericMessageDialog(String title, String message, boolean displayDoNotShowAgainCheckBox, boolean hasData, Button... buttons) {
+	public XLDGenericMessageDialog(String title, String message, boolean displayDoNotShowAgainCheckBox, boolean hasData, XLDGenericMessageDialogButton... buttons) {
 		this.buttons.addAll(Arrays.asList(buttons));
 		
 		this.displayDoNotShowAgainCheckBox = displayDoNotShowAgainCheckBox;
@@ -116,7 +117,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	private void addEventHandlers() {
 		buttons.forEach((button) -> {
 			
-			if (button == XLDGenericMessageDialog.OK_BUTTON) {
+			if (button.getDecision() == Decision.OK) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {
@@ -130,7 +131,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					}
 				});
 				
-			} else if (button == XLDGenericMessageDialog.YES_BUTTON) {
+			} else if (button.getDecision() == Decision.YES) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {
@@ -144,7 +145,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					}
 				});
 				
-			} else if (button == XLDGenericMessageDialog.NO_BUTTON) {
+			} else if (button.getDecision() == Decision.NO) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {
@@ -159,7 +160,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					}
 				});
 				
-			} else if (button == XLDGenericMessageDialog.SAVE_BUTTON) {
+			} else if (button.getDecision() == Decision.SAVE) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {
@@ -173,7 +174,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					}
 				});
 				
-			} else if (button == XLDGenericMessageDialog.EXIT_BUTTON) {
+			} else if (button.getDecision() == Decision.EXIT) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {
@@ -187,7 +188,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 					}
 				});
 				
-			} else if (button == XLDGenericMessageDialog.CANCEL_BUTTON) {
+			} else if (button.getDecision() == Decision.CANCEL) {
 				button.setOnAction((actionEvent) -> {
 					T value = null;
 					if (hasData) {

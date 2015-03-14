@@ -13,8 +13,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/model/Settings.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/confirmations/ExitConfirmationDialog.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/manager/DialogInstanceManager.java</file>
             <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/MainApp.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/model/Decision.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/confirmations/SaveVocablesConfirmationDialog.java</file>
+            <file>file:/home/xiaolong/NetBeansProjects/XiaolongDictionary/src/dictionary/dialogs/confirmations/XLDGenericMessageDialog.java</file>
         </group>
     </open-files>
 </project-private>

@@ -105,6 +105,7 @@ public class Settings {
 	
 	// DIALOGS
 	public final String DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME = "dialog_show_save_vocable_changes_confirmation";
+	public final String DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME = "dialog_show_exit_confirmation";
 	
 	public final String SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME = "save_vocable_changes_on_exit";
 	
@@ -180,6 +181,7 @@ public class Settings {
 		VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME,
 		
 		DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME,
+		DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME,
 		SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME
 	};
 	
@@ -249,6 +251,8 @@ public class Settings {
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().VOCABLE_PREDEFINED_RELEVANCE_LEVELS_SETTING_NAME, "LVL5,LVL4,LVL3,LVL2,LVL1");
 			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
+			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
 			
 		} catch (SettingNotFoundException ex) {
