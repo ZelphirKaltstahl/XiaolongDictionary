@@ -5,15 +5,13 @@
  */
 package dictionary.manager;
 
-import dictionary.MainApp;
 import dictionary.customcontrols.XLDGenericMessageDialogButton;
 import dictionary.dialogs.AddVocablesDialog;
 import dictionary.dialogs.ChangeVocableDialog;
 import dictionary.dialogs.InsertSpecialCharacterDialog;
 import dictionary.dialogs.SearchVocablesDialog;
 import dictionary.dialogs.TrainVocablesDialog;
-import dictionary.dialogs.confirmations.SaveVocablesConfirmationDialog;
-import dictionary.dialogs.confirmations.XLDGenericMessageDialog;
+import dictionary.customcontrols.XLDGenericMessageDialog;
 import dictionary.dialogs.options.BigCharacterBoxOptionsDialog;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.model.Decision;
@@ -36,8 +34,10 @@ public class DialogInstanceManager {
 	private static TrainVocablesDialog trainVocablesDialogInstance;
 	private static SearchVocablesDialog searchVocablesDialogInstance;
 	private static InsertSpecialCharacterDialog insertSpecialCharacterDialogInstance;
+
 	private static XLDGenericMessageDialog<Object> saveVocablesOnExitConfirmationDialogInstance;
 	private static XLDGenericMessageDialog<Object> exitConfirmationDialogInstance;
+	private static XLDGenericMessageDialog<Object> addingDuplicateVocableDialogInstance;
 
 	// OPTIONS
 	private static BigCharacterBoxOptionsDialog bigCharacterBoxOptionsDialogInstance;
@@ -92,6 +92,37 @@ public class DialogInstanceManager {
 		return bigCharacterBoxOptionsDialogInstance;
 	}
 
+	public static XLDGenericMessageDialog<Object> getAddingDuplicateVocableDialogInstance(Stage owner) {
+		if (addingDuplicateVocableDialogInstance == null) {
+			String dialogTitle = "Duplicate Vocable";
+			String dialogMessage = "The vocable you want to add is already in the currently active dictionary.";
+			boolean dialogDisplaysDoNotShowAgainCheckBox = false;
+			boolean dialogHasData = false;
+
+			addingDuplicateVocableDialogInstance = new XLDGenericMessageDialog<>(
+					dialogTitle,
+					dialogMessage,
+					dialogDisplaysDoNotShowAgainCheckBox,
+					dialogHasData,
+					new XLDGenericMessageDialogButton("OK", Decision.OK)
+			);
+
+			addingDuplicateVocableDialogInstance.initModality(Modality.APPLICATION_MODAL);
+			addingDuplicateVocableDialogInstance.initOwner(owner);
+			addingDuplicateVocableDialogInstance.initialize();
+
+			addingDuplicateVocableDialogInstance.setActionForDecision(
+					Decision.OK,
+					(dictionary.model.Action) (Object value) -> {
+						addingDuplicateVocableDialogInstance.close();
+					}
+			);
+
+		}
+
+		return addingDuplicateVocableDialogInstance;
+	}
+
 	public static XLDGenericMessageDialog<Object> getExitConfirmationDialogInstance(Stage owner) {
 		if (exitConfirmationDialogInstance == null) {
 			try {
@@ -112,12 +143,10 @@ public class DialogInstanceManager {
 				exitConfirmationDialogInstance.initModality(Modality.APPLICATION_MODAL);
 				exitConfirmationDialogInstance.initOwner(owner);
 				exitConfirmationDialogInstance.initialize();
-				
+
 				exitConfirmationDialogInstance.setActionForDecision(
 						Decision.YES,
 						(dictionary.model.Action) (Object value) -> {
-							System.out.println("EXIT:YES");
-							
 							Settings.getInstance().writeSettings();
 							DialogInstanceManager.closeAllDialogs();
 							owner.close();
@@ -127,10 +156,8 @@ public class DialogInstanceManager {
 				exitConfirmationDialogInstance.setActionForDecision(
 						Decision.YES_REMEMBER,
 						(dictionary.model.Action) (Object value) -> {
-							System.out.println("EXIT:YES_REMEMBER");
-							
 							Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
-							
+
 							Settings.getInstance().writeSettings();
 							DialogInstanceManager.closeAllDialogs();
 							owner.close();
@@ -140,15 +167,13 @@ public class DialogInstanceManager {
 				exitConfirmationDialogInstance.setActionForDecision(
 						Decision.NO,
 						(dictionary.model.Action) (Object value) -> {
-							System.out.println("EXIT:NO");
 							exitConfirmationDialogInstance.close();
 						}
 				);
-				
+
 				exitConfirmationDialogInstance.setActionForDecision(
 						Decision.NO_REMEMBER,
 						(dictionary.model.Action) (Object value) -> {
-							System.out.println("EXIT:NO_REMEMBER");
 							exitConfirmationDialogInstance.close();
 						}
 				);
@@ -246,5 +271,4 @@ public class DialogInstanceManager {
 			saveVocablesOnExitConfirmationDialogInstance.close();
 		}
 	}
-	
 }

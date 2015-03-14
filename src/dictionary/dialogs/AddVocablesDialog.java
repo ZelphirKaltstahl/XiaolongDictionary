@@ -553,7 +553,8 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 					.message("The vocable you want to add is already in the currently active dictionary.")
 					.showInformation();
 				*/
-				ControlFXDialogDisplayer.showAddingDuplicateVocableDialog(this);
+				//ControlFXDialogDisplayer.showAddingDuplicateVocableDialog(this);
+				DialogInstanceManager.getAddingDuplicateVocableDialogInstance(this).show();
 			}
 			
 		} else {

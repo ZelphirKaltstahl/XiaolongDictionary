@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dictionary.dialogs.confirmations;
+package dictionary.customcontrols;
 
-import dictionary.customcontrols.XLDGenericMessageDialogButton;
 import dictionary.model.Decision;
 import dictionary.model.Action;
 import java.util.ArrayList;
@@ -83,6 +82,11 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	private void initializeControls() {
 		setTitle(title);
 		
+		/*
+		setMaxWidth(300);
+		setMaxHeight(Double.MAX_VALUE);
+		*/
+		
 		containingVBox = new VBox();
 		containingVBox.setSpacing(10);
 		containingVBox.setPadding(new Insets(10));
@@ -90,6 +94,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 		scene = new Scene(containingVBox);
 		
 		textFlow = new TextFlow();
+		textFlow.setTextAlignment(TextAlignment.JUSTIFY);
 		
 		text = new Text(message);
 		text.setTextAlignment(TextAlignment.JUSTIFY);
@@ -98,7 +103,9 @@ public class XLDGenericMessageDialog<T> extends Stage {
 		buttonHBox.setSpacing(10);
 		buttonHBox.setAlignment(Pos.CENTER_RIGHT);
 		
-		doNotShowAgainCheckBox = new CheckBox("Do not show this dialog again");
+		if (displayDoNotShowAgainCheckBox) {
+			doNotShowAgainCheckBox = new CheckBox("Do not show this dialog again");
+		}
 		
 		setScene(scene);
 	}
@@ -107,7 +114,9 @@ public class XLDGenericMessageDialog<T> extends Stage {
 		containingVBox.getChildren().add(textFlow);
 		textFlow.getChildren().add(text);
 		
-		containingVBox.getChildren().add(doNotShowAgainCheckBox);
+		if (displayDoNotShowAgainCheckBox) {
+			containingVBox.getChildren().add(doNotShowAgainCheckBox);
+		}
 		
 		buttonHBox.getChildren().addAll(buttons);
 		
