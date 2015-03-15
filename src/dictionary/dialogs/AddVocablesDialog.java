@@ -13,6 +13,7 @@ import dictionary.helpers.ControlFXDialogDisplayer;
 import dictionary.listeners.SettingsPropertyChangeListener;
 import dictionary.manager.ManagerInstanceManager;
 import dictionary.model.Action;
+import dictionary.model.Decision;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.util.Arrays;
@@ -558,7 +559,7 @@ public class AddVocablesDialog extends XLDDialog implements SettingsPropertyChan
 			}
 			
 		} else {
-			ControlFXDialogDisplayer.showEmptyInputFieldsDialog(this);
+			DialogInstanceManager.getEmptyInputFieldsDialogInstance(this).show();
 		}
 	}
 

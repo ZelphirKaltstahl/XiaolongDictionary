@@ -35,9 +35,11 @@ public class DialogInstanceManager {
 	private static SearchVocablesDialog searchVocablesDialogInstance;
 	private static InsertSpecialCharacterDialog insertSpecialCharacterDialogInstance;
 
-	private static XLDGenericMessageDialog<Object> saveVocablesOnExitConfirmationDialogInstance;
-	private static XLDGenericMessageDialog<Object> exitConfirmationDialogInstance;
-	private static XLDGenericMessageDialog<Object> addingDuplicateVocableDialogInstance;
+	private static XLDGenericMessageDialog saveVocablesOnExitConfirmationDialogInstance;
+	private static XLDGenericMessageDialog exitConfirmationDialogInstance;
+	private static XLDGenericMessageDialog addingDuplicateVocableDialogInstance;
+	private static XLDGenericMessageDialog emptyInputFieldsDialogInstance;
+	private static XLDGenericMessageDialog deleteVocablesConfirmationDialogInstance;
 
 	// OPTIONS
 	private static BigCharacterBoxOptionsDialog bigCharacterBoxOptionsDialogInstance;
@@ -92,18 +94,17 @@ public class DialogInstanceManager {
 		return bigCharacterBoxOptionsDialogInstance;
 	}
 
-	public static XLDGenericMessageDialog<Object> getAddingDuplicateVocableDialogInstance(Stage owner) {
+	public static XLDGenericMessageDialog getAddingDuplicateVocableDialogInstance(Stage owner) {
 		if (addingDuplicateVocableDialogInstance == null) {
 			String dialogTitle = "Duplicate Vocable";
 			String dialogMessage = "The vocable you want to add is already in the currently active dictionary.";
 			boolean dialogDisplaysDoNotShowAgainCheckBox = false;
 			boolean dialogHasData = false;
 
-			addingDuplicateVocableDialogInstance = new XLDGenericMessageDialog<>(
+			addingDuplicateVocableDialogInstance = new XLDGenericMessageDialog(
 					dialogTitle,
 					dialogMessage,
 					dialogDisplaysDoNotShowAgainCheckBox,
-					dialogHasData,
 					new XLDGenericMessageDialogButton("OK", Decision.OK)
 			);
 
@@ -123,19 +124,64 @@ public class DialogInstanceManager {
 		return addingDuplicateVocableDialogInstance;
 	}
 
-	public static XLDGenericMessageDialog<Object> getExitConfirmationDialogInstance(Stage owner) {
+	public static XLDGenericMessageDialog getEmptyInputFieldsDialogInstance(Stage owner) {
+		if (emptyInputFieldsDialogInstance == null) {
+			String dialogTitle = "Empty fields";
+			String dialogMessage = "One or more input fields are empty. Please enter values.\n(You can enter a place holder like \"---\" and check the preserve check box, if you do not wish to bother with some input fields.)";
+			boolean dialogDisplaysDoNotShowAgainCheckBox = false;
+
+			emptyInputFieldsDialogInstance = new XLDGenericMessageDialog(
+					dialogTitle,
+					dialogMessage,
+					dialogDisplaysDoNotShowAgainCheckBox,
+					new XLDGenericMessageDialogButton("OK", Decision.OK)
+			);
+			emptyInputFieldsDialogInstance.initModality(Modality.APPLICATION_MODAL);
+			emptyInputFieldsDialogInstance.initOwner(owner);
+			emptyInputFieldsDialogInstance.initialize();
+
+			emptyInputFieldsDialogInstance.setActionForDecision(
+					Decision.OK,
+					(dictionary.model.Action) (Object value) -> {
+						emptyInputFieldsDialogInstance.close();
+					}
+			);
+		}
+		return emptyInputFieldsDialogInstance;
+	}
+
+	public static XLDGenericMessageDialog getDeleteVocablesConfirmationDialog(Stage owner) {
+		if (deleteVocablesConfirmationDialogInstance == null) {
+			String dialogTitle = "Delete Vocable Confirmation";
+			String dialogMessage = "Do you really want to delete the selected vocables?";
+			boolean dialogDisplaysDoNotShowAgainCheckBox = true;
+
+			deleteVocablesConfirmationDialogInstance = new XLDGenericMessageDialog(
+					dialogTitle,
+					dialogMessage,
+					dialogDisplaysDoNotShowAgainCheckBox,
+					new XLDGenericMessageDialogButton("Yes", Decision.YES),
+					new XLDGenericMessageDialogButton("No", Decision.NO)
+			);
+
+			deleteVocablesConfirmationDialogInstance.initModality(Modality.APPLICATION_MODAL);
+			deleteVocablesConfirmationDialogInstance.initOwner(owner);
+			deleteVocablesConfirmationDialogInstance.initialize();
+		}
+		return deleteVocablesConfirmationDialogInstance;
+	}
+
+	public static XLDGenericMessageDialog getExitConfirmationDialogInstance(Stage owner) {
 		if (exitConfirmationDialogInstance == null) {
 			try {
 				String dialogTitle = "Exit Confirmation";
 				String dialogMessage = "Do you really want to exit " + Settings.getInstance().getSettingsProperty(Settings.getInstance().APPLICATION_NAME_SETTING_NAME) + "?";
 				boolean dialogDisplaysDoNotShowAgainCheckBox = true;
-				boolean dialogHasData = false;
 
-				exitConfirmationDialogInstance = new XLDGenericMessageDialog<>(
+				exitConfirmationDialogInstance = new XLDGenericMessageDialog(
 						dialogTitle,
 						dialogMessage,
 						dialogDisplaysDoNotShowAgainCheckBox,
-						dialogHasData,
 						new XLDGenericMessageDialogButton("Yes", Decision.YES),
 						new XLDGenericMessageDialogButton("No", Decision.NO)
 				);
@@ -186,19 +232,17 @@ public class DialogInstanceManager {
 		return exitConfirmationDialogInstance;
 	}
 
-	public static XLDGenericMessageDialog<Object> getSaveVocablesOnExitConfirmationDialogInstance(Stage owner) {
+	public static XLDGenericMessageDialog getSaveVocablesOnExitConfirmationDialogInstance(Stage owner) {
 		if (saveVocablesOnExitConfirmationDialogInstance == null) {
 
 			String dialogTitle = "Save Vocable Changes Confirmation";
 			String dialogMessage = "Before you leave ...\nThere are unsaved vocable changes. Do you want to save these changes?";
 			boolean dialogDisplaysDoNotShowAgainCheckBox = true;
-			boolean dialogHasData = false;
 
-			saveVocablesOnExitConfirmationDialogInstance = new XLDGenericMessageDialog<>(
+			saveVocablesOnExitConfirmationDialogInstance = new XLDGenericMessageDialog(
 					dialogTitle,
 					dialogMessage,
 					dialogDisplaysDoNotShowAgainCheckBox,
-					dialogHasData,
 					new XLDGenericMessageDialogButton("Yes", Decision.YES),
 					new XLDGenericMessageDialogButton("No", Decision.NO)
 			);

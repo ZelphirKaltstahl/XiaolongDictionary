@@ -106,8 +106,11 @@ public class Settings {
 	// DIALOGS
 	public final String DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME = "dialog_show_save_vocable_changes_confirmation";
 	public final String DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME = "dialog_show_exit_confirmation";
+	public final String DIALOG_SHOW_DELETE_VOCABLE_CONFIRMATION_SETTING_NAME = "dialog_show_delete_vocable_confirmation";
 	
 	public final String SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME = "save_vocable_changes_on_exit";
+	public final String DELETE_SELECTED_VOCABLES_ON_BUTTON_CLICK_SETTING_NAME = "delete_selected_vocables_on_button_click";
+	
 	
 	// other values
 	private final String FIRST_LANGUAGE_TO_SECOND_LANGUAGE_TRAINING_DIRECTION = Boolean.toString(true);
@@ -182,8 +185,10 @@ public class Settings {
 		
 		DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME,
 		DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME,
+		DIALOG_SHOW_DELETE_VOCABLE_CONFIRMATION_SETTING_NAME,
 		
-		SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME
+		SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME,
+		DELETE_SELECTED_VOCABLES_ON_BUTTON_CLICK_SETTING_NAME
 	};
 	
 	private final HashMap<String, String> settings = new HashMap<>();
@@ -253,8 +258,10 @@ public class Settings {
 			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_SAVE_VOCABLE_CHANGES_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_EXIT_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_DELETE_VOCABLE_CONFIRMATION_SETTING_NAME, Boolean.toString(true));
 			
 			Settings.getInstance().changeSettingsProperty(Settings.getInstance().SAVE_VOCABLE_CHANGES_ON_EXIT_SETTING_NAME, Boolean.toString(true));
+			Settings.getInstance().changeSettingsProperty(Settings.getInstance().DELETE_SELECTED_VOCABLES_ON_BUTTON_CLICK_SETTING_NAME, Boolean.toString(false));
 			
 		} catch (SettingNotFoundException ex) {
 			Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
@@ -285,9 +292,9 @@ public class Settings {
 				}
 			}
 			
-			settings.forEach(
+			/*settings.forEach(
 				(key, value) -> System.out.println(key+"|"+value)
-			);
+			);*/
 
 		} catch (IOException ex) {
 			Logger.getLogger(Settings.class.getName()).log(Level.SEVERE, null, ex);
@@ -305,7 +312,7 @@ public class Settings {
 		
 		//readSettingsFromFile(new File(DEFAULT_SETTINGS_FILE_NAME));
 		
-		settings.forEach((settingName, value) -> System.out.println("KEY:"+settingName+"|VALUE:"+value));
+		//settings.forEach((settingName, value) -> System.out.println("KEY:"+settingName+"|VALUE:"+value));
 	}
 	
 	public void writeSettings() {
@@ -325,7 +332,7 @@ public class Settings {
 			
 			settings.forEach(
 				(settingsName, value) -> {
-					System.out.println("Saving SETTING:|" + settingsName + "| VALUE:|" + value + "|");
+					//System.out.println("Saving SETTING:|" + settingsName + "| VALUE:|" + value + "|");
 					properties.setProperty(settingsName, value);
 				}
 			);

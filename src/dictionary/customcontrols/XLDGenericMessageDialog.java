@@ -26,9 +26,8 @@ import javafx.stage.Stage;
 /**
  *
  * @author xiaolong
- * @param <T> the type of the data carried by this dialog
  */
-public class XLDGenericMessageDialog<T> extends Stage {
+public class XLDGenericMessageDialog extends Stage {
 	
 	public static final Button OK_BUTTON = new Button("OK");
 	public static final Button YES_BUTTON = new Button("Yes");
@@ -53,22 +52,18 @@ public class XLDGenericMessageDialog<T> extends Stage {
 	private boolean displayDoNotShowAgainCheckBox = false;
 	private String message = "No message";
 	private String title = "No title";
-	private boolean hasData = false;
-	private T data;
 	
 	/**
 	 * 
 	 * @param title the title of the dialog
 	 * @param message the message displayed by the dialog
 	 * @param displayDoNotShowAgainCheckBox whether or not the dialog shall show a checkbox for the user to decide whether or not the dialog shall be shown again in the future
-	 * @param hasData whether or not this dialog carries any data, which is used in the actions set for the decisions connected to the buttons of this dialog
 	 * @param buttons an arbitrary number ob buttons, which will be displayed in the dialog
 	 */
-	public XLDGenericMessageDialog(String title, String message, boolean displayDoNotShowAgainCheckBox, boolean hasData, XLDGenericMessageDialogButton... buttons) {
+	public XLDGenericMessageDialog(String title, String message, boolean displayDoNotShowAgainCheckBox, XLDGenericMessageDialogButton... buttons) {
 		this.buttons.addAll(Arrays.asList(buttons));
 		
 		this.displayDoNotShowAgainCheckBox = displayDoNotShowAgainCheckBox;
-		this.hasData = hasData;
 		this.message = message;
 		this.title = title;
 	}
@@ -94,6 +89,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 		scene = new Scene(containingVBox);
 		
 		textFlow = new TextFlow();
+		textFlow.setMaxWidth(300);
 		textFlow.setTextAlignment(TextAlignment.JUSTIFY);
 		
 		text = new Text(message);
@@ -128,83 +124,52 @@ public class XLDGenericMessageDialog<T> extends Stage {
 			
 			if (button.getDecision() == Decision.OK) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-					
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
-						executeActionForDecision(Decision.OK_REMEMBER, value);
+						executeActionForDecision(Decision.OK_REMEMBER);
 					} else {
-						executeActionForDecision(Decision.OK, value);
+						executeActionForDecision(Decision.OK);
 					}
 				});
 				
 			} else if (button.getDecision() == Decision.YES) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-					
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
-						executeActionForDecision(Decision.YES_REMEMBER, value);
+						executeActionForDecision(Decision.YES_REMEMBER);
 					} else {
-						executeActionForDecision(Decision.YES, value);
+						executeActionForDecision(Decision.YES);
 					}
 				});
 				
 			} else if (button.getDecision() == Decision.NO) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-					
-
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
-						executeActionForDecision(Decision.NO_REMEMBER, value);
+						executeActionForDecision(Decision.NO_REMEMBER);
 					} else {
-						executeActionForDecision(Decision.NO, value);
+						executeActionForDecision(Decision.NO);
 					}
 				});
 				
 			} else if (button.getDecision() == Decision.SAVE) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
-						executeActionForDecision(Decision.SAVE_REMEMBER, value);
+						executeActionForDecision(Decision.SAVE_REMEMBER);
 					} else {
-						executeActionForDecision(Decision.SAVE, value);
+						executeActionForDecision(Decision.SAVE);
 					}
 				});
 				
 			} else if (button.getDecision() == Decision.EXIT) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-
 					if (displayDoNotShowAgainCheckBox && doNotShowAgainCheckBox.isSelected()) {
-						executeActionForDecision(Decision.EXIT_REMEMBER, value);
+						executeActionForDecision(Decision.EXIT_REMEMBER);
 					} else {
-						executeActionForDecision(Decision.EXIT, value);
+						executeActionForDecision(Decision.EXIT);
 					}
 				});
 				
 			} else if (button.getDecision() == Decision.CANCEL) {
 				button.setOnAction((actionEvent) -> {
-					T value = null;
-					if (hasData) {
-						value = data;
-					}
-					
-					executeActionForDecision(Decision.CANCEL, value);
+					executeActionForDecision(Decision.CANCEL);
 				});
 			}
 		});
@@ -214,7 +179,7 @@ public class XLDGenericMessageDialog<T> extends Stage {
 		actions.put(decision, action);
 	}
 	
-	private void executeActionForDecision(Decision decision, T value) {
-		actions.get(decision).execute(value);
+	private void executeActionForDecision(Decision decision) {
+		actions.get(decision).execute(null);
 	}
 }

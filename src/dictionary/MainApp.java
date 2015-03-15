@@ -10,6 +10,7 @@ import dictionary.manager.DialogInstanceManager;
 import dictionary.exceptions.SettingNotFoundException;
 import dictionary.helpers.ControlFXDialogDisplayer;
 import dictionary.manager.ManagerInstanceManager;
+import dictionary.model.Decision;
 import dictionary.model.Settings;
 import dictionary.model.Vocable;
 import java.util.ArrayList;
@@ -85,7 +86,7 @@ public class MainApp extends Application {
 	public void start(Stage stage) throws Exception {
 		this.primaryStage = stage;
 		Settings.getInstance().readSettings();
-		//Settings.setDefaultValues();
+		Settings.setDefaultValues();
 
 		setUserCSS();
 
@@ -340,13 +341,53 @@ public class MainApp extends Application {
 
 	private void deleteVocablesButtonActionPerformed() {
 		if (!xldVocableTable.getSelectionModel().getSelectedItems().isEmpty()) {
-			Action response = ControlFXDialogDisplayer.showDeleteVocablesConfirmationDialog(primaryStage);
-
-			if (response == Dialog.Actions.YES) {
-				ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
-				ManagerInstanceManager.getVocableManagerInstance().deleteVocables(listOfSelectedVocables);
-				//xldVocableTable.getSelectionModel().clearSelection();
-
+			try {
+				if (Settings.getInstance().getSettingsProperty(Settings.getInstance().DIALOG_SHOW_DELETE_VOCABLE_CONFIRMATION_SETTING_NAME).equals(Boolean.toString(true))) {
+					
+					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
+							Decision.YES,
+							(dictionary.model.Action) (Object value) -> {
+								ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
+								ManagerInstanceManager.getVocableManagerInstance().deleteVocables(listOfSelectedVocables);
+								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
+							}
+					);
+					
+					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
+							Decision.YES_REMEMBER,
+							(dictionary.model.Action) (Object value) -> {
+								Settings.getInstance().changeSettingsProperty(Settings.getInstance().DIALOG_SHOW_DELETE_VOCABLE_CONFIRMATION_SETTING_NAME, Boolean.toString(false));
+								Settings.getInstance().changeSettingsProperty(Settings.getInstance().DELETE_SELECTED_VOCABLES_ON_BUTTON_CLICK_SETTING_NAME, Boolean.toString(true));
+								ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
+								ManagerInstanceManager.getVocableManagerInstance().deleteVocables(listOfSelectedVocables);
+								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
+							}
+					);
+					
+					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
+							Decision.NO,
+							(dictionary.model.Action) (Object value) -> {
+								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
+							}
+					);
+					
+					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
+							Decision.NO_REMEMBER,
+							(dictionary.model.Action) (Object value) -> {
+								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
+							}
+					);
+					
+					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).show();
+					
+				} else {
+					if (Settings.getInstance().getSettingsProperty(Settings.getInstance().DELETE_SELECTED_VOCABLES_ON_BUTTON_CLICK_SETTING_NAME).equals(Boolean.toString(true))) {
+						ObservableList<Vocable> listOfSelectedVocables = (ObservableList<Vocable>) xldVocableTable.getSelectionModel().getSelectedItems();
+						ManagerInstanceManager.getVocableManagerInstance().deleteVocables(listOfSelectedVocables);
+					}
+				}
+			} catch (SettingNotFoundException ex) {
+				Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		} else {
 			ControlFXDialogDisplayer.showNoVocablesSelectedForDeletionDialog(primaryStage);

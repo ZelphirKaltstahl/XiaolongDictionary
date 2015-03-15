@@ -7,6 +7,7 @@ package dictionary.helpers;
 
 import org.controlsfx.control.action.Action;
 import org.controlsfx.dialog.Dialog;
+import org.controlsfx.dialog.DialogStyle;
 import org.controlsfx.dialog.Dialogs;
 
 /**
@@ -48,6 +49,7 @@ public class ControlFXDialogDisplayer {
 			.masthead("Deletion of vocables")
 			.message("Do you really want to delete the selected vocables?")
 			.actions(Dialog.Actions.YES, Dialog.Actions.NO)
+			.style(DialogStyle.NATIVE)
 			.showConfirm();
 	}
 	
