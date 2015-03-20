@@ -5,13 +5,6 @@ VocableDetailBox.png
 BigCharacterBoxOptionsDialog.graphml
 BigCharacterBoxOptionsDialog.png
 
-# old files
-encodingTestFile.xml
-hs_err_pid*.log
-oldvocabulary
-xld_settings.xml
-trash/
-
 # binaries
 build/*
 dist/run*
@@ -19,7 +12,6 @@ dist/run*
 
 # netbeans stuff
 nbproject/private
-org/
 
 # not used code
 src/dictionary/model/ListVocableConverter.java
