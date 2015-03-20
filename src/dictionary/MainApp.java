@@ -37,8 +37,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import org.controlsfx.control.action.Action;
-import org.controlsfx.dialog.Dialog;
 
 public class MainApp extends Application {
 
@@ -92,7 +90,7 @@ public class MainApp extends Application {
 
 		initializeGUIControls();
 		addControls();
-		addActionListeners();
+		addActionEventHandlers();
 		addExitListener();
 
 		ManagerInstanceManager.getVocableManagerInstance().loadVocables();
@@ -284,7 +282,7 @@ public class MainApp extends Application {
 		root.setBottom(statusLabelHBox);
 	}
 
-	private void addActionListeners() {
+	private void addActionEventHandlers() {
 
 		addVocableButton.setOnAction((ActionEvent event) -> {
 			addVocableButtonActionPerformed();

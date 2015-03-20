@@ -1,4 +1,4 @@
-#Sun Mar 15 00:45:40 CET 2015
+#Fri Mar 20 16:31:09 CET 2015
 application_name=Xiaolong Dictionary
 application_path=/home/xiaolong/NetBeansProjects/XiaolongDictionary
 application_version=2.0
@@ -6,8 +6,8 @@ big_character_box_font_name=Dialog
 big_character_box_font_size=50
 big_character_box_font_style=Regular
 big_character_box_loop=false
-delete_selected_vocables_on_button_click=true
-dialog_show_delete_vocable_confirmation=false
+delete_selected_vocables_on_button_click=false
+dialog_show_delete_vocable_confirmation=true
 dialog_show_exit_confirmation=true
 dialog_show_save_vocable_changes_confirmation=true
 first_language_name=German
