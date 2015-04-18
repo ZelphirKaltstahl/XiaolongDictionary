@@ -1370,7 +1370,7 @@
 		<secondLanguageTranslations>商店</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shāngdiàn</secondLanguagePhoneticScripts>
 		<topics>Gebaeude</topics>
-		<chapters>PC13</chapters>
+		<chapters>PC13 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>1</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1911,7 +1911,7 @@
 		<topics>Papierzeug</topics>
 		<chapters>PC15/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1933,7 +1933,7 @@
 		<topics>Raeume</topics>
 		<chapters>PC15/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -1988,7 +1988,7 @@
 		<topics>---</topics>
 		<chapters>PC15Z/NPC16</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2003,14 +2003,14 @@
 		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>(lange Dinge/Hose/Straße)</firstLanguageTranslations>
+		<firstLanguageTranslations>(ZEW lange Dinge / Hose / Straße)</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>条</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tiáo</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC16</chapters>
+		<chapters>PC16 / NPC17Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2098,7 +2098,7 @@
 		<topics>Verben</topics>
 		<chapters>PC16/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2120,7 +2120,7 @@
 		<topics>Kleidung</topics>
 		<chapters>PC16/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>3</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2131,16 +2131,16 @@
 		<topics>ZEW</topics>
 		<chapters>PC16/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>das Hemd/die Bluse</firstLanguageTranslations>
+		<firstLanguageTranslations>das Hemd / die Bluse</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>衬衫</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chènshān</secondLanguagePhoneticScripts>
 		<topics>Kleidung</topics>
-		<chapters>PC16</chapters>
+		<chapters>PC16 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2148,10 +2148,10 @@
 	<vocable>
 		<firstLanguageTranslations>gruen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>绿色</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>lǜsè</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>绿色 / 绿</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>lǜsè / lǜ</secondLanguagePhoneticScripts>
 		<topics>Farben</topics>
-		<chapters>PC16</chapters>
+		<chapters>PC16 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2164,16 +2164,16 @@
 		<topics>---</topics>
 		<chapters>PC16/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>weiß</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>白色</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>báisè</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>白色 / 白</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>báisè / bái</secondLanguagePhoneticScripts>
 		<topics>Farben</topics>
-		<chapters>PC16</chapters>
+		<chapters>PC16 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2206,7 +2206,7 @@
 		<secondLanguageTranslations>裤子</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>kùzi</secondLanguagePhoneticScripts>
 		<topics>Kleidung</topics>
-		<chapters>PC16Z</chapters>
+		<chapters>PC16Z / NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2225,10 +2225,10 @@
 	<vocable>
 		<firstLanguageTranslations>schwarz</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>黑色</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>hēisè</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>黑色 / 黑</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>hēisè / hēi</secondLanguagePhoneticScripts>
 		<topics>Farben</topics>
-		<chapters>PC16Z</chapters>
+		<chapters>PC16Z / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2278,12 +2278,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>fehlen</firstLanguageTranslations>
+		<firstLanguageTranslations>fehlen / schlecht</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>差</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC17/NPC11</chapters>
+		<chapters>PC17 / NPC11 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2362,7 +2362,7 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2373,7 +2373,7 @@
 		<topics>Verben</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2384,7 +2384,7 @@
 		<topics>Verben</topics>
 		<chapters>PC17/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2395,7 +2395,7 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>4</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2439,7 +2439,7 @@
 		<topics>---</topics>
 		<chapters>PC17/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -2461,16 +2461,16 @@
 		<topics>Verben</topics>
 		<chapters>PC17/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>gehen</firstLanguageTranslations>
+		<firstLanguageTranslations>losgehen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>走</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zǒu</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC17</chapters>
+		<chapters>PC17 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2525,10 +2525,10 @@
 		<secondLanguageTranslations>表</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>biǎo</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC17Z/NPC11Z</chapters>
+		<chapters>PC17Z / NPC11Z / NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>2</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Uhr</firstLanguageTranslations>
@@ -2571,8 +2571,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC18/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>jedes/jede/jeder</firstLanguageTranslations>
@@ -2582,8 +2582,8 @@
 		<topics>---</topics>
 		<chapters>PC18/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>aufstehen</firstLanguageTranslations>
@@ -2593,8 +2593,8 @@
 		<topics>Verben</topics>
 		<chapters>PC18/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>sich erheben/aufstehen</firstLanguageTranslations>
@@ -2604,8 +2604,8 @@
 		<topics>Verben</topics>
 		<chapters>PC18/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Bett</firstLanguageTranslations>
@@ -2615,8 +2615,8 @@
 		<topics>Moebel</topics>
 		<chapters>PC18/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Vormittag/vormittags</firstLanguageTranslations>
@@ -2626,8 +2626,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC18/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>essen</firstLanguageTranslations>
@@ -2637,8 +2637,8 @@
 		<topics>Essen</topics>
 		<chapters>PC18/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Essen/das Mahl</firstLanguageTranslations>
@@ -2648,8 +2648,8 @@
 		<topics>Essen</topics>
 		<chapters>PC18/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>viele/viel</firstLanguageTranslations>
@@ -2659,8 +2659,8 @@
 		<topics>Anzahl</topics>
 		<chapters>PC18/PC21/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Nachmittag/nachmittags</firstLanguageTranslations>
@@ -2670,8 +2670,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC18/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>sich ausruhen/eine Pause machen</firstLanguageTranslations>
@@ -2681,8 +2681,8 @@
 		<topics>---</topics>
 		<chapters>PC18/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>manchmal</firstLanguageTranslations>
@@ -2703,8 +2703,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC18/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Frage/das Problem</firstLanguageTranslations>
@@ -2714,8 +2714,8 @@
 		<topics>---</topics>
 		<chapters>PC18/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>schlafen</firstLanguageTranslations>
@@ -2725,8 +2725,8 @@
 		<topics>Verben</topics>
 		<chapters>PC18/NPC11</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>wollen/werden (Fut.)/muessen</firstLanguageTranslations>
@@ -2736,8 +2736,8 @@
 		<topics>Verben</topics>
 		<chapters>PC19/NPC02</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Kellner/der Bedienstete</firstLanguageTranslations>
@@ -2758,8 +2758,8 @@
 		<topics>ZEW</topics>
 		<chapters>PC19/NPC10Z</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>moegen</firstLanguageTranslations>
@@ -2769,8 +2769,8 @@
 		<topics>Verben</topics>
 		<chapters>PC19/LSC01/NPC08</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Yasmintee</firstLanguageTranslations>
@@ -2795,17 +2795,6 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>rot</firstLanguageTranslations>
-		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>红色</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>hóngsè</secondLanguagePhoneticScripts>
-		<topics>Farben</topics>
-		<chapters>PC19</chapters>
-		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
-	</vocable>
-	<vocable>
 		<firstLanguageTranslations>oder (nur bei Fragen)</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>还是</secondLanguageTranslations>
@@ -2813,8 +2802,8 @@
 		<topics>---</topics>
 		<chapters>PC19/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Orangensaft</firstLanguageTranslations>
@@ -2846,8 +2835,8 @@
 		<topics>Getraenke/Elemente</topics>
 		<chapters>PC19/NPC12</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>4</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Flasche</firstLanguageTranslations>
@@ -2858,7 +2847,7 @@
 		<chapters>PC19/NPC09</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>hoeren/zuhoeren</firstLanguageTranslations>
@@ -2868,8 +2857,8 @@
 		<topics>Wahrnehmung</topics>
 		<chapters>PC19/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>das Volkslied</firstLanguageTranslations>
@@ -2901,8 +2890,8 @@
 		<topics>Musik</topics>
 		<chapters>PC19/NPC07Z/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>modern</firstLanguageTranslations>
@@ -2945,8 +2934,8 @@
 		<topics>---</topics>
 		<chapters>PC19/NPC13</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>nicht (imperativ)</firstLanguageTranslations>
@@ -2978,8 +2967,8 @@
 		<topics>Obst</topics>
 		<chapters>PC19Z/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Banane</firstLanguageTranslations>
@@ -2989,8 +2978,8 @@
 		<topics>Obst</topics>
 		<chapters>PC19Z/NPC10</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Weintraube</firstLanguageTranslations>
@@ -3001,7 +2990,7 @@
 		<chapters>PC19Z/NPC09/NPC10</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Schallplatte</firstLanguageTranslations>
@@ -3066,8 +3055,8 @@
 		<topics>Personendaten/Zeit</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Heute</firstLanguageTranslations>
@@ -3077,8 +3066,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC20/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>5</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Klasse/die Gruppe</firstLanguageTranslations>
@@ -3121,8 +3110,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Jahre alt sein/Lebensjahr</firstLanguageTranslations>
@@ -3132,8 +3121,8 @@
 		<topics>ZEW/Personendaten</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>gratulieren/beglueckwuenschen/Gratulation</firstLanguageTranslations>
@@ -3143,8 +3132,8 @@
 		<topics>---</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Ball/der Tanz</firstLanguageTranslations>
@@ -3165,8 +3154,8 @@
 		<topics>---</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>der Klassenkamerad/der Kommilitone/der Mitstudent</firstLanguageTranslations>
@@ -3180,12 +3169,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>sicher/gewiss/sicherlich/bestimmt</firstLanguageTranslations>
+		<firstLanguageTranslations>sicher / gewiss / sicherlich / bestimmt</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>一定</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yídìng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC20</chapters>
+		<chapters>PC20 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3198,8 +3187,8 @@
 		<topics>---</topics>
 		<chapters>PC20/NPC06</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>3</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Woche</firstLanguageTranslations>
@@ -3209,8 +3198,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>Sonntag</firstLanguageTranslations>
@@ -3220,8 +3209,8 @@
 		<topics>Zeit/Wochentage</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>wissen/kennen</firstLanguageTranslations>
@@ -3231,8 +3220,8 @@
 		<topics>Verben</topics>
 		<chapters>PC20/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Adresse</firstLanguageTranslations>
@@ -3253,8 +3242,8 @@
 		<topics>Zeit</topics>
 		<chapters>PC20/NPC09</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>letztes Jahr</firstLanguageTranslations>
@@ -3308,8 +3297,8 @@
 		<topics>---</topics>
 		<chapters>PC20Z/NPC05</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>die Verabredung</firstLanguageTranslations>
@@ -3323,14 +3312,14 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>macht nichts/kein Problem/schon gut</firstLanguageTranslations>
+		<firstLanguageTranslations>macht nichts / kein Problem / schon gut</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>没关系</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>méiguānxi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC20Z/NPC05</chapters>
+		<chapters>PC20Z / NPC05／NPC17</chapters>
 		<description>---</description>
-		<learnLevel>2</learnLevel>
+		<learnLevel>3</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
@@ -3768,7 +3757,7 @@
 		<secondLanguageTranslations>总是</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zǒngshì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC22</chapters>
+		<chapters>PC22 / NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5248,12 +5237,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>versuchen</firstLanguageTranslations>
+		<firstLanguageTranslations>versuchen / anprobieren / einen Versuch unternehmen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>试</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC27</chapters>
+		<chapters>PC27 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5611,12 +5600,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>(Schuhe) ein Paar</firstLanguageTranslations>
+		<firstLanguageTranslations>(ZEW Schuhe, ...) / ein Paar</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>双</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shuāng</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC28</chapters>
+		<chapters>PC28 / NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5682,7 +5671,7 @@
 		<secondLanguageTranslations>公园</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gōngyuán</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC28</chapters>
+		<chapters>PC28 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7033,9 +7022,9 @@
 		<firstLanguageTranslations>die Haare</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>头发</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>tóufà</secondLanguagePhoneticScripts>
-		<topics>Koerper/Gesicht</topics>
-		<chapters>---</chapters>
+		<secondLanguagePhoneticScripts>tóufa</secondLanguagePhoneticScripts>
+		<topics>Koerper / Gesicht</topics>
+		<chapters>NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8300,7 +8289,7 @@
 		<secondLanguageTranslations>颜色</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yánsè</secondLanguagePhoneticScripts>
 		<topics>Farben</topics>
-		<chapters>---</chapters>
+		<chapters>NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8322,7 +8311,7 @@
 		<secondLanguageTranslations>短</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>duǎn</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>---</chapters>
+		<chapters>NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8344,7 +8333,7 @@
 		<secondLanguageTranslations>鞋</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xié</secondLanguagePhoneticScripts>
 		<topics>Kleidung</topics>
-		<chapters>---</chapters>
+		<chapters>NPC17Z</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8900,12 +8889,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>hoch/groß</firstLanguageTranslations>
+		<firstLanguageTranslations>hoch / groß</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>高</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gāo</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC07</chapters>
+		<chapters>NPC07 / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9331,10 +9320,10 @@
 	<vocable>
 		<firstLanguageTranslations>rot</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>红</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>hóng</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>红 / 红色</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>hóng / hóngsè</secondLanguagePhoneticScripts>
 		<topics>Farben</topics>
-		<chapters>NPC09</chapters>
+		<chapters>NPC09 / NPC17 / PC19</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9807,18 +9796,18 @@
 		<secondLanguageTranslations>售货员</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shòuhuòyuán</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10Z</chapters>
+		<chapters>NPC10Z / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>1</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>billig/preisguenstig</firstLanguageTranslations>
+		<firstLanguageTranslations>billig / preisguenstig</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>便宜</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>piányi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10Z</chapters>
+		<chapters>NPC10Z / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9840,7 +9829,7 @@
 		<secondLanguageTranslations>卖</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>mài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10Z</chapters>
+		<chapters>NPC10Z / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10572,12 +10561,12 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>passend/geeignet</firstLanguageTranslations>
+		<firstLanguageTranslations>passend / geeignet / richtig</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>合适</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>héshì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC13Z</chapters>
+		<chapters>NPC13Z / NPC17</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -11945,5 +11934,313 @@
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Angelegenheit / Sache</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>事情</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shìqíng</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Cheongsam</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>旗袍</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>qípáo</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>2</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>(Praeposition die einen Vergleich andeutet)</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>比</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>bǐ</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>chinesischer Stil</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>zhōngshì</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>中式</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>(Suffix fuer Stil oder Typ)</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>式</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>(Suffix, das benutzt wird um anzudeuten, dass etwas zu einem bestimmten Stil oder Typ gehoert)</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>schon / bereits</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>已经</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yǐjīng</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>aeußerst</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>极了</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>jíle</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>anfangen / beginnen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>开始</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>kāishǐ</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Taiji / das Taichi</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>太极拳</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>tàijíquán</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Set / die Folge</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>套</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>tào</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>gutaussehend / attraktiv</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>帅</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shuài</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Stunde</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>小时</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xiǎoshí</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>vergehen / vorbeigehen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>过去</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>guòqu</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Form / der Stil / das Modell / das Muster</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>样子</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yàngzi</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>verkaufen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>售</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shòu</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Gueter / das Gut</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>货</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>huò</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>denken / fuehlen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>觉得</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>juéde</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Zentimeter</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>公分</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>gōngfēn</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>jemanden nerven / jemanden sich um etwas sorgen lassen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>麻烦</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>máfan</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Seide</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>丝绸</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>sīchóu</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>westliche Kleidung</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>西服</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xīfú</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Rabatt geben beim Verkaufen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>打折</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>dǎzhé</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>comic dialogue / crosstalk</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>相声</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xiàngsheng</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>erstaunlich / außergewoehnlich</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>了不起</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>liǎobuqǐ</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>duenn</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>薄</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>báo</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Seite (im Buch)</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>页</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yè</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Material zur Kleiderherstellung</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>料子</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>liàozi</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Kleidungsstoff</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>布</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>bù</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>NPC17Z</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 </list>
