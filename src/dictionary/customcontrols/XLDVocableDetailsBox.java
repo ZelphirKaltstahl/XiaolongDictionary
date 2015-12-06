@@ -118,6 +118,9 @@ public class XLDVocableDetailsBox extends GridPane implements VocableChangeListe
 			secondLanguageTranslationsLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_SETTING_NAME) + ":");
 			secondLanguagePhoneticScriptsLabel = new Label(Settings.getInstance().getSettingsProperty(Settings.getInstance().SECOND_LANGUAGE_PHONETIC_SCRIPT_SETTING_NAME) + ":");
 			
+			//TEST
+			System.out.println(firstLanguageTranslationsLabel.getFont().getName());
+			
 			topicsLabel = new Label("Topics:");
 			chaptersLabel = new Label("Chapters:");
 			

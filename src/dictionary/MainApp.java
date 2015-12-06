@@ -113,6 +113,7 @@ public class MainApp extends Application {
 		scene = new Scene(root);
 		scene.setFill(Color.AZURE);
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(true);
 
 		topVBox = new VBox(0);
 		topVBox.setAlignment(Pos.CENTER);
@@ -364,16 +365,12 @@ public class MainApp extends Application {
 					
 					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
 							Decision.NO,
-							(dictionary.model.Action) (Object value) -> {
-								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
-							}
+							(dictionary.model.Action) (Object value) -> DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close()
 					);
 					
 					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).setActionForDecision(
 							Decision.NO_REMEMBER,
-							(dictionary.model.Action) (Object value) -> {
-								DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close();
-							}
+							(dictionary.model.Action) (Object value) -> DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).close()
 					);
 					
 					DialogInstanceManager.getDeleteVocablesConfirmationDialog(primaryStage).show();

@@ -6,7 +6,7 @@
 		<secondLanguageTranslations>你</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǐ</secondLanguagePhoneticScripts>
 		<topics>Personalpronomen</topics>
-		<chapters>PC01 / LSC01 / NPC01</chapters>
+		<chapters>PC01 / LSC01 / NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -17,7 +17,7 @@
 		<secondLanguageTranslations>好</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hǎo</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC01 / LSC01 / NPC01</chapters>
+		<chapters>PC01 / LSC01 / NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -28,7 +28,7 @@
 		<secondLanguageTranslations>吗</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>ma</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC02/LSC01/NPC01</chapters>
+		<chapters>PC02/LSC01/NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -39,7 +39,7 @@
 		<secondLanguageTranslations>我</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wǒ</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Personalpronomen</topics>
-		<chapters>PC02 / LSC01 / NPC01</chapters>
+		<chapters>PC02 / LSC01 / NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -50,7 +50,7 @@
 		<secondLanguageTranslations>很</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hěn</secondLanguagePhoneticScripts>
 		<topics>Adjektive</topics>
-		<chapters>PC02 / LSC01 / NPC01</chapters>
+		<chapters>PC02 / LSC01 / NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -61,7 +61,7 @@
 		<secondLanguageTranslations>呢</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>ne</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Modalpartikel</topics>
-		<chapters>PC02 / NPC01</chapters>
+		<chapters>PC02 / NPC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -83,7 +83,7 @@
 		<secondLanguageTranslations>不</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>bù</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC03 / LSC01 / NPC02</chapters>
+		<chapters>PC03 / LSC01 / NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -105,7 +105,7 @@
 		<secondLanguageTranslations>他</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tā</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Personalpronomen</topics>
-		<chapters>PC03 / LSC01 / NPC02</chapters>
+		<chapters>PC03 / LSC01 / NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -138,7 +138,7 @@
 		<secondLanguageTranslations>都</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dōu</secondLanguagePhoneticScripts>
 		<topics>Personen</topics>
-		<chapters>PC03/NPC02</chapters>
+		<chapters>PC03/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -146,13 +146,13 @@
 	<vocable>
 		<firstLanguageTranslations>der Arzt</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>大夫 / 医生</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>dàifu / yīsheng</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>大夫</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>dàifu</secondLanguagePhoneticScripts>
 		<topics>Berufe</topics>
 		<chapters>PC05 / NPC03</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
+		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
 		<firstLanguageTranslations>(Attributpartikel)</firstLanguageTranslations>
@@ -160,7 +160,7 @@
 		<secondLanguageTranslations>的</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>de</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Strukturpartikel</topics>
-		<chapters>PC05 / LSC01 / NPC04</chapters>
+		<chapters>PC05 / LSC01 / NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -171,7 +171,7 @@
 		<secondLanguageTranslations>车</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chē</secondLanguagePhoneticScripts>
 		<topics>Verkehr</topics>
-		<chapters>PC05 / NPC08Z</chapters>
+		<chapters>PC05 / NPC08Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -182,7 +182,7 @@
 		<secondLanguageTranslations>她</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tā</secondLanguagePhoneticScripts>
 		<topics>grammatik / personalpronomen</topics>
-		<chapters>PC05 / LSC01 / NPC03</chapters>
+		<chapters>PC05 / LSC01 / NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -193,7 +193,7 @@
 		<secondLanguageTranslations>那</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC05 / NPC03</chapters>
+		<chapters>PC05 / NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -204,7 +204,7 @@
 		<secondLanguageTranslations>书</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shū</secondLanguagePhoneticScripts>
 		<topics>Literatur</topics>
-		<chapters>PC05 / NPC10</chapters>
+		<chapters>PC05 / NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -237,7 +237,7 @@
 		<secondLanguageTranslations>哪</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǎ</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Fragepartikel</topics>
-		<chapters>PC06 / NPC03</chapters>
+		<chapters>PC06 / NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -248,7 +248,7 @@
 		<secondLanguageTranslations>国</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>guó</secondLanguagePhoneticScripts>
 		<topics>Laender</topics>
-		<chapters>PC06 / NPC03</chapters>
+		<chapters>PC06 / NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -259,7 +259,7 @@
 		<secondLanguageTranslations>人</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>rén</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC06/LSC01/NPC03</chapters>
+		<chapters>PC06/LSC01/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -270,7 +270,7 @@
 		<secondLanguageTranslations>谁</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shéi</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC06/NPC03</chapters>
+		<chapters>PC06/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -281,7 +281,7 @@
 		<secondLanguageTranslations>我们</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wǒmen</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Personalpronomen</topics>
-		<chapters>PC06/NPC02</chapters>
+		<chapters>PC06/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -292,7 +292,7 @@
 		<secondLanguageTranslations>老师</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>lǎoshī</secondLanguagePhoneticScripts>
 		<topics>Berufe</topics>
-		<chapters>PC06/NPC03</chapters>
+		<chapters>PC06/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -303,7 +303,7 @@
 		<secondLanguageTranslations>汉语</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hànyǔ</secondLanguagePhoneticScripts>
 		<topics>Sprachen</topics>
-		<chapters>PC06/NPC04</chapters>
+		<chapters>PC06/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -314,7 +314,7 @@
 		<secondLanguageTranslations>中国</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhōngguó</secondLanguagePhoneticScripts>
 		<topics>Laender</topics>
-		<chapters>PC06/LSC01/NPC03</chapters>
+		<chapters>PC06/LSC01/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -380,7 +380,7 @@
 		<secondLanguageTranslations>这</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhè</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC04/LSC01/NPC03</chapters>
+		<chapters>PC04/LSC01/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -391,7 +391,7 @@
 		<secondLanguageTranslations>是</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC04/LSC01/NPC03</chapters>
+		<chapters>PC04/LSC01/NPC03/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -402,7 +402,7 @@
 		<secondLanguageTranslations>朋友</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>péngyou</secondLanguagePhoneticScripts>
 		<topics>Personen</topics>
-		<chapters>PC04/LSC01/NPC02</chapters>
+		<chapters>PC04/LSC01/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -413,7 +413,7 @@
 		<secondLanguageTranslations>爸爸</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>bàba</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC04/NPC02</chapters>
+		<chapters>PC04/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -424,7 +424,7 @@
 		<secondLanguageTranslations>妈妈</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>māma</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC04/NPC02</chapters>
+		<chapters>PC04/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -446,7 +446,7 @@
 		<secondLanguageTranslations>什么</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shénme</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC07/NPC04</chapters>
+		<chapters>PC07/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -468,7 +468,7 @@
 		<secondLanguageTranslations>看</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>kàn</secondLanguagePhoneticScripts>
 		<topics>Wahrnehmung</topics>
-		<chapters>PC07/NPC07</chapters>
+		<chapters>PC07/NPC07/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -479,7 +479,7 @@
 		<secondLanguageTranslations>北京</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>běijīng</secondLanguagePhoneticScripts>
 		<topics>Staedte</topics>
-		<chapters>PC07/LSC01/NPC09</chapters>
+		<chapters>PC07/LSC01/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -589,7 +589,7 @@
 		<secondLanguageTranslations>请</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qǐng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC08/NPC04</chapters>
+		<chapters>PC08/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -600,7 +600,7 @@
 		<secondLanguageTranslations>喝</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hē</secondLanguagePhoneticScripts>
 		<topics>Essen/Trinken</topics>
-		<chapters>PC08/NPC02</chapters>
+		<chapters>PC08/NPC02/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -611,7 +611,7 @@
 		<secondLanguageTranslations>茶</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chá</secondLanguagePhoneticScripts>
 		<topics>Getraenke</topics>
-		<chapters>PC08/NPC09Z</chapters>
+		<chapters>PC08/NPC09Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -655,7 +655,7 @@
 		<secondLanguageTranslations>谢谢</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xièxiè</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC08/LSC01/NPC05</chapters>
+		<chapters>PC08/LSC01/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -666,7 +666,7 @@
 		<secondLanguageTranslations>客气</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>kèqi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC08</chapters>
+		<chapters>PC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -710,7 +710,7 @@
 		<secondLanguageTranslations>先生</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiānsheng/xiānshēng</secondLanguagePhoneticScripts>
 		<topics>Anrede</topics>
-		<chapters>PC08Z/PC12/NPC04</chapters>
+		<chapters>PC08Z/PC12/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -787,7 +787,7 @@
 		<secondLanguageTranslations>叫</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiào</secondLanguagePhoneticScripts>
 		<topics>Verben/Name</topics>
-		<chapters>PC09/LSC01/NPC04</chapters>
+		<chapters>PC09/LSC01/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -820,7 +820,7 @@
 		<secondLanguageTranslations>学生</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xuéshēng</secondLanguagePhoneticScripts>
 		<topics>Berufe</topics>
-		<chapters>PC09/NPC04</chapters>
+		<chapters>PC09/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -831,7 +831,7 @@
 		<secondLanguageTranslations>学习</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xuéxí</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC09/NPC04</chapters>
+		<chapters>PC09/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -842,7 +842,7 @@
 		<secondLanguageTranslations>学</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xué</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC09/NPC07</chapters>
+		<chapters>PC09/NPC07/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -853,7 +853,7 @@
 		<secondLanguageTranslations>小姐</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiǎojiě</secondLanguagePhoneticScripts>
 		<topics>Anrede</topics>
-		<chapters>PC09Z/PC19/NPC05</chapters>
+		<chapters>PC09Z/PC19/NPC05/HSK1-2012</chapters>
 		<description>Achtung! Diese Anrede hat einen Bedeutungswandel durchlaufen und kann eventuell sehr missverstanden werden!</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -908,7 +908,7 @@
 		<secondLanguageTranslations>在</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC10/NPC05</chapters>
+		<chapters>PC10/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -919,7 +919,7 @@
 		<secondLanguageTranslations>坐</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zuò</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC10/NPC05</chapters>
+		<chapters>PC10/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -930,7 +930,7 @@
 		<secondLanguageTranslations>哪儿</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǎr</secondLanguagePhoneticScripts>
 		<topics>Grammatik / Fragepartikel</topics>
-		<chapters>PC10 / NPC05</chapters>
+		<chapters>PC10 / NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -952,7 +952,7 @@
 		<secondLanguageTranslations>住</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhù</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC10/NPC14</chapters>
+		<chapters>PC10/NPC14/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -963,7 +963,7 @@
 		<secondLanguageTranslations>多少</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>duōshao</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC10/NPC08</chapters>
+		<chapters>PC10/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -974,7 +974,7 @@
 		<secondLanguageTranslations>号</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hào</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC10/PC20/LSC01/NPC05</chapters>
+		<chapters>PC10/PC20/LSC01/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -985,7 +985,7 @@
 		<secondLanguageTranslations>四</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>sì</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC10/LSC01/NPC05</chapters>
+		<chapters>PC10/LSC01/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1007,7 +1007,7 @@
 		<secondLanguageTranslations>一</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yī</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC10/LSC01</chapters>
+		<chapters>PC10/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1018,7 +1018,7 @@
 		<secondLanguageTranslations>二</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>èr</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC10/LSC01/NPC05</chapters>
+		<chapters>PC10/LSC01/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1029,7 +1029,7 @@
 		<secondLanguageTranslations>三</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>sān</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC10/LSC01</chapters>
+		<chapters>PC10/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1040,7 +1040,7 @@
 		<secondLanguageTranslations>五</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wǔ</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC10/LSC01</chapters>
+		<chapters>PC10/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1062,7 +1062,7 @@
 		<secondLanguageTranslations>医院</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yīyuàn</secondLanguagePhoneticScripts>
 		<topics>Gebaeude/Gesundheit</topics>
-		<chapters>PC10Z/NPC12</chapters>
+		<chapters>PC10Z/NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1128,7 +1128,7 @@
 		<secondLanguageTranslations>现在</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiànzài</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Zeitwoerter</topics>
-		<chapters>PC11/LSC01/NPC06</chapters>
+		<chapters>PC11/LSC01/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1161,7 +1161,7 @@
 		<secondLanguageTranslations>再见</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zàijiàn</secondLanguagePhoneticScripts>
 		<topics>Verabschiedung / Gruß</topics>
-		<chapters>PC11 / NPC05</chapters>
+		<chapters>PC11 / NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1172,7 +1172,7 @@
 		<secondLanguageTranslations>六</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>liù</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC11/LSC01</chapters>
+		<chapters>PC11/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1183,7 +1183,7 @@
 		<secondLanguageTranslations>七</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qī</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC11/LSC01</chapters>
+		<chapters>PC11/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1194,7 +1194,7 @@
 		<secondLanguageTranslations>八</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>bā</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC11/LSC01</chapters>
+		<chapters>PC11/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1205,7 +1205,7 @@
 		<secondLanguageTranslations>九</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiǔ</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC11/LSC01</chapters>
+		<chapters>PC11/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1216,7 +1216,7 @@
 		<secondLanguageTranslations>十</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shí</secondLanguagePhoneticScripts>
 		<topics>Zahlen</topics>
-		<chapters>PC11/LSC01</chapters>
+		<chapters>PC11/LSC01/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1238,7 +1238,7 @@
 		<secondLanguageTranslations>电话</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diànhuà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC11Z/LSC01/NPC13</chapters>
+		<chapters>PC11Z/LSC01/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1260,7 +1260,7 @@
 		<secondLanguageTranslations>女</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǚ</secondLanguagePhoneticScripts>
 		<topics>Geschlecht</topics>
-		<chapters>PC12/NPC05</chapters>
+		<chapters>PC12/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1271,7 +1271,7 @@
 		<secondLanguageTranslations>认识</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>rènshi</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC12/LCS01/NPC04</chapters>
+		<chapters>PC12/LCS01/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1315,7 +1315,7 @@
 		<secondLanguageTranslations>去</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qù</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC12/NPC06</chapters>
+		<chapters>PC12/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1337,7 +1337,7 @@
 		<secondLanguageTranslations>名字</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>míngzi</secondLanguagePhoneticScripts>
 		<topics>Name</topics>
-		<chapters>PC13/LSC01/NPC07</chapters>
+		<chapters>PC13/LSC01/NPC07/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1348,7 +1348,7 @@
 		<secondLanguageTranslations>喂</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>wèi</secondLanguagePhoneticScripts>
 		<topics>Gruß/Begrueßung</topics>
-		<chapters>PC13/NPC13</chapters>
+		<chapters>PC13/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1370,7 +1370,7 @@
 		<secondLanguageTranslations>商店</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shāngdiàn</secondLanguagePhoneticScripts>
 		<topics>Gebaeude</topics>
-		<chapters>PC13 / NPC17</chapters>
+		<chapters>PC13 / NPC17/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>1</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1381,7 +1381,7 @@
 		<secondLanguageTranslations>买</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>mǎi</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC13/NPC09</chapters>
+		<chapters>PC13/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1414,7 +1414,7 @@
 		<secondLanguageTranslations>来</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>lái</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC13/NPC04</chapters>
+		<chapters>PC13/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1447,7 +1447,7 @@
 		<secondLanguageTranslations>对</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>duì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC13/LSC01/NPC14</chapters>
+		<chapters>PC13/LSC01/NPC14/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1458,7 +1458,7 @@
 		<secondLanguageTranslations>了</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>le</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Zeitwoerter/Modalpartikel</topics>
-		<chapters>PC13/NPC05</chapters>
+		<chapters>PC13/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1469,7 +1469,7 @@
 		<secondLanguageTranslations>和</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>hé</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC13/NPC08</chapters>
+		<chapters>PC13/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1480,7 +1480,7 @@
 		<secondLanguageTranslations>说</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shuō</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC13/NPC06</chapters>
+		<chapters>PC13/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1535,7 +1535,7 @@
 		<secondLanguageTranslations>作</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zuò</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC14</chapters>
+		<chapters>PC14/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1546,7 +1546,7 @@
 		<secondLanguageTranslations>工作</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gōngzuò</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC14/NPC08</chapters>
+		<chapters>PC14/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1557,7 +1557,7 @@
 		<secondLanguageTranslations>想</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiǎng</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC14/NPC12</chapters>
+		<chapters>PC14/NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1568,7 +1568,7 @@
 		<secondLanguageTranslations>家</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiā</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC14/NPC08</chapters>
+		<chapters>PC14/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -1579,7 +1579,7 @@
 		<secondLanguageTranslations>有</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yǒu</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC14/NPC06</chapters>
+		<chapters>PC14/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1590,7 +1590,7 @@
 		<secondLanguageTranslations>没</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>méi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC14/NPC08</chapters>
+		<chapters>PC14/NPC08/HSK1-2012</chapters>
 		<description>Dieses "nicht" wird fuer die Vergangenheitsform verwendet.</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -1678,7 +1678,7 @@
 		<secondLanguageTranslations>写</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiě</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC14/NPC11</chapters>
+		<chapters>PC14/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -1766,7 +1766,7 @@
 		<secondLanguageTranslations>系</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xì</secondLanguagePhoneticScripts>
 		<topics>Studium</topics>
-		<chapters>PC15/NPC07</chapters>
+		<chapters>PC15/NPC07/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -1777,7 +1777,7 @@
 		<secondLanguageTranslations>个</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gè</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC15/NPC08</chapters>
+		<chapters>PC15/NPC08/HSK1-2012</chapters>
 		<description>allgemeines Zaehleinheitswort, kann man benutzen wenn man das richtige Zaehleinheitswort nicht kennt</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -1788,7 +1788,7 @@
 		<secondLanguageTranslations>几</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jǐ</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel/Anzahl</topics>
-		<chapters>PC15/NPC08</chapters>
+		<chapters>PC15/NPC08/HSK1-2012</chapters>
 		<description>Man benutzt dieses Fragewort, wenn man eine Anzahl von bis zu zehn in der Antwort auf die Frage erwartet.</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -1832,7 +1832,7 @@
 		<secondLanguageTranslations>字</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC15</chapters>
+		<chapters>PC15/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -1920,7 +1920,7 @@
 		<secondLanguageTranslations>本</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>běn</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC15/NPC10Z</chapters>
+		<chapters>PC15/NPC10Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2074,7 +2074,7 @@
 		<secondLanguageTranslations>太</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC16/NPC06</chapters>
+		<chapters>PC16/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -2162,7 +2162,7 @@
 		<secondLanguageTranslations>大</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC16/NPC08</chapters>
+		<chapters>PC16/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2261,7 +2261,7 @@
 		<secondLanguageTranslations>点</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diǎn</secondLanguagePhoneticScripts>
 		<topics>ZEW/Zeit</topics>
-		<chapters>PC17/NPC11</chapters>
+		<chapters>PC17/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2294,7 +2294,7 @@
 		<secondLanguageTranslations>分钟</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>fēnzhōng</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC17</chapters>
+		<chapters>PC17/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2371,7 +2371,7 @@
 		<secondLanguageTranslations>回</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>huí</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC17/NPC11</chapters>
+		<chapters>PC17/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2404,7 +2404,7 @@
 		<secondLanguageTranslations>电影</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diànyǐng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC17/NPC13</chapters>
+		<chapters>PC17/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -2536,7 +2536,7 @@
 		<secondLanguageTranslations>钟</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhōng</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC17Z</chapters>
+		<chapters>PC17Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2558,7 +2558,7 @@
 		<secondLanguageTranslations>分</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>fēn</secondLanguagePhoneticScripts>
 		<topics>ZEW/Zeit</topics>
-		<chapters>PC17</chapters>
+		<chapters>PC17/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -2569,7 +2569,7 @@
 		<secondLanguageTranslations>天</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tiān</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC18/NPC06</chapters>
+		<chapters>PC18/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2602,7 +2602,7 @@
 		<secondLanguageTranslations>起</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qǐ</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC18/NPC11</chapters>
+		<chapters>PC18/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -2624,7 +2624,7 @@
 		<secondLanguageTranslations>上午</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shàngwǔ</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC18/NPC09</chapters>
+		<chapters>PC18/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2635,7 +2635,7 @@
 		<secondLanguageTranslations>吃</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chī</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>PC18/NPC09</chapters>
+		<chapters>PC18/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2646,7 +2646,7 @@
 		<secondLanguageTranslations>饭</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>fàn</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>PC18/NPC13</chapters>
+		<chapters>PC18/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2657,7 +2657,7 @@
 		<secondLanguageTranslations>多</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>duō</secondLanguagePhoneticScripts>
 		<topics>Anzahl</topics>
-		<chapters>PC18/PC21/NPC08</chapters>
+		<chapters>PC18/PC21/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2668,7 +2668,7 @@
 		<secondLanguageTranslations>下午</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiàwǔ</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC18/NPC09</chapters>
+		<chapters>PC18/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2701,7 +2701,7 @@
 		<secondLanguageTranslations>时候</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shíhou</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC18/NPC06</chapters>
+		<chapters>PC18/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>3</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2723,18 +2723,18 @@
 		<secondLanguageTranslations>睡觉</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shuìjiào</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC18/NPC11</chapters>
+		<chapters>PC18/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>3</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>wollen/werden (Fut.)/muessen</firstLanguageTranslations>
+		<firstLanguageTranslations>wollen / werden (Fut.) / muessen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>要</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yào</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC19/NPC02</chapters>
+		<chapters>PC19 / NPC02 / PC29</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2756,7 +2756,7 @@
 		<secondLanguageTranslations>杯</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>bēi</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC19/NPC10Z</chapters>
+		<chapters>PC19/NPC10Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -2767,7 +2767,7 @@
 		<secondLanguageTranslations>喜欢</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xǐhuan</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>PC19/LSC01/NPC08</chapters>
+		<chapters>PC19/LSC01/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -2833,7 +2833,7 @@
 		<secondLanguageTranslations>水</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shuǐ</secondLanguagePhoneticScripts>
 		<topics>Getraenke/Elemente</topics>
-		<chapters>PC19/NPC12</chapters>
+		<chapters>PC19/NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>4</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2855,7 +2855,7 @@
 		<secondLanguageTranslations>听</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tīng</secondLanguagePhoneticScripts>
 		<topics>Wahrnehmung</topics>
-		<chapters>PC19/NPC13</chapters>
+		<chapters>PC19/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -2965,7 +2965,7 @@
 		<secondLanguageTranslations>苹果</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>píngguǒ</secondLanguagePhoneticScripts>
 		<topics>Obst</topics>
-		<chapters>PC19Z/NPC10</chapters>
+		<chapters>PC19Z/NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>3</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -2976,7 +2976,7 @@
 		<secondLanguageTranslations>香蕉</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiāngjiāo</secondLanguagePhoneticScripts>
 		<topics>Obst</topics>
-		<chapters>PC19Z/NPC10</chapters>
+		<chapters>PC19Z / NPC10</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -3031,7 +3031,7 @@
 		<secondLanguageTranslations>月</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yuè</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC20</chapters>
+		<chapters>PC20/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3064,7 +3064,7 @@
 		<secondLanguageTranslations>今天</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jīntiān</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC20/NPC06</chapters>
+		<chapters>PC20/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>5</relevanceLevel>
@@ -3119,7 +3119,7 @@
 		<secondLanguageTranslations>岁</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>suì</secondLanguagePhoneticScripts>
 		<topics>ZEW/Personendaten</topics>
-		<chapters>PC20/NPC09</chapters>
+		<chapters>PC20/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -3163,7 +3163,7 @@
 		<secondLanguageTranslations>同学</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tóngxué</secondLanguagePhoneticScripts>
 		<topics>Schule/Studium</topics>
-		<chapters>PC20</chapters>
+		<chapters>PC20/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3196,7 +3196,7 @@
 		<secondLanguageTranslations>星期</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xīngqī</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC20/NPC09</chapters>
+		<chapters>PC20/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -3240,7 +3240,7 @@
 		<secondLanguageTranslations>年</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nián</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC20/NPC09</chapters>
+		<chapters>PC20/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -3295,7 +3295,7 @@
 		<secondLanguageTranslations>对不起</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>duìbuqǐ</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC20Z/NPC05</chapters>
+		<chapters>PC20Z/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>5</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -3317,7 +3317,7 @@
 		<secondLanguageTranslations>没关系</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>méiguānxi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC20Z / NPC05／NPC17</chapters>
+		<chapters>PC20Z / NPC05／NPC17/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>3</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3427,7 +3427,7 @@
 		<secondLanguageTranslations>高兴</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gāoxìng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC21/NPC04</chapters>
+		<chapters>PC21/NPC04/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3493,7 +3493,7 @@
 		<secondLanguageTranslations>漂亮</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>piàoliang</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC21/NPC09</chapters>
+		<chapters>PC21/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3526,7 +3526,7 @@
 		<secondLanguageTranslations>开</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>kāi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC21/NPC07</chapters>
+		<chapters>PC21/NPC07/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3614,7 +3614,7 @@
 		<secondLanguageTranslations>儿子</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>érzi</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC21Z</chapters>
+		<chapters>PC21Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3625,7 +3625,7 @@
 		<secondLanguageTranslations>女儿</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǚér</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC21Z</chapters>
+		<chapters>PC21Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3647,7 +3647,7 @@
 		<secondLanguageTranslations>小</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiǎo</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC22/NPC08</chapters>
+		<chapters>PC22/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3713,7 +3713,7 @@
 		<secondLanguageTranslations>椅子</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yǐzi</secondLanguagePhoneticScripts>
 		<topics>Moebel</topics>
-		<chapters>PC22</chapters>
+		<chapters>PC22/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3724,7 +3724,7 @@
 		<secondLanguageTranslations>少</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shǎo</secondLanguagePhoneticScripts>
 		<topics>Anzahl</topics>
-		<chapters>PC22/NPC08</chapters>
+		<chapters>PC22/NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3735,7 +3735,7 @@
 		<secondLanguageTranslations>桌子</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhuōzi</secondLanguagePhoneticScripts>
 		<topics>Moebel</topics>
-		<chapters>PC22</chapters>
+		<chapters>PC22/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -3911,7 +3911,7 @@
 		<secondLanguageTranslations>怎么样</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zěnmeyàng</secondLanguagePhoneticScripts>
 		<topics>Grammatik/Fragepartikel</topics>
-		<chapters>PC22/NPC06</chapters>
+		<chapters>PC22/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4010,7 +4010,7 @@
 		<secondLanguageTranslations>电视</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diànshì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC23/NPC14Z</chapters>
+		<chapters>PC23/NPC14Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4029,10 +4029,10 @@
 	<vocable>
 		<firstLanguageTranslations>nicht</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>没(有)</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>méi(you)</secondLanguagePhoneticScripts>
+		<secondLanguageTranslations>没有</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>méiyǒu</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC23</chapters>
+		<chapters>PC23/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4153,7 +4153,7 @@
 		<secondLanguageTranslations>明天</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>míngtiān</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC23/NPC06</chapters>
+		<chapters>PC23/NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4362,7 +4362,7 @@
 		<secondLanguageTranslations>些</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiē</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>PC24</chapters>
+		<chapters>PC24/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4637,7 +4637,7 @@
 		<secondLanguageTranslations>一点儿</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yìdiǎnr</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC25/NPC11/NPC12</chapters>
+		<chapters>PC25/NPC11/NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4659,7 +4659,7 @@
 		<secondLanguageTranslations>再</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC25/NPC05</chapters>
+		<chapters>PC25/NPC05/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4703,7 +4703,7 @@
 		<secondLanguageTranslations>菜</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>cài</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>PC25Z</chapters>
+		<chapters>PC25Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4802,7 +4802,7 @@
 		<secondLanguageTranslations>会</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>huì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC26/NPC09</chapters>
+		<chapters>PC26/NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4835,7 +4835,7 @@
 		<secondLanguageTranslations>能</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>néng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC26/NPC11</chapters>
+		<chapters>PC26/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -4907,7 +4907,7 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>sofort</firstLanguageTranslations>
+		<firstLanguageTranslations>sofort / schon / bereits</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>就</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiù</secondLanguagePhoneticScripts>
@@ -5220,7 +5220,7 @@
 		<secondLanguageTranslations>菜</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>cài</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>PC27</chapters>
+		<chapters>PC27/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5429,7 +5429,7 @@
 		<secondLanguageTranslations>昨天</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zuótiān</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>PC28/NPC06/NPC11</chapters>
+		<chapters>PC28/NPC06/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5748,18 +5748,7 @@
 		<secondLanguageTranslations>飞机</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>fēijī</secondLanguagePhoneticScripts>
 		<topics>Verkehr</topics>
-		<chapters>PC29</chapters>
-		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
-	</vocable>
-	<vocable>
-		<firstLanguageTranslations>wollen/werden</firstLanguageTranslations>
-		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>要</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>yào</secondLanguagePhoneticScripts>
-		<topics>---</topics>
-		<chapters>PC29</chapters>
+		<chapters>PC29/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5836,7 +5825,7 @@
 		<secondLanguageTranslations>见</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiàn</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC29</chapters>
+		<chapters>PC29/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -5913,7 +5902,7 @@
 		<secondLanguageTranslations>上</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shàng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC29/NPC09/NPC11</chapters>
+		<chapters>PC29/NPC09/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6045,7 +6034,7 @@
 		<secondLanguageTranslations>叫</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>jiào</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC29Z</chapters>
+		<chapters>PC29Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6122,7 +6111,7 @@
 		<secondLanguageTranslations>女儿</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǚér</secondLanguagePhoneticScripts>
 		<topics>Familie</topics>
-		<chapters>PC30</chapters>
+		<chapters>PC30/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6155,7 +6144,7 @@
 		<secondLanguageTranslations>东西</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dōngxi</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC30/NPC11</chapters>
+		<chapters>PC30/NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6749,7 +6738,7 @@
 		<secondLanguageTranslations>北</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>běi</secondLanguagePhoneticScripts>
 		<topics>Richtung</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6760,7 +6749,7 @@
 		<secondLanguageTranslations>东</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dōng</secondLanguagePhoneticScripts>
 		<topics>Richtung</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6782,7 +6771,7 @@
 		<secondLanguageTranslations>西</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xī</secondLanguagePhoneticScripts>
 		<topics>Richtung</topics>
-		<chapters>NPC12</chapters>
+		<chapters>NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -6870,7 +6859,7 @@
 		<secondLanguageTranslations>不客气</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>búkèqi</secondLanguagePhoneticScripts>
 		<topics>Floskeln</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7211,7 +7200,7 @@
 		<secondLanguageTranslations>猫</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>māo</secondLanguagePhoneticScripts>
 		<topics>Tiere</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7222,7 +7211,7 @@
 		<secondLanguageTranslations>狗</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gǒu</secondLanguagePhoneticScripts>
 		<topics>Tiere</topics>
-		<chapters>NPC08</chapters>
+		<chapters>NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7327,17 +7316,6 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>schon/bereits</firstLanguageTranslations>
-		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>就</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>jiù</secondLanguagePhoneticScripts>
-		<topics>---</topics>
-		<chapters>---</chapters>
-		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
-	</vocable>
-	<vocable>
 		<firstLanguageTranslations>lange nicht mehr gesehen</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
 		<secondLanguageTranslations>好久不见了</secondLanguageTranslations>
@@ -7349,9 +7327,9 @@
 		<relevanceLevel>---</relevanceLevel>
 	</vocable>
 	<vocable>
-		<firstLanguageTranslations>Wie ist es dir in letzter Zeit ergangen?</firstLanguageTranslations>
+		<firstLanguageTranslations>Wie erging es dir in letzter Zeit?</firstLanguageTranslations>
 		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>你近来好吗？</secondLanguageTranslations>
+		<secondLanguageTranslations>你最近好吗？</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>Nǐ zuìjìn hǎo ma?</secondLanguagePhoneticScripts>
 		<topics>Floskeln</topics>
 		<chapters>---</chapters>
@@ -7684,7 +7662,7 @@
 		<secondLanguageTranslations>米</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>mǐ</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7750,7 +7728,7 @@
 		<secondLanguageTranslations>读</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dú</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -7783,17 +7761,6 @@
 		<secondLanguageTranslations>你好</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǐhǎo</secondLanguagePhoneticScripts>
 		<topics>Begrueßung</topics>
-		<chapters>---</chapters>
-		<description>---</description>
-		<learnLevel>0</learnLevel>
-		<relevanceLevel>---</relevanceLevel>
-	</vocable>
-	<vocable>
-		<firstLanguageTranslations>Gern geschehen.</firstLanguageTranslations>
-		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
-		<secondLanguageTranslations>不客气</secondLanguageTranslations>
-		<secondLanguagePhoneticScripts>búkèqi</secondLanguagePhoneticScripts>
-		<topics>Floskeln</topics>
 		<chapters>---</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
@@ -8102,7 +8069,7 @@
 		<secondLanguageTranslations>学校</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xuéxiào</secondLanguagePhoneticScripts>
 		<topics>Schule</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8190,7 +8157,7 @@
 		<secondLanguageTranslations>做</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zuò</secondLanguagePhoneticScripts>
 		<topics>Verben</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8267,7 +8234,7 @@
 		<secondLanguageTranslations>钱</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qián</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10</chapters>
+		<chapters>NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8278,7 +8245,7 @@
 		<secondLanguageTranslations>块</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>kuài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10</chapters>
+		<chapters>NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8300,7 +8267,7 @@
 		<secondLanguageTranslations>衣服</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yīfu</secondLanguagePhoneticScripts>
 		<topics>Kleidung</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8410,7 +8377,7 @@
 		<secondLanguageTranslations>同学</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tóngxué</secondLanguagePhoneticScripts>
 		<topics>Schule/Studium/lernen/Personen</topics>
-		<chapters>---</chapters>
+		<chapters>HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8784,7 +8751,7 @@
 		<secondLanguageTranslations>天气</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>tiānqì</secondLanguagePhoneticScripts>
 		<topics>Wetter</topics>
-		<chapters>NPC06</chapters>
+		<chapters>NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8828,7 +8795,7 @@
 		<secondLanguageTranslations>打</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dǎ</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC06</chapters>
+		<chapters>NPC06/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -8894,7 +8861,7 @@
 		<secondLanguageTranslations>高</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>gāo</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC07 / NPC17</chapters>
+		<chapters>NPC07 / NPC17/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9081,7 +9048,7 @@
 		<secondLanguageTranslations>爱</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>ài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC08</chapters>
+		<chapters>NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9092,7 +9059,7 @@
 		<secondLanguageTranslations>做</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zuò</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC08</chapters>
+		<chapters>NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9125,7 +9092,7 @@
 		<secondLanguageTranslations>语</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yǔ</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC08</chapters>
+		<chapters>NPC08/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9158,7 +9125,7 @@
 		<secondLanguageTranslations>电脑</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diànnǎo</secondLanguagePhoneticScripts>
 		<topics>IT</topics>
-		<chapters>NPC08Z / NPC16</chapters>
+		<chapters>NPC08Z / NPC16/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -9202,7 +9169,7 @@
 		<secondLanguageTranslations>下</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xià</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC09</chapters>
+		<chapters>NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9213,7 +9180,7 @@
 		<secondLanguageTranslations>生</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shēng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC09/NPC14</chapters>
+		<chapters>NPC09/NPC14/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9246,7 +9213,7 @@
 		<secondLanguageTranslations>出</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>chū</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC09/NPC16</chapters>
+		<chapters>NPC09/NPC16/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9367,7 +9334,7 @@
 		<secondLanguageTranslations>再</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zài</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC09</chapters>
+		<chapters>NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9389,7 +9356,7 @@
 		<secondLanguageTranslations>面</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>miàn</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>NPC09</chapters>
+		<chapters>NPC09/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9444,7 +9411,7 @@
 		<secondLanguageTranslations>米饭</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>mǐfàn</secondLanguagePhoneticScripts>
 		<topics>Essen</topics>
-		<chapters>NPC09Z</chapters>
+		<chapters>NPC09Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9653,7 +9620,7 @@
 		<secondLanguageTranslations>商</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>shāng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC10</chapters>
+		<chapters>NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9708,7 +9675,7 @@
 		<secondLanguageTranslations>怎么</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zěnme</secondLanguagePhoneticScripts>
 		<topics>Fragewoerter</topics>
-		<chapters>NPC10</chapters>
+		<chapters>NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9752,7 +9719,7 @@
 		<secondLanguageTranslations>分</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>fēn</secondLanguagePhoneticScripts>
 		<topics>ZEW</topics>
-		<chapters>NPC10</chapters>
+		<chapters>NPC10/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -9884,7 +9851,7 @@
 		<secondLanguageTranslations>会</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>huì</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC11</chapters>
+		<chapters>NPC11/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10071,7 +10038,7 @@
 		<secondLanguageTranslations>冷</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>lěng</secondLanguagePhoneticScripts>
 		<topics>Wetter</topics>
-		<chapters>NPC12</chapters>
+		<chapters>NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10082,7 +10049,7 @@
 		<secondLanguageTranslations>衣服</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yīfu</secondLanguagePhoneticScripts>
 		<topics>Kleidung</topics>
-		<chapters>NPC12</chapters>
+		<chapters>NPC12/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10291,7 +10258,7 @@
 		<secondLanguageTranslations>热</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>rè</secondLanguagePhoneticScripts>
 		<topics>Temperatur</topics>
-		<chapters>NPC12Z</chapters>
+		<chapters>NPC12Z/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10346,7 +10313,7 @@
 		<secondLanguageTranslations>打电话</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>dǎdiànhuà</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>PC23/NPC13</chapters>
+		<chapters>PC23/NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10467,7 +10434,7 @@
 		<secondLanguageTranslations>电</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>diàn</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC13</chapters>
+		<chapters>NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10478,7 +10445,7 @@
 		<secondLanguageTranslations>影</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>yǐng</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC13</chapters>
+		<chapters>NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10489,7 +10456,7 @@
 		<secondLanguageTranslations>租</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zū</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC13</chapters>
+		<chapters>NPC13/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -10621,7 +10588,7 @@
 		<secondLanguageTranslations>中午</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>zhōngwǔ</secondLanguagePhoneticScripts>
 		<topics>Zeitangaben</topics>
-		<chapters>NPC14</chapters>
+		<chapters>NPC14/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
@@ -11380,7 +11347,7 @@
 		<secondLanguageTranslations>先</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>xiān</secondLanguagePhoneticScripts>
 		<topics>---</topics>
-		<chapters>NPC16</chapters>
+		<chapters>NPC16/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>2</learnLevel>
 		<relevanceLevel>4</relevanceLevel>
@@ -11567,7 +11534,7 @@
 		<secondLanguageTranslations>期</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>qī</secondLanguagePhoneticScripts>
 		<topics>Zeit</topics>
-		<chapters>NPC16</chapters>
+		<chapters>NPC16/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>3</relevanceLevel>
@@ -11611,7 +11578,7 @@
 		<secondLanguageTranslations>脑</secondLanguageTranslations>
 		<secondLanguagePhoneticScripts>nǎo</secondLanguagePhoneticScripts>
 		<topics>Koerper</topics>
-		<chapters>NPC16</chapters>
+		<chapters>NPC16/HSK1-2012</chapters>
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>2</relevanceLevel>
@@ -12242,5 +12209,269 @@
 		<description>---</description>
 		<learnLevel>0</learnLevel>
 		<relevanceLevel>---</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Paris</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>爸黎</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>bàlí</secondLanguagePhoneticScripts>
+		<topics>Staedte / Orte</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Berlin</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>柏林</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>bólín</secondLanguagePhoneticScripts>
+		<topics>Staedte / Orte</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL2</learnLevel>
+		<relevanceLevel>LVL3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>Nantes</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>南特</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>nántè</secondLanguagePhoneticScripts>
+		<topics>Staedte / Orte</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL1</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Mietwagen / das Taxi</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>出租车</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>chūzūchē</secondLanguagePhoneticScripts>
+		<topics>Fahrzeug</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>vorne / davor</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>前面</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>qiánmian</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Becher / die Tasse / das Glas</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>杯子</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>bēizi</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Arzt</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>医生</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yīshēng</secondLanguagePhoneticScripts>
+		<topics>Berufe</topics>
+		<chapters>PC05 / NPC03/HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>sehen / erblicken / anzeigen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>看见</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>kànjiàn</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>innen / in</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>里</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>lǐ</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Fruechte / das Obst</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>水果</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shuǐguǒ</secondLanguagePhoneticScripts>
+		<topics>Obst / Nahrung</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Hotel</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>饭店</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>fàndiàn</secondLanguagePhoneticScripts>
+		<topics>Gebaeude</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>hinten / hinter / Rueckseite</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>后面</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>hòumiàn</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>regnen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>下雨</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>xiàyǔ</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>HSK1-2012</chapters>
+		<description>---</description>
+		<learnLevel>5</learnLevel>
+		<relevanceLevel>4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Supermarkt</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>超市</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>chāoshì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL1</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>das Praktikum</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>实习</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shíxí</secondLanguagePhoneticScripts>
+		<topics>Beruf / Job / Ausbildung / Bildung</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Bewerbung</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>申请</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>shēnqǐng</secondLanguagePhoneticScripts>
+		<topics>Beruf / Job / Ausbildung / Bildung</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>vorschlagen / empfehlen / der Vorschlag / die Empfehlung</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>建议</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>jiànyì</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>我觉得你的建议很好．</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>der Zoo</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>动物园</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>dòngwùyuán</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>noch nie / niemals zuvor</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>从来没有</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>cóngláiméiyǒu</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>chatten / erzaehlen</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>聊</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>liáo</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>interessant / faszinierend</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>有趣</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>yǒuqù</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>LVL1</learnLevel>
+		<relevanceLevel>LVL4</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>organisieren</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>组织</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>zǔzhī</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>chaotisch / unordentlich / durcheinander</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>乱七八糟的</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>luànqībāzāode</secondLanguagePhoneticScripts>
+		<topics>---</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>2</relevanceLevel>
+	</vocable>
+	<vocable>
+		<firstLanguageTranslations>die Programmiersprache</firstLanguageTranslations>
+		<firstLanguagePhoneticScripts>---</firstLanguagePhoneticScripts>
+		<secondLanguageTranslations>电脑语言</secondLanguageTranslations>
+		<secondLanguagePhoneticScripts>diànnǎoyǔyán</secondLanguagePhoneticScripts>
+		<topics>IT</topics>
+		<chapters>---</chapters>
+		<description>---</description>
+		<learnLevel>0</learnLevel>
+		<relevanceLevel>3</relevanceLevel>
 	</vocable>
 </list>

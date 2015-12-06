@@ -19,3 +19,14 @@ src/dictionary/model/VocableConverter.java
 src/dictionary/model/VocableList.java
 src/dictionary/parser/TestStaxVocableReader.java
 src/dictionary/parser/TestStaxVocableWriter.java
+
+# files not needed for running xiaolong dictionary
+dist/*.html
+dist/XiaolongDictionary.jnlp
+dist/web-files/
+lib/ControlFX/controlsfx-8.20.8.jar
+lib/ControlFX/controlsfx-samples-8.20.8.jar
+lib/ControlFX/fxsampler-1.0.8.jar
+lib/ControlFX/openjfx-dialogs-1.0.2.jar
+dist/lib/controlsfx-8.0.6.jar
+dist/lib/controlsfx-8.0.6_20.jar
